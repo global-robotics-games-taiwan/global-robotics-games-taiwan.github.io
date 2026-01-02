@@ -11,7 +11,8 @@
             --tw-blue: #002D62;      /* 台灣深海藍 */
             --tech-cyan: #00F2FF;    /* 科技青色 */
             --dark-bg: #0A0F1E;      /* 深色背景 */
-            --glass-white: rgba(255, 255, 255, 0.1);
+            --pure-white: #FFFFFF;
+            --line-green: #06C755;   /* LINE 官方綠 */
         }
 
         * {
@@ -26,6 +27,7 @@
             font-family: 'Noto Sans TC', sans-serif;
             overflow-x: hidden;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         /* 科技感背景裝飾 */
@@ -39,18 +41,19 @@
             z-index: -1;
         }
 
-        /* 導覽列：毛玻璃效果 */
+        /* 導覽列強化設計 */
         nav {
-            background: rgba(10, 15, 30, 0.8);
-            backdrop-filter: blur(15px);
-            padding: 1.2rem 5%;
+            background: rgba(10, 15, 30, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 2px solid var(--tw-blue);
+            box-shadow: 0 4px 20px rgba(0, 242, 255, 0.15);
         }
 
         .logo-container {
@@ -60,59 +63,94 @@
         }
 
         .main-logo-img {
-            height: 50px; /* 這裡預留給你放置那張專屬 PNG 圖片 */
-            filter: drop-shadow(0 0 5px var(--tech-cyan));
+            height: 50px;
+            filter: drop-shadow(0 0 8px var(--tech-cyan));
         }
 
         .nav-brand {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: 900;
             letter-spacing: 2px;
-            background: linear-gradient(to right, #fff, var(--sg-red));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--pure-white);
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 35px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 500;
-            font-size: 0.95rem;
+            color: var(--pure-white);
+            font-weight: 700;
+            font-size: 1.05rem;
             transition: 0.3s;
-            position: relative;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
 
         .nav-links a:hover {
             color: var(--tech-cyan);
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
         }
+
+        /* 懸浮按鈕群組設計 */
+        .floating-group {
+            position: fixed;
+            right: 0;
+            top: 55%;
+            transform: translateY(-50%);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            gap: 2px; /* 按鈕間微小間隔 */
+        }
+
+        .f-btn {
+            writing-mode: vertical-rl;
+            padding: 20px 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-radius: 10px 0 0 10px;
+            transition: 0.3s all ease;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        /* 紅白紅白綠 配色邏輯 */
+        .f-red { background: var(--sg-red); color: white; }
+        .f-red:hover { background: var(--tw-blue); padding-right: 25px; box-shadow: -5px 0 15px var(--tech-cyan); }
+
+        .f-white { background: var(--pure-white); color: var(--tw-blue); }
+        .f-white:hover { background: var(--sg-red); color: white; padding-right: 25px; box-shadow: -5px 0 15px rgba(239, 51, 64, 0.5); }
+
+        .f-green { background: var(--line-green); color: white; }
+        .f-green:hover { background: #05a045; padding-right: 25px; box-shadow: -5px 0 15px var(--line-green); }
 
         /* 主視覺區塊 */
         .hero {
-            height: 85vh;
+            height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 5%;
-            position: relative;
         }
 
         .hero h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-size: clamp(2rem, 7vw, 4.5rem);
             font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            background: linear-gradient(135deg, #fff 30%, var(--tw-blue) 60%, var(--sg-red) 100%);
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #fff 40%, var(--tw-blue) 70%, var(--sg-red) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
@@ -121,162 +159,109 @@
         .hero p {
             font-size: 1.2rem;
             color: var(--tech-cyan);
-            letter-spacing: 5px;
+            letter-spacing: 4px;
             margin-bottom: 40px;
-            font-weight: 300;
         }
 
-        /* 專屬圖片區域 (Hero Image) */
-        .hero-image-placeholder {
-            width: 100%;
-            max-width: 600px;
-            margin-bottom: 30px;
+        .hero-img {
+            max-width: 500px;
+            width: 90%;
             animation: float 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(0, 242, 255, 0.2));
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
         }
 
-        /* 懸浮按鈕：更具質感 */
-        .floating-btn {
-            position: fixed;
-            right: 0;
-            top: 55%;
-            transform: translateY(-50%);
-            z-index: 2000;
-            background: rgba(239, 51, 64, 0.9);
-            color: white;
-            writing-mode: vertical-rl;
-            padding: 30px 15px;
-            font-weight: 700;
-            letter-spacing: 5px;
-            text-decoration: none;
-            border-radius: 20px 0 0 20px;
-            border: 1px solid rgba(255,255,255,0.3);
-            backdrop-filter: blur(10px);
-            transition: 0.4s;
-        }
-
-        .floating-btn:hover {
-            background: var(--tw-blue);
-            padding-right: 30px;
-            box-shadow: -10px 0 30px rgba(0, 242, 255, 0.4);
-        }
-
-        /* 內容卡片設計 */
+        /* 內容區塊卡片 */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 100px 5%;
+            padding: 80px 5%;
         }
 
         .section-title {
-            font-family: 'Orbitron', sans-serif;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
-            background: linear-gradient(to right, var(--tech-cyan), #fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            color: var(--pure-white);
+            border-bottom: 3px solid var(--sg-red);
+            display: inline-block;
+            padding-bottom: 10px;
         }
 
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
 
         .info-card {
-            background: var(--glass-white);
+            background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
-            padding: 40px;
-            border-radius: 20px;
+            padding: 35px;
+            border-radius: 15px;
             transition: 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .info-card::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 4px;
-            background: linear-gradient(90deg, var(--tw-blue), var(--sg-red));
         }
 
         .info-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255,255,255,0.1);
             border-color: var(--tech-cyan);
+            transform: translateY(-5px);
         }
 
         .info-card h3 {
             color: var(--tech-cyan);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
+            margin-bottom: 15px;
         }
 
-        .info-card ul {
-            list-style: none;
-            color: rgba(255,255,255,0.8);
-        }
-
-        .info-card li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-        }
-
-        .info-card li::before {
-            content: "▶";
-            font-size: 0.8rem;
-            margin-right: 10px;
-            color: var(--sg-red);
-        }
-
-        /* 頁尾 */
         footer {
-            padding: 60px 5%;
+            padding: 50px 5%;
             text-align: center;
-            background: rgba(0,0,0,0.5);
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            color: rgba(255,255,255,0.5);
+            background: rgba(0,0,0,0.8);
+            border-top: 1px solid var(--tw-blue);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
         }
 
-        /* 響應式調整 */
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero h1 { font-size: 2.5rem; }
+            .floating-group { transform: translateY(-50%) scale(0.85); right: -5px; }
         }
     </style>
 </head>
 <body>
 
-    <a href="#rules" class="floating-btn">競賽資訊 INFO</a>
+    <div class="floating-group">
+        <a href="#" class="f-btn f-red">前往報名</a>
+        <a href="#" class="f-btn f-white">題庫專區</a>
+        <a href="#rules" class="f-btn f-red">競賽資訊</a>
+        <a href="#" class="f-btn f-white">匯款表單</a>
+        <a href="#" class="f-btn f-green">加入群組</a>
+    </div>
 
     <nav>
         <div class="logo-container">
             <img src="your-image-filename.png" alt="GRG Logo" class="main-logo-img" onerror="this.style.display='none'">
-            <span class="nav-brand">GRG TAIWAN</span>
+            <span class="nav-brand">GLOBAL ROBOTICS GAMES</span>
         </div>
         <ul class="nav-links">
-            <li><a href="#hero">HOME</a></li>
-            <li><a href="#rules">RULES</a></li>
-            <li><a href="#about">QUACK</a></li>
+            <li><a href="#hero">首頁中心</a></li>
+            <li><a href="#rules">競賽規則</a></li>
+            <li><a href="#about">教育理念</a></li>
         </ul>
     </nav>
 
     <section class="hero" id="hero">
-        <img src="your-image-filename.png" alt="Competition Main Image" class="hero-image-placeholder" onerror="this.style.display='none'">
-        
+        <img src="your-image-filename.png" alt="Competition Poster" class="hero-img" onerror="this.style.display='none'">
         <h1>GLOBAL ROBOTICS GAMES</h1>
-        <p>TAIWAN 2026 | 台灣賽區選拔賽</p>
+        <p>TAIWAN 2026 台灣賽區</p>
     </section>
 
     <div class="container" id="rules">
@@ -301,17 +286,14 @@
                     <li>120 秒自動化任務應戰</li>
                     <li>任務完成分 + 剩餘秒數加分</li>
                     <li>機器人結構創意與穩定性評估</li>
-                    <li>團隊技術簡報與應變能力</li>
                 </ul>
             </div>
 
             <div class="info-card">
                 <h3>教育理念 QUACK</h3>
                 <ul>
-                    <li>Question (提問)</li>
-                    <li>Understand (理解)</li>
-                    <li>Apply (應用)</li>
-                    <li>Critique (評論)</li>
+                    <li>Question (提問) / Understand (理解)</li>
+                    <li>Apply (應用) / Critique (評論)</li>
                     <li>Know (知識)</li>
                 </ul>
             </div>
@@ -319,8 +301,8 @@
     </div>
 
     <footer>
-        <p>© 2026 GLOBAL ROBOTICS GAMES TAIWAN - 台灣 JBC 比賽委員會</p>
-        <p>Singapore & Taiwan Innovation Excellence</p>
+        <p>© 2026 GLOBAL ROBOTICS GAMES TAIWAN - 台灣 JBC 競賽委員會</p>
+        <p>卓越創新 ‧ 連結國際 | Singapore & Taiwan Collaboration</p>
     </footer>
 
 </body>
