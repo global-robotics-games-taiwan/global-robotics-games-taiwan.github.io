@@ -53,7 +53,6 @@
             top: 0;
             z-index: 1000;
             border-bottom: 2px solid var(--tw-blue);
-            box-shadow: 0 4px 20px rgba(0, 242, 255, 0.15);
         }
 
         .logo-container {
@@ -73,13 +72,12 @@
             font-weight: 900;
             letter-spacing: 2px;
             color: var(--pure-white);
-            text-shadow: 0 0 10px rgba(255,255,255,0.5);
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 25px;
         }
 
         .nav-links a {
@@ -88,14 +86,10 @@
             font-weight: 700;
             font-size: 0.95rem;
             transition: 0.3s;
-            padding: 8px 15px;
-            border-radius: 5px;
         }
 
         .nav-links a:hover {
             color: var(--tech-cyan);
-            background: rgba(255,255,255,0.05);
-            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
         }
 
         /* 懸浮按鈕群組設計 */
@@ -124,13 +118,13 @@
         }
 
         .f-red { background: var(--sg-red); color: white; }
-        .f-red:hover { background: var(--tw-blue); padding-right: 25px; box-shadow: -5px 0 15px var(--tech-cyan); }
+        .f-red:hover { background: var(--tw-blue); padding-right: 25px; }
 
         .f-white { background: var(--pure-white); color: var(--tw-blue); }
-        .f-white:hover { background: var(--sg-red); color: white; padding-right: 25px; box-shadow: -5px 0 15px rgba(239, 51, 64, 0.5); }
+        .f-white:hover { background: var(--sg-red); color: white; padding-right: 25px; }
 
         .f-green { background: var(--line-green); color: white; }
-        .f-green:hover { background: #05a045; padding-right: 25px; box-shadow: -5px 0 15px var(--line-green); }
+        .f-green:hover { background: #05a045; padding-right: 25px; }
 
         /* 主視覺區塊 */
         .hero {
@@ -150,7 +144,6 @@
             background: linear-gradient(135deg, #fff 40%, var(--tw-blue) 70%, var(--sg-red) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
         }
 
         .hero p {
@@ -160,87 +153,7 @@
             margin: 20px 0 40px;
         }
 
-        .hero-img {
-            max-width: 450px;
-            width: 85%;
-            animation: float 4s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-
-        /* 媒體報導區塊設計 */
-        .media-section {
-            padding: 80px 5%;
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .media-card {
-            display: block;
-            text-decoration: none;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.4s ease;
-        }
-
-        .media-card:hover {
-            transform: scale(1.02);
-            border-color: var(--tech-cyan);
-            background: rgba(255, 255, 255, 0.07);
-        }
-
-        .media-img-wrapper {
-            width: 100%;
-            height: 200px;
-            background: #1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .media-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.6; /* 讓圖片與背景融合，不突兀 */
-            transition: 0.4s;
-        }
-
-        .media-card:hover .media-img-wrapper img {
-            opacity: 0.9;
-        }
-
-        .media-content {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .media-content h4 {
-            color: var(--pure-white);
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .media-content p {
-            color: var(--tech-cyan);
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-        }
-
-        /* 通用內容區塊 */
+        /* 內容區塊 */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -272,18 +185,111 @@
             border: 1px solid rgba(255,255,255,0.1);
             padding: 35px;
             border-radius: 15px;
+            transition: 0.3s;
         }
+
+        .info-card:hover { border-color: var(--tech-cyan); transform: translateY(-5px); }
+
+        /* 影片展示區塊 */
+        .video-section {
+            background: rgba(0,0,0,0.2);
+            padding: 80px 5%;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 比例 */
+            height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: none;
+        }
+
+        /* 媒體報導區塊：浮動效果強化 */
+        .media-section {
+            padding: 100px 5%;
+            background: var(--dark-bg);
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .media-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .media-img-wrapper {
+            width: 100%;
+            height: 220px;
+            overflow: visible; /* 允許圖片溢出 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .media-img-wrapper img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            opacity: 0.7;
+            transition: all 0.5s ease;
+            filter: grayscale(30%);
+        }
+
+        /* 滑鼠移入：整張圖片浮動破框 */
+        .media-card:hover {
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--tech-cyan);
+            box-shadow: 0 20px 40px rgba(0, 242, 255, 0.2);
+        }
+
+        .media-card:hover .media-img-wrapper img {
+            opacity: 1;
+            transform: scale(1.15) translateY(-10px); /* 放大並向上浮動 */
+            filter: grayscale(0%) drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+        }
+
+        .media-content { padding: 25px; text-align: center; }
+        .media-content h4 { color: #fff; margin-bottom: 5px; font-size: 1.2rem; }
+        .media-content p { color: var(--tech-cyan); font-size: 0.9rem; }
 
         footer {
             padding: 50px 5%;
             text-align: center;
-            background: rgba(0,0,0,0.8);
             border-top: 1px solid var(--tw-blue);
             color: rgba(255,255,255,0.4);
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
+            .video-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -305,7 +311,7 @@
         <ul class="nav-links">
             <li><a href="#hero">首頁中心</a></li>
             <li><a href="#rules">競賽規則</a></li>
-            <li><a href="#about">教育理念</a></li>
+            <li><a href="#videos">精彩回顧</a></li>
             <li><a href="#media">媒體報導</a></li>
         </ul>
     </nav>
@@ -316,6 +322,51 @@
         <p>TAIWAN 2026 台灣賽區</p>
     </section>
 
+    <div class="container" id="rules">
+        <div class="section-title">
+            <h2>競賽核心規範</h2>
+        </div>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>硬體規格 SPEC</h3>
+                <ul>
+                    <li>LEGO® SPIKE™ Prime / Mindstorms</li>
+                    <li>最多 4 顆馬達 & 4 顆感測器</li>
+                    <li>起始尺寸 25x25x25 cm</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>評分標準 SCORE</h3>
+                <ul>
+                    <li>120 秒自動化任務應戰</li>
+                    <li>任務得分 + 剩餘時間加分</li>
+                    <li>結構設計與穩定性評比</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>教育理念 QUACK</h3>
+                <ul>
+                    <li>Question (提問) / Understand (理解)</li>
+                    <li>Apply (應用) / Critique (評論) / Know (知識)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="video-section" id="videos">
+        <div class="section-title">
+            <h2>賽事精彩回顧</h2>
+        </div>
+        <div class="video-grid">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/2MVkPrLuC4g" allowfullscreen></iframe>
+            </div>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/PjS-58tG4_Y" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
     <section class="media-section" id="media">
         <div class="section-title">
             <h2>媒體聯合報導</h2>
@@ -323,7 +374,7 @@
         <div class="media-grid">
             <a href="https://www.zaobao.com.sg/news/singapore/story20231115-1450247" target="_blank" class="media-card">
                 <div class="media-img-wrapper">
-                    <img src="zaobao-thumb.png" alt="Lianhe Zaobao Coverage" onerror="this.src='https://via.placeholder.com/400x200/002D62/FFFFFF?text=Lianhe+Zaobao'">
+                    <img src="zaobao-thumb.png" alt="聯合早報" onerror="this.src='https://via.placeholder.com/400x200/002D62/FFFFFF?text=Lianhe+Zaobao'">
                 </div>
                 <div class="media-content">
                     <h4>首屆國際機器人遊戲大賽</h4>
@@ -333,51 +384,15 @@
 
             <a href="https://www.bykido.com/blogs/events-and-activities/global-robotics-games-finals-2023-with-hands-on-booths-at-our-tampines-hub" target="_blank" class="media-card">
                 <div class="media-img-wrapper">
-                    <img src="bykido-thumb.png" alt="BYKIDO Coverage" onerror="this.src='https://via.placeholder.com/400x200/EF3340/FFFFFF?text=BYKIDO+EVENTS'">
+                    <img src="bykido-thumb.png" alt="BYKIDO" onerror="this.src='https://via.placeholder.com/400x200/EF3340/FFFFFF?text=BYKIDO+EVENTS'">
                 </div>
                 <div class="media-content">
-                    <h4>GRG Finals 2023 Highlights</h4>
-                    <p>來源：BYKIDO Events & Activities</p>
+                    <h4>GRG Finals Highlights</h4>
+                    <p>來源：BYKIDO 活動專訪</p>
                 </div>
             </a>
         </div>
     </section>
-
-    <div class="container" id="rules">
-        <div class="section-title">
-            <h2>競賽核心規範</h2>
-        </div>
-        
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>硬體規格 SPEC</h3>
-                <ul>
-                    <li>LEGO® SPIKE™ Prime / Mindstorms</li>
-                    <li>最多 4 顆馬達 (Max Motors)</li>
-                    <li>最多 4 顆感測器 (Max Sensors)</li>
-                    <li>起始尺寸限制 25x25x25 cm</li>
-                </ul>
-            </div>
-
-            <div class="info-card">
-                <h3>評分標準 SCORE</h3>
-                <ul>
-                    <li>120 秒自動化任務應戰</li>
-                    <li>任務完成分 + 剩餘秒數加分</li>
-                    <li>機器人結構創意與穩定性評估</li>
-                </ul>
-            </div>
-
-            <div class="info-card" id="about">
-                <h3>教育理念 QUACK</h3>
-                <ul>
-                    <li>Question (提問) / Understand (理解)</li>
-                    <li>Apply (應用) / Critique (評論)</li>
-                    <li>Know (知識)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
     <footer>
         <p>© 2026 GLOBAL ROBOTICS GAMES TAIWAN - 台灣 JBC 競賽委員會</p>
