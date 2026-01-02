@@ -79,16 +79,16 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 35px;
+            gap: 30px;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--pure-white);
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             transition: 0.3s;
-            padding: 5px 10px;
+            padding: 8px 15px;
             border-radius: 5px;
         }
 
@@ -107,7 +107,7 @@
             z-index: 2000;
             display: flex;
             flex-direction: column;
-            gap: 2px; /* 按鈕間微小間隔 */
+            gap: 2px;
         }
 
         .f-btn {
@@ -121,10 +121,8 @@
             transition: 0.3s all ease;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.1);
-            backdrop-filter: blur(5px);
         }
 
-        /* 紅白紅白綠 配色邏輯 */
         .f-red { background: var(--sg-red); color: white; }
         .f-red:hover { background: var(--tw-blue); padding-right: 25px; box-shadow: -5px 0 15px var(--tech-cyan); }
 
@@ -149,7 +147,6 @@
             font-family: 'Orbitron', sans-serif;
             font-size: clamp(2rem, 7vw, 4.5rem);
             font-weight: 900;
-            margin-bottom: 10px;
             background: linear-gradient(135deg, #fff 40%, var(--tw-blue) 70%, var(--sg-red) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -160,14 +157,13 @@
             font-size: 1.2rem;
             color: var(--tech-cyan);
             letter-spacing: 4px;
-            margin-bottom: 40px;
+            margin: 20px 0 40px;
         }
 
         .hero-img {
-            max-width: 500px;
-            width: 90%;
+            max-width: 450px;
+            width: 85%;
             animation: float 4s ease-in-out infinite;
-            filter: drop-shadow(0 0 20px rgba(0, 242, 255, 0.2));
         }
 
         @keyframes float {
@@ -175,7 +171,76 @@
             50% { transform: translateY(-15px); }
         }
 
-        /* 內容區塊卡片 */
+        /* 媒體報導區塊設計 */
+        .media-section {
+            padding: 80px 5%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .media-card {
+            display: block;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.4s ease;
+        }
+
+        .media-card:hover {
+            transform: scale(1.02);
+            border-color: var(--tech-cyan);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .media-img-wrapper {
+            width: 100%;
+            height: 200px;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .media-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6; /* 讓圖片與背景融合，不突兀 */
+            transition: 0.4s;
+        }
+
+        .media-card:hover .media-img-wrapper img {
+            opacity: 0.9;
+        }
+
+        .media-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .media-content h4 {
+            color: var(--pure-white);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .media-content p {
+            color: var(--tech-cyan);
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* 通用內容區塊 */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -207,18 +272,6 @@
             border: 1px solid rgba(255,255,255,0.1);
             padding: 35px;
             border-radius: 15px;
-            transition: 0.3s;
-        }
-
-        .info-card:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: var(--tech-cyan);
-            transform: translateY(-5px);
-        }
-
-        .info-card h3 {
-            color: var(--tech-cyan);
-            margin-bottom: 15px;
         }
 
         footer {
@@ -226,13 +279,11 @@
             text-align: center;
             background: rgba(0,0,0,0.8);
             border-top: 1px solid var(--tw-blue);
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
+            color: rgba(255,255,255,0.4);
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .floating-group { transform: translateY(-50%) scale(0.85); right: -5px; }
         }
     </style>
 </head>
@@ -255,6 +306,7 @@
             <li><a href="#hero">首頁中心</a></li>
             <li><a href="#rules">競賽規則</a></li>
             <li><a href="#about">教育理念</a></li>
+            <li><a href="#media">媒體報導</a></li>
         </ul>
     </nav>
 
@@ -262,6 +314,33 @@
         <img src="your-image-filename.png" alt="Competition Poster" class="hero-img" onerror="this.style.display='none'">
         <h1>GLOBAL ROBOTICS GAMES</h1>
         <p>TAIWAN 2026 台灣賽區</p>
+    </section>
+
+    <section class="media-section" id="media">
+        <div class="section-title">
+            <h2>媒體聯合報導</h2>
+        </div>
+        <div class="media-grid">
+            <a href="https://www.zaobao.com.sg/news/singapore/story20231115-1450247" target="_blank" class="media-card">
+                <div class="media-img-wrapper">
+                    <img src="zaobao-thumb.png" alt="Lianhe Zaobao Coverage" onerror="this.src='https://via.placeholder.com/400x200/002D62/FFFFFF?text=Lianhe+Zaobao'">
+                </div>
+                <div class="media-content">
+                    <h4>首屆國際機器人遊戲大賽</h4>
+                    <p>來源：新加坡《聯合早報》</p>
+                </div>
+            </a>
+
+            <a href="https://www.bykido.com/blogs/events-and-activities/global-robotics-games-finals-2023-with-hands-on-booths-at-our-tampines-hub" target="_blank" class="media-card">
+                <div class="media-img-wrapper">
+                    <img src="bykido-thumb.png" alt="BYKIDO Coverage" onerror="this.src='https://via.placeholder.com/400x200/EF3340/FFFFFF?text=BYKIDO+EVENTS'">
+                </div>
+                <div class="media-content">
+                    <h4>GRG Finals 2023 Highlights</h4>
+                    <p>來源：BYKIDO Events & Activities</p>
+                </div>
+            </a>
+        </div>
     </section>
 
     <div class="container" id="rules">
@@ -289,7 +368,7 @@
                 </ul>
             </div>
 
-            <div class="info-card">
+            <div class="info-card" id="about">
                 <h3>教育理念 QUACK</h3>
                 <ul>
                     <li>Question (提問) / Understand (理解)</li>
@@ -302,7 +381,7 @@
 
     <footer>
         <p>© 2026 GLOBAL ROBOTICS GAMES TAIWAN - 台灣 JBC 競賽委員會</p>
-        <p>卓越創新 ‧ 連結國際 | Singapore & Taiwan Collaboration</p>
+        <p>新加坡總體規劃 ‧ 台灣團隊承辦執行</p>
     </footer>
 
 </body>
