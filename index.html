@@ -153,6 +153,17 @@
             margin: 20px 0 40px;
         }
 
+        .hero-img {
+            max-width: 450px;
+            width: 85%;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
         /* 內容區塊 */
         .container {
             max-width: 1200px;
@@ -247,7 +258,7 @@
         .media-img-wrapper {
             width: 100%;
             height: 220px;
-            overflow: visible; /* 允許圖片溢出 */
+            overflow: visible;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -262,7 +273,6 @@
             filter: grayscale(30%);
         }
 
-        /* 滑鼠移入：整張圖片浮動破框 */
         .media-card:hover {
             z-index: 10;
             background: rgba(255, 255, 255, 0.08);
@@ -272,7 +282,7 @@
 
         .media-card:hover .media-img-wrapper img {
             opacity: 1;
-            transform: scale(1.15) translateY(-10px); /* 放大並向上浮動 */
+            transform: scale(1.15) translateY(-10px);
             filter: grayscale(0%) drop-shadow(0 10px 20px rgba(0,0,0,0.5));
         }
 
@@ -362,7 +372,7 @@
                 <iframe src="https://www.youtube.com/embed/2MVkPrLuC4g" allowfullscreen></iframe>
             </div>
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/PjS-58tG4_Y" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/wp3Qji2D3CY" allowfullscreen></iframe>
             </div>
         </div>
     </section>
