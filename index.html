@@ -41,7 +41,7 @@
             z-index: -1;
         }
 
-        /* 導覽列強化設計 */
+        /* 導覽列 */
         nav {
             background: rgba(10, 15, 30, 0.9);
             backdrop-filter: blur(20px);
@@ -92,7 +92,7 @@
             color: var(--tech-cyan);
         }
 
-        /* 懸浮按鈕群組設計 */
+        /* 懸浮按鈕群組 */
         .floating-group {
             position: fixed;
             right: 0;
@@ -126,9 +126,9 @@
         .f-green { background: var(--line-green); color: white; }
         .f-green:hover { background: #05a045; padding-right: 25px; }
 
-        /* 主視覺區塊 */
+        /* 主視覺區塊 - 加強版 LOGO */
         .hero {
-            height: 80vh;
+            height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -153,15 +153,27 @@
             margin: 20px 0 40px;
         }
 
+        /* 強化後的 LOGO 圖片樣式 */
         .hero-img {
-            max-width: 450px;
-            width: 85%;
+            max-width: 600px; /* 放大尺寸 */
+            width: 95%;
             animation: float 4s ease-in-out infinite;
+            /* 強大的霓虹光暈與立體感投影 */
+            filter: drop-shadow(0 0 15px rgba(239, 51, 64, 0.6)) 
+                    drop-shadow(0 0 30px rgba(0, 242, 255, 0.4)) 
+                    drop-shadow(0 20px 30px rgba(0,0,0,0.8));
+            transition: transform 0.5s ease;
+        }
+
+        .hero-img:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 25px rgba(239, 51, 64, 0.8)) 
+                    drop-shadow(0 0 45px rgba(0, 242, 255, 0.6));
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
         }
 
         /* 內容區塊 */
@@ -196,12 +208,9 @@
             border: 1px solid rgba(255,255,255,0.1);
             padding: 35px;
             border-radius: 15px;
-            transition: 0.3s;
         }
 
-        .info-card:hover { border-color: var(--tech-cyan); transform: translateY(-5px); }
-
-        /* 影片展示區塊 */
+        /* 影片區塊 */
         .video-section {
             background: rgba(0,0,0,0.2);
             padding: 80px 5%;
@@ -217,7 +226,7 @@
 
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 比例 */
+            padding-bottom: 56.25%;
             height: 0;
             border-radius: 15px;
             overflow: hidden;
@@ -230,7 +239,7 @@
             border: none;
         }
 
-        /* 媒體報導區塊：浮動效果強化 */
+        /* 媒體報導 */
         .media-section {
             padding: 100px 5%;
             background: var(--dark-bg);
@@ -270,7 +279,6 @@
             object-fit: contain;
             opacity: 0.7;
             transition: all 0.5s ease;
-            filter: grayscale(30%);
         }
 
         .media-card:hover {
@@ -287,7 +295,7 @@
         }
 
         .media-content { padding: 25px; text-align: center; }
-        .media-content h4 { color: #fff; margin-bottom: 5px; font-size: 1.2rem; }
+        .media-content h4 { color: #fff; font-size: 1.2rem; }
         .media-content p { color: var(--tech-cyan); font-size: 0.9rem; }
 
         footer {
@@ -356,8 +364,8 @@
             <div class="info-card">
                 <h3>教育理念 QUACK</h3>
                 <ul>
-                    <li>Question (提問) / Understand (理解)</li>
-                    <li>Apply (應用) / Critique (評論) / Know (知識)</li>
+                    <li>Question / Understand / Apply</li>
+                    <li>Critique / Know</li>
                 </ul>
             </div>
         </div>
@@ -391,7 +399,6 @@
                     <p>來源：新加坡《聯合早報》</p>
                 </div>
             </a>
-
             <a href="https://www.bykido.com/blogs/events-and-activities/global-robotics-games-finals-2023-with-hands-on-booths-at-our-tampines-hub" target="_blank" class="media-card">
                 <div class="media-img-wrapper">
                     <img src="bykido-thumb.png" alt="BYKIDO" onerror="this.src='https://via.placeholder.com/400x200/EF3340/FFFFFF?text=BYKIDO+EVENTS'">
