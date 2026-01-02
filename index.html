@@ -13,6 +13,7 @@
             --dark-bg: #0A0F1E;      /* 深色背景 */
             --pure-white: #FFFFFF;
             --line-green: #06C755;   /* LINE 官方綠 */
+            --neon-glow: 0 0 15px var(--tech-cyan);
         }
 
         * {
@@ -43,7 +44,7 @@
 
         /* 導覽列 */
         nav {
-            background: rgba(10, 15, 30, 0.9);
+            background: rgba(10, 15, 30, 0.95);
             backdrop-filter: blur(20px);
             padding: 1rem 5%;
             display: flex;
@@ -52,7 +53,8 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid var(--tw-blue);
+            border-bottom: 2px solid var(--tech-cyan);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
         }
 
         .logo-container {
@@ -63,7 +65,7 @@
 
         .main-logo-img {
             height: 50px;
-            filter: drop-shadow(0 0 8px var(--tech-cyan));
+            filter: drop-shadow(0 0 5px var(--tech-cyan));
         }
 
         .nav-brand {
@@ -74,25 +76,7 @@
             color: var(--pure-white);
         }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--pure-white);
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--tech-cyan);
-        }
-
-        /* 懸浮按鈕群組 */
+        /* 懸浮按鈕：強化霓虹邊框與觸碰回饋 */
         .floating-group {
             position: fixed;
             right: 0;
@@ -101,32 +85,67 @@
             z-index: 2000;
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 8px; /* 增加間距讓邊框更明顯 */
         }
 
         .f-btn {
             writing-mode: vertical-rl;
-            padding: 20px 12px;
+            padding: 22px 14px;
             font-weight: 700;
             letter-spacing: 2px;
             text-decoration: none;
             font-size: 0.9rem;
-            border-radius: 10px 0 0 10px;
-            transition: 0.3s all ease;
+            border-radius: 12px 0 0 12px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent; /* 預留空間給霓虹邊框 */
         }
 
-        .f-red { background: var(--sg-red); color: white; }
-        .f-red:hover { background: var(--tw-blue); padding-right: 25px; }
+        /* 紅白紅白綠 霓虹邊框邏輯 */
+        .f-red { 
+            background: var(--sg-red); 
+            color: white; 
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: -5px 0 10px rgba(239, 51, 64, 0.3);
+        }
+        .f-red:hover { 
+            background: var(--tw-blue); 
+            padding-right: 35px;
+            border-color: var(--tech-cyan);
+            box-shadow: -10px 0 25px var(--tech-cyan);
+            transform: scale(1.1) translateX(-5px);
+        }
 
-        .f-white { background: var(--pure-white); color: var(--tw-blue); }
-        .f-white:hover { background: var(--sg-red); color: white; padding-right: 25px; }
+        .f-white { 
+            background: var(--pure-white); 
+            color: var(--tw-blue); 
+            border: 2px solid var(--sg-red);
+        }
+        .f-white:hover { 
+            background: var(--sg-red); 
+            color: white; 
+            padding-right: 35px;
+            border-color: var(--pure-white);
+            box-shadow: -10px 0 25px var(--sg-red);
+            transform: scale(1.1) translateX(-5px);
+        }
 
-        .f-green { background: var(--line-green); color: white; }
-        .f-green:hover { background: #05a045; padding-right: 25px; }
+        .f-green { 
+            background: var(--line-green); 
+            color: white; 
+            border: 2px solid rgba(255,255,255,0.4);
+        }
+        .f-green:hover { 
+            background: #05a045; 
+            padding-right: 35px;
+            border-color: #fff;
+            box-shadow: -10px 0 25px var(--line-green);
+            transform: scale(1.1) translateX(-5px);
+        }
 
-        /* 主視覺區塊 - 加強版 LOGO */
+        /* 主視覺：針對老闆要求的 LOGO 強化 */
         .hero {
             height: 85vh;
             display: flex;
@@ -144,36 +163,36 @@
             background: linear-gradient(135deg, #fff 40%, var(--tw-blue) 70%, var(--sg-red) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-top: 20px;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--tech-cyan);
-            letter-spacing: 4px;
-            margin: 20px 0 40px;
-        }
-
-        /* 強化後的 LOGO 圖片樣式 */
+        /* LOGO 強化核心：解決文字看不清與紋路不凸顯問題 */
         .hero-img {
-            max-width: 600px; /* 放大尺寸 */
+            max-width: 600px;
             width: 95%;
             animation: float 4s ease-in-out infinite;
-            /* 強大的霓虹光暈與立體感投影 */
-            filter: drop-shadow(0 0 15px rgba(239, 51, 64, 0.6)) 
-                    drop-shadow(0 0 30px rgba(0, 242, 255, 0.4)) 
-                    drop-shadow(0 20px 30px rgba(0,0,0,0.8));
-            transition: transform 0.5s ease;
+            /* 1. 使用亮度濾鏡凸顯電路紋路 2. 使用銳利度與對比 3. 多層發光邊框 */
+            filter: 
+                brightness(1.2) 
+                contrast(1.1)
+                drop-shadow(0 0 2px #fff) /* 白色極細邊框，確保 Global/Games 文字邊緣清晰 */
+                drop-shadow(0 0 10px var(--tech-cyan)) /* 青色發光 */
+                drop-shadow(0 0 20px var(--sg-red)); /* 紅色底光 */
+            transition: all 0.5s ease;
         }
 
         .hero-img:hover {
             transform: scale(1.05);
-            filter: drop-shadow(0 0 25px rgba(239, 51, 64, 0.8)) 
-                    drop-shadow(0 0 45px rgba(0, 242, 255, 0.6));
+            filter: 
+                brightness(1.4) 
+                contrast(1.2)
+                drop-shadow(0 0 5px #fff)
+                drop-shadow(0 0 30px var(--tech-cyan));
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(1deg); }
+            50% { transform: translateY(-20px) rotate(0.5deg); }
         }
 
         /* 內容區塊 */
@@ -181,11 +200,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 80px 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
         }
 
         .section-title h2 {
@@ -197,25 +211,16 @@
             padding-bottom: 10px;
         }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
         .info-card {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
             padding: 35px;
             border-radius: 15px;
+            border-left: 5px solid var(--tech-cyan);
         }
 
-        /* 影片區塊 */
-        .video-section {
-            background: rgba(0,0,0,0.2);
-            padding: 80px 5%;
-        }
-
+        /* 影片區 */
+        .video-section { background: rgba(0,0,0,0.3); padding: 80px 5%; }
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -223,16 +228,14 @@
             max-width: 1100px;
             margin: 0 auto;
         }
-
         .video-wrapper {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 0 20px var(--tech-cyan);
         }
-
         .video-wrapper iframe {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -240,11 +243,7 @@
         }
 
         /* 媒體報導 */
-        .media-section {
-            padding: 100px 5%;
-            background: var(--dark-bg);
-        }
-
+        .media-section { padding: 100px 5%; }
         .media-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -252,62 +251,37 @@
             max-width: 1100px;
             margin: 0 auto;
         }
-
         .media-card {
             display: block;
             text-decoration: none;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            z-index: 1;
-        }
-
-        .media-img-wrapper {
-            width: 100%;
-            height: 220px;
-            overflow: visible;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .media-img-wrapper img {
-            width: 90%;
-            height: 90%;
-            object-fit: contain;
-            opacity: 0.7;
             transition: all 0.5s ease;
         }
-
         .media-card:hover {
-            z-index: 10;
-            background: rgba(255, 255, 255, 0.08);
+            transform: scale(1.05) translateY(-10px);
             border-color: var(--tech-cyan);
-            box-shadow: 0 20px 40px rgba(0, 242, 255, 0.2);
+            box-shadow: 0 0 30px var(--tech-cyan);
         }
-
-        .media-card:hover .media-img-wrapper img {
-            opacity: 1;
-            transform: scale(1.15) translateY(-10px);
-            filter: grayscale(0%) drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+        .media-img-wrapper img {
+            width: 90%;
+            height: 220px;
+            object-fit: contain;
+            transition: 0.5s;
         }
-
-        .media-content { padding: 25px; text-align: center; }
-        .media-content h4 { color: #fff; font-size: 1.2rem; }
-        .media-content p { color: var(--tech-cyan); font-size: 0.9rem; }
 
         footer {
             padding: 50px 5%;
             text-align: center;
-            border-top: 1px solid var(--tw-blue);
-            color: rgba(255,255,255,0.4);
+            border-top: 1px solid var(--tech-cyan);
+            color: rgba(255,255,255,0.5);
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .video-grid { grid-template-columns: 1fr; }
+            .floating-group { transform: translateY(-50%) scale(0.8); }
         }
     </style>
 </head>
@@ -341,7 +315,7 @@
     </section>
 
     <div class="container" id="rules">
-        <div class="section-title">
+        <div class="section-title" style="text-align: center; margin-bottom: 50px;">
             <h2>競賽核心規範</h2>
         </div>
         <div class="info-grid">
@@ -372,7 +346,7 @@
     </div>
 
     <section class="video-section" id="videos">
-        <div class="section-title">
+        <div class="section-title" style="text-align: center; margin-bottom: 50px;">
             <h2>賽事精彩回顧</h2>
         </div>
         <div class="video-grid">
@@ -386,24 +360,24 @@
     </section>
 
     <section class="media-section" id="media">
-        <div class="section-title">
+        <div class="section-title" style="text-align: center; margin-bottom: 50px;">
             <h2>媒體聯合報導</h2>
         </div>
         <div class="media-grid">
             <a href="https://www.zaobao.com.sg/news/singapore/story20231115-1450247" target="_blank" class="media-card">
-                <div class="media-img-wrapper">
+                <div class="media-img-wrapper" style="text-align: center; padding-top: 20px;">
                     <img src="zaobao-thumb.png" alt="聯合早報" onerror="this.src='https://via.placeholder.com/400x200/002D62/FFFFFF?text=Lianhe+Zaobao'">
                 </div>
-                <div class="media-content">
+                <div class="media-content" style="padding: 25px; text-align: center;">
                     <h4>首屆國際機器人遊戲大賽</h4>
                     <p>來源：新加坡《聯合早報》</p>
                 </div>
             </a>
             <a href="https://www.bykido.com/blogs/events-and-activities/global-robotics-games-finals-2023-with-hands-on-booths-at-our-tampines-hub" target="_blank" class="media-card">
-                <div class="media-img-wrapper">
+                <div class="media-img-wrapper" style="text-align: center; padding-top: 20px;">
                     <img src="bykido-thumb.png" alt="BYKIDO" onerror="this.src='https://via.placeholder.com/400x200/EF3340/FFFFFF?text=BYKIDO+EVENTS'">
                 </div>
-                <div class="media-content">
+                <div class="media-content" style="padding: 25px; text-align: center;">
                     <h4>GRG Finals Highlights</h4>
                     <p>來源：BYKIDO 活動專訪</p>
                 </div>
