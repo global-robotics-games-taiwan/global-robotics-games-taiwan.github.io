@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Robotics Games Taiwan 2026 | 國際機器人競賽台灣官網</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sg-red: #EF3340;       /* 新加坡紅 */
+            --tw-blue: #002D62;      /* 台灣深海藍 */
+            --tech-cyan: #00F2FF;    /* 科技青色 */
+            --dark-bg: #0A0F1E;      /* 深色背景 */
+            --glass-white: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #FFFFFF;
+            font-family: 'Noto Sans TC', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* 科技感背景裝飾 */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 45, 98, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(239, 51, 64, 0.2) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        /* 導覽列：毛玻璃效果 */
+        nav {
+            background: rgba(10, 15, 30, 0.8);
+            backdrop-filter: blur(15px);
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .main-logo-img {
+            height: 50px; /* 這裡預留給你放置那張專屬 PNG 圖片 */
+            filter: drop-shadow(0 0 5px var(--tech-cyan));
+        }
+
+        .nav-brand {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, #fff, var(--sg-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--tech-cyan);
+        }
+
+        /* 主視覺區塊 */
+        .hero {
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #fff 30%, var(--tw-blue) 60%, var(--sg-red) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--tech-cyan);
+            letter-spacing: 5px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* 專屬圖片區域 (Hero Image) */
+        .hero-image-placeholder {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 30px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* 懸浮按鈕：更具質感 */
+        .floating-btn {
+            position: fixed;
+            right: 0;
+            top: 55%;
+            transform: translateY(-50%);
+            z-index: 2000;
+            background: rgba(239, 51, 64, 0.9);
+            color: white;
+            writing-mode: vertical-rl;
+            padding: 30px 15px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-decoration: none;
+            border-radius: 20px 0 0 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+            transition: 0.4s;
+        }
+
+        .floating-btn:hover {
+            background: var(--tw-blue);
+            padding-right: 30px;
+            box-shadow: -10px 0 30px rgba(0, 242, 255, 0.4);
+        }
+
+        /* 內容卡片設計 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 5%;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            background: linear-gradient(to right, var(--tech-cyan), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            background: var(--glass-white);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--tw-blue), var(--sg-red));
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--tech-cyan);
+        }
+
+        .info-card h3 {
+            color: var(--tech-cyan);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .info-card li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-card li::before {
+            content: "▶";
+            font-size: 0.8rem;
+            margin-right: 10px;
+            color: var(--sg-red);
+        }
+
+        /* 頁尾 */
+        footer {
+            padding: 60px 5%;
+            text-align: center;
+            background: rgba(0,0,0,0.5);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* 響應式調整 */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#rules" class="floating-btn">競賽資訊 INFO</a>
+
+    <nav>
+        <div class="logo-container">
+            <img src="your-image-filename.png" alt="GRG Logo" class="main-logo-img" onerror="this.style.display='none'">
+            <span class="nav-brand">GRG TAIWAN</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero">HOME</a></li>
+            <li><a href="#rules">RULES</a></li>
+            <li><a href="#about">QUACK</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="hero">
+        <img src="your-image-filename.png" alt="Competition Main Image" class="hero-image-placeholder" onerror="this.style.display='none'">
+        
+        <h1>GLOBAL ROBOTICS GAMES</h1>
+        <p>TAIWAN 2026 | 台灣賽區選拔賽</p>
+    </section>
+
+    <div class="container" id="rules">
+        <div class="section-title">
+            <h2>競賽核心規範</h2>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>硬體規格 SPEC</h3>
+                <ul>
+                    <li>LEGO® SPIKE™ Prime / Mindstorms</li>
+                    <li>最多 4 顆馬達 (Max Motors)</li>
+                    <li>最多 4 顆感測器 (Max Sensors)</li>
+                    <li>起始尺寸限制 25x25x25 cm</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>評分標準 SCORE</h3>
+                <ul>
+                    <li>120 秒自動化任務應戰</li>
+                    <li>任務完成分 + 剩餘秒數加分</li>
+                    <li>機器人結構創意與穩定性評估</li>
+                    <li>團隊技術簡報與應變能力</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>教育理念 QUACK</h3>
+                <ul>
+                    <li>Question (提問)</li>
+                    <li>Understand (理解)</li>
+                    <li>Apply (應用)</li>
+                    <li>Critique (評論)</li>
+                    <li>Know (知識)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 GLOBAL ROBOTICS GAMES TAIWAN - 台灣 JBC 比賽委員會</p>
+        <p>Singapore & Taiwan Innovation Excellence</p>
+    </footer>
+
+</body>
+</html>
