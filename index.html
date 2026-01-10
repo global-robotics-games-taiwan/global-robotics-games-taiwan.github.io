@@ -228,11 +228,66 @@
         }
 
        /* 確保卡片排版流暢 */
+/* 控制 2x2 排版 */
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 自動適應欄數 */
-    gap: 25px;
-    padding: 20px 0;
+    /* 電腦版：固定為兩欄 */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+    padding: 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 針對年齡標籤的強化 (加大且使用鮮艷色) */
+.age-tag {
+    display: inline-block;
+    background: #ffec00; /* 使用高對比度的鮮黃色 */
+    color: #000;         /* 黑色字體確保可讀性 */
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 1.1rem;   /* 加大字體 */
+    font-weight: 900;    /* 極粗體 */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(255, 236, 0, 0.5);
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+/* 卡片基礎樣式微調 */
+.info-card {
+    background: rgba(10, 20, 40, 0.85);
+    border: 2px solid var(--spark-blue);
+    padding: 30px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+    text-align: left; /* 改回靠左對齊方便閱讀列表 */
+}
+
+.info-card:hover {
+    border-color: #ff00ff;
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.3);
+}
+
+.info-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    margin: 10px 0;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+/* 手機版自動切換為一欄排版 */
+@media (max-width: 850px) {
+    .info-grid {
+        grid-template-columns: 1fr; 
+        padding: 20px;
+    }
+    
+    .age-tag {
+        font-size: 1rem;
+    }
 }
 
 /* 類別標籤樣式 (例如: 6-9 歲) */
@@ -510,7 +565,10 @@ html {
             <li><strong>競賽時間：</strong>120 秒挑戰賽</li>
         </ul>
     </div>
-
+<section id="rules" class="section-container" style="padding-top: 100px; margin-top: -100px;">
+    <div class="section-header">
+        <h2 class="section-title">GRG 2026 競賽項目核心規範</h2>
+    </div>
     <div class="info-card">
         <div class="category-tag">9-12 歲</div>
         <h3>JUNIOR MISSION</h3>
