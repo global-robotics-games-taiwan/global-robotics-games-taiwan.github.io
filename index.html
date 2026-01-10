@@ -227,20 +227,35 @@
             padding-bottom: 10px;
         }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
+       /* 確保卡片排版流暢 */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 自動適應欄數 */
+    gap: 25px;
+    padding: 20px 0;
+}
 
-        .info-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 35px;
-            border-radius: 15px;
-            transition: 0.3s;
-        }
+/* 類別標籤樣式 (例如: 6-9 歲) */
+.category-tag {
+    display: inline-block;
+    background: var(--spark-orange);
+    color: #000;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;
+}
 
+.mission-theme {
+    color: var(--spark-blue);
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 210, 255, 0.3);
+    padding-bottom: 5px;
+}
         /* 影片展示區塊 */
         .video-section {
             background: rgba(0,0,0,0.2);
@@ -483,39 +498,55 @@ html {
         <p>TAIWAN 2026 台灣賽區</p>
     </section>
 
-    <div class="container" id="rules">
-        <div class="section-title">
-            <h2>競賽核心規範</h2>
-        </div>
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>硬體規格 SPEC</h3>
-                <ul>
-                    <li>LEGO® SPIKE™ Prime / Mindstorms</li>
-                    <li>最多 4 顆馬達 (Max Motors)</li>
-                    <li>最多 4 顆感測器 (Max Sensors)</li>
-                    <li>起始尺寸限制 25x25x25 cm</li>
-                </ul>
-            </div>
+    <div class="info-grid">
+    <div class="info-card">
+        <div class="category-tag">6-9 歲</div>
+        <h3>MICRO MISSION</h3>
+        <p class="mission-theme">主題：海洋探索家</p>
+        <ul>
+            <li><strong>硬體限制：</strong>限用 Spike Essential / WeDo 2.0</li>
+            <li><strong>核心挑戰：</strong>機器人自動導航至指定海洋生態區</li>
+            <li><strong>得分關鍵：</strong>精準啟動任務裝置並安全返回基地</li>
+            <li><strong>競賽時間：</strong>120 秒挑戰賽</li>
+        </ul>
+    </div>
 
-            <div class="info-card">
-                <h3>評分標準 SCORE</h3>
-                <ul>
-                    <li>120 秒自動化任務應戰</li>
-                    <li>任務完成分 + 剩餘秒數加分</li>
-                    <li>機器人結構創意與穩定性評估</li>
-                </ul>
-            </div>
+    <div class="info-card">
+        <div class="category-tag">9-12 歲</div>
+        <h3>JUNIOR MISSION</h3>
+        <p class="mission-theme">主題：智慧能源港</p>
+        <ul>
+            <li><strong>硬體限制：</strong>Spike Prime / Mindstorms (4 馬達)</li>
+            <li><strong>核心挑戰：</strong>模擬港口自動化操作，搬運貨櫃與電力配置</li>
+            <li><strong>得分關鍵：</strong>運用顏色感測器進行精準路徑校準</li>
+            <li><strong>競賽時間：</strong>120 秒自動化任務</li>
+        </ul>
+    </div>
 
-            <div class="info-card">
-                <h3>教育理念 QUACK</h3>
-                <ul>
-                    <li>Question (提問) / Understand (理解)</li>
-                    <li>Apply (應用) / Critique (評論)</li>
-                    <li>Know (知識)</li>
-                </ul>
-            </div>
-        </div>
+    <div class="info-card">
+        <div class="category-tag">13-17 歲</div>
+        <h3>SENIOR MISSION</h3>
+        <p class="mission-theme">主題：未來城市樞紐</p>
+        <ul>
+            <li><strong>硬體限制：</strong>不限廠牌控器 (強調開源與集成)</li>
+            <li><strong>核心挑戰：</strong>複雜的地圖邏輯判斷與動態障礙規避</li>
+            <li><strong>得分關鍵：</strong>PID 巡線效率與多機構協同作業</li>
+            <li><strong>競賽時間：</strong>150 秒高強度對戰</li>
+        </ul>
+    </div>
+
+    <div class="info-card">
+        <div class="category-tag">全年齡/混合</div>
+        <h3>OPEN INNOVATION</h3>
+        <p class="mission-theme">主題：永續技術提案</p>
+        <ul>
+            <li><strong>競賽形式：</strong>專題研究與原型實作演示</li>
+            <li><strong>核心挑戰：</strong>針對全球氣候變遷提出可行的機器人方案</li>
+            <li><strong>評分關鍵：</strong>創新思維 (40%) + 簡報表達 (30%) + 技術實現 (30%)</li>
+            <li><strong>教育理念：</strong>深度實踐 QUACK 核心教育框架</li>
+        </ul>
+    </div>
+</div>
     </div>
 
     <section class="video-section" id="videos">
