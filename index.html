@@ -162,33 +162,42 @@
 
         /* --- 手機版 RWD 特殊樣式 (關鍵！) --- */
      /* --- 手機版 RWD 特殊樣式 (修正選單不出現問題) --- */
-        @media (max-width: 1024px) {
-            #menu-toggle { display: flex; } /* 顯示漢堡按鈕 */
+      @media (max-width: 1024px) {
+    #menu-toggle { 
+        display: flex; 
+    }
 
             .nav-brand { font-size: 1rem; letter-spacing: 1px; }
 
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%; /* 預設在右邊螢幕外 */
-                width: 75%;
-                height: 100vh;
-                background: rgba(10, 15, 30, 0.98);
-                flex-direction: column; /* 垂直排列選項 */
-                justify-content: center;
-                align-items: center;
-                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                gap: 30px;
-                border-left: 2px solid var(--tw-blue);
-                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
-                display: flex; /* 關鍵：確保它是 flex 容器，只是被 right 藏起來 */
-            }
+           .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* 初始藏在螢幕右側 */
+        width: 70%;
+        height: 100vh;
+        background: rgba(10, 15, 30, 0.98); /* 背景稍微深一點確保文字清晰 */
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        gap: 30px;
+        z-index: 1100; /* 確保在導覽列背景之上 */
+        display: flex !important; /* 強制啟動 flex 佈局 */
+        border-left: 1px solid var(--tw-blue);
+        box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+    }
 
-            /* 當 JS 觸發時滑入螢幕 */
-            .nav-links.active {
-                right: 0 !important;
-            }
+           /* 當 JS 加入 .active 類別時滑入螢幕 */
+    .nav-links.active {
+        right: 0 !important;
+    }
 
+    .nav-links a {
+        font-size: 1.2rem; /* 手機版字體稍微加大方便點擊 */
+        width: 100%;
+        text-align: center;
+    }
+}
             /* 手機版懸浮按鈕優化 */
             .floating-group {
                 top: auto;
@@ -467,11 +476,7 @@
             border-top: 1px solid var(--tw-blue);
             color: rgba(255,255,255,0.4);
         }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .video-grid { grid-template-columns: 1fr; }
-        }
+        
         /* --- 浮動動畫 --- */
 @keyframes logoFloat {
     0%, 100% {
@@ -746,12 +751,15 @@ html {
         </div>
     </div>
     </section>
-    <script>
+   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
 
-    // 切換選單
-    menuToggle.addEventListener('click', function() {
+    menuToggle.addEventListener('click', function(e) {
+        // 阻止點擊事件冒泡，避免干擾其他元素
+        e.stopPropagation();
+        
+        // 切換 active 狀態
         navLinks.classList.toggle('active');
         
         // 漢堡按鈕動畫
@@ -761,15 +769,21 @@ html {
         spans[2].classList.toggle('-rotate-45');
     });
 
-    // 點擊連結後關閉選單 (修正：直接從類別移除 active)
+    // 點擊連結後自動關閉選單
     function closeMenu() {
         navLinks.classList.remove('active');
-        // 同時恢復漢堡按鈕形狀
         const spans = menuToggle.querySelectorAll('span');
         spans[0].classList.remove('rotate-45');
         spans[1].classList.remove('opacity-0');
         spans[2].classList.remove('-rotate-45');
     }
+
+    // 點擊選單外部自動關閉 (選配優化)
+    document.addEventListener('click', function(e) {
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+            closeMenu();
+        }
+    });
 </script>
         
     <footer>
