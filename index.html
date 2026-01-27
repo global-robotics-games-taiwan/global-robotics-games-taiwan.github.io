@@ -6,6 +6,12 @@
     <title>Global Robotics Games Taiwan 2026 | 臺灣智能程式科技教育推廣協會</title>
     <meta name="description" content="GRG Global Robotics Games 官方資訊平台。推廣全球機器人競技運動，培養跨領域科技人才，提供最新賽制與參賽資訊。">
 <meta name="keywords" content="GRG, Global Robotics Games, 全球機器人運動會, SPARK, 機器人競賽, 科技教育, 臺灣智能程式科技教育推廣協會">
+    <title>GRG 2026 台灣賽區官方網站 | 臺灣智能程式科技教育推廣協會 SPARK</title>
+<meta name="description" content="2026 Global Robotics Games (GRG) 台灣區競賽官方平台。由臺灣智能程式科技教育推廣協會 (SPARK) 主辦，提供 Micro、Junior、Senior 及 Open 各組別詳細競賽規則、題庫與報名資訊。">
+<meta name="keywords" content="GRG 2026, Global Robotics Games, 機器人比賽, 臺灣智能程式科技教育推廣協會, SPARK, 機器人競賽規則, QUACK教育, 程式教育">
+<meta property="og:title" content="GRG 2026 台灣賽區 | 邁向國際機器人舞台">
+<meta property="og:description" content="立即查看最新 GRG 2026 競賽規範，加入 SPARK 科技教育行列。">
+
    <link rel="canonical" href="https://你的用戶名.github.io/enjoyai-taiwan/index.html" />
     <style>
         :root {
@@ -44,8 +50,9 @@
         }
 
         /* 導覽列 - 恢復原始精緻樣式 */
+       /* --- 導覽列與懸浮按鈕 (已整合手機版) --- */
         nav {
-            background: rgba(10, 15, 30, 0.9);
+            background: rgba(10, 15, 30, 0.95);
             backdrop-filter: blur(20px);
             padding: 1rem 5%;
             display: flex;
@@ -53,7 +60,7 @@
             align-items: center;
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 1100;
             border-bottom: 2px solid var(--tw-blue);
             box-shadow: 0 4px 20px rgba(0, 242, 255, 0.15);
         }
@@ -78,6 +85,26 @@
             text-shadow: 0 0 10px rgba(255,255,255,0.5);
         }
 
+        /* 漢堡按鈕 - 預設隱藏 (電腦版) */
+        #menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1200;
+        }
+
+        #menu-toggle span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--pure-white);
+            transition: 0.3s;
+            box-shadow: 0 0 5px var(--tech-cyan);
+        }
+
         .nav-links {
             list-style: none;
             display: flex;
@@ -92,6 +119,7 @@
             transition: 0.3s;
             padding: 8px 15px;
             border-radius: 5px;
+            cursor: pointer;
         }
 
         .nav-links a:hover {
@@ -100,7 +128,7 @@
             box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
         }
 
-        /* 懸浮按鈕 - 強化霓虹流光邊框 */
+        /* 懸浮按鈕群組 */
         .floating-group {
             position: fixed;
             right: 0;
@@ -125,43 +153,72 @@
             border: 2px solid transparent;
         }
 
-        .f-red { 
-            background: var(--sg-red); 
-            color: white; 
-            border: 1px solid rgba(255,255,255,0.1); 
-        }
-        .f-red:hover { 
-            background: var(--tw-blue); 
-            padding-right: 25px; 
-            border-color: var(--tech-cyan); 
-            box-shadow: -5px 0 15px var(--tech-cyan); 
+        .f-red { background: var(--sg-red); color: white; border: 1px solid rgba(255,255,255,0.1); }
+        .f-red:hover { background: var(--tw-blue); padding-right: 25px; border-color: var(--tech-cyan); box-shadow: -5px 0 15px var(--tech-cyan); }
+        .f-white { background: var(--pure-white); color: var(--tw-blue); border: 2px solid var(--sg-red); }
+        .f-white:hover { background: var(--sg-red); color: white; padding-right: 25px; border-color: var(--pure-white); box-shadow: -5px 0 15px rgba(239, 51, 64, 0.5); }
+        .f-green { background: var(--line-green); color: white; border: 1px solid rgba(255,255,255,0.1); }
+        .f-green:hover { background: #05a045; padding-right: 25px; border-color: #fff; box-shadow: -5px 0 15px var(--line-green); }
+
+        /* --- 手機版 RWD 特殊樣式 (關鍵！) --- */
+        @media (max-width: 1024px) {
+            #menu-toggle { display: flex; } /* 顯示漢堡按鈕 */
+
+            .nav-brand { font-size: 1rem; letter-spacing: 1px; }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%; /* 預設在螢幕外 */
+                width: 75%;
+                height: 100vh;
+                background: rgba(10, 15, 30, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                gap: 30px;
+                border-left: 2px solid var(--tw-blue);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            }
+
+            .nav-links.active {
+                right: 0; /* 點擊後滑入 */
+            }
+
+            /* 手機版懸浮按鈕優化：移動到螢幕底部橫向排列，避免遮擋文字 */
+            .floating-group {
+                top: auto;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                transform: none;
+                flex-direction: row;
+                width: 100%;
+                height: 60px;
+                background: var(--dark-bg);
+                border-top: 1px solid var(--tw-blue);
+            }
+
+            .f-btn {
+                writing-mode: horizontal-tb; /* 文字改為橫向 */
+                width: 20%; /* 五個按鈕平分螢幕 */
+                height: 100%;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.7rem;
+                border-radius: 0;
+                letter-spacing: 0;
+            }
+            .f-btn:hover { padding-right: 0; transform: translateY(-5px); }
         }
 
-        .f-white { 
-            background: var(--pure-white); 
-            color: var(--tw-blue); 
-            border: 2px solid var(--sg-red); 
-        }
-        .f-white:hover { 
-            background: var(--sg-red); 
-            color: white; 
-            padding-right: 25px; 
-            border-color: var(--pure-white);
-            box-shadow: -5px 0 15px rgba(239, 51, 64, 0.5); 
-        }
-
-        .f-green { 
-            background: var(--line-green); 
-            color: white; 
-            border: 1px solid rgba(255,255,255,0.1); 
-        }
-        .f-green:hover { 
-            background: #05a045; 
-            padding-right: 25px; 
-            border-color: #fff;
-            box-shadow: -5px 0 15px var(--line-green); 
-        }
-
+        /* 漢堡按鈕動畫輔助類 */
+        .rotate-45 { transform: translateY(7px) rotate(45deg); }
+        .opacity-0 { opacity: 0; }
+        .-rotate-45 { transform: translateY(-7px) rotate(-45deg); }
         /* 主視覺區塊 - LOGO 紋路與文字強化 */
         .hero {
             height: 80vh;
@@ -535,17 +592,24 @@ html {
         <a href="https://line.me/ti/g2/XWUYNGvXIzqFgE9b6Z4oTb1_jFIvgsxXs7SCJw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"target="_blank" class="f-btn f-green">加入群組</a>
     </div>
 
-    <nav>
+ <nav>
         <div class="logo-container">
             <img src="your-image-filename.png" alt="GRG Logo" class="main-logo-img" onerror="this.style.display='none'">
-            <span class="nav-brand">GLOBAL ROBOTICS GAMES TAIWAN</span>
+            <span class="nav-brand">GRG TAIWAN</span>
         </div>
-        <ul class="nav-links">
-            <li><a href="#hero">首頁中心</a></li>
-            <li><a href="#rules">競賽規則</a></li>
-            <li><a href="#videos">精彩回顧</a></li>
-            <li><a href="#media">媒體報導</a></li>
-            <li><a href="#contact">聯絡我們</a></li>
+        
+        <button id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#hero" onclick="closeMenu()">首頁中心</a></li>
+            <li><a href="#rules" onclick="closeMenu()">競賽規則</a></li>
+            <li><a href="#videos" onclick="closeMenu()">精彩回顧</a></li>
+            <li><a href="#media" onclick="closeMenu()">媒體報導</a></li>
+            <li><a href="#contact" onclick="closeMenu()">聯絡我們</a></li>
         </ul>
     </nav>
 
@@ -680,12 +744,35 @@ html {
         </div>
     </div>
     </section>
-        <title>GRG 2026 台灣賽區官方網站 | 臺灣智能程式科技教育推廣協會 SPARK</title>
-<meta name="description" content="2026 Global Robotics Games (GRG) 台灣區競賽官方平台。由臺灣智能程式科技教育推廣協會 (SPARK) 主辦，提供 Micro、Junior、Senior 及 Open 各組別詳細競賽規則、題庫與報名資訊。">
-<meta name="keywords" content="GRG 2026, Global Robotics Games, 機器人比賽, 臺灣智能程式科技教育推廣協會, SPARK, 機器人競賽規則, QUACK教育, 程式教育">
-<meta property="og:title" content="GRG 2026 台灣賽區 | 邁向國際機器人舞台">
-<meta property="og:description" content="立即查看最新 GRG 2026 競賽規範，加入 SPARK 科技教育行列。">
+        <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
 
+    // 切換選單
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        // 漢堡按鈕簡易動畫
+        const spans = menuToggle.querySelectorAll('span');
+        spans[0].classList.toggle('rotate-45');
+        spans[1].classList.toggle('opacity-0');
+        spans[2].classList.toggle('-rotate-45');
+    });
+
+    // 點擊連結後關閉選單
+    function closeMenu() {
+        navLinks.classList.remove('active');
+    }
+
+    // 處理漢堡按鈕動畫的 CSS 補充
+    document.head.insertAdjacentHTML('beforeend', `
+        <style>
+            .rotate-45 { transform: translateY(7px) rotate(45deg); }
+            .opacity-0 { opacity: 0; }
+            .-rotate-45 { transform: translateY(-7px) rotate(-45deg); }
+        </style>
+    `);
+</script>
+        
     <footer>
       <div class="spark-competition-footer" style="background-color: transparent; padding: 40px 20px; text-align: center; font-family: 'Microsoft JhengHei', sans-serif;">
     
