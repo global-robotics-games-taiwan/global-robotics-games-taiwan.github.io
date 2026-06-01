@@ -13,581 +13,7 @@
 <meta property="og:description" content="立即查看最新 GRG 2026 競賽規範，加入 SPARK 科技教育行列。">
 
    <link rel="canonical" href="https://你的用戶名.github.io/enjoyai-taiwan/index.html" />
-    <style>
-        :root {
-            --sg-red: #EF3340;       /* 新加坡紅 */
-            --tw-blue: #002D62;      /* 台灣深海藍 */
-            --tech-cyan: #00F2FF;    /* 科技青色 */
-            --dark-bg: #0A0F1E;      /* 深色背景 */
-            --pure-white: #FFFFFF;
-            --line-green: #06C755;   /* LINE 官方綠 */
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--dark-bg);
-            color: #FFFFFF;
-            font-family: 'Noto Sans TC', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        /* 科技感背景裝飾 */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(0, 45, 98, 0.4) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(239, 51, 64, 0.2) 0%, transparent 50%);
-            z-index: -1;
-        }
-
-        /* 導覽列 - 恢復原始精緻樣式 */
-       /* --- 導覽列與懸浮按鈕 (已整合手機版) --- */
-        nav {
-            background: rgba(10, 15, 30, 0.95);
-            backdrop-filter: blur(20px);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1100;
-            border-bottom: 2px solid var(--tw-blue);
-            box-shadow: 0 4px 20px rgba(0, 242, 255, 0.15);
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .main-logo-img {
-            height: 50px;
-            filter: drop-shadow(0 0 8px var(--tech-cyan));
-        }
-
-        .nav-brand {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-            color: var(--pure-white);
-            text-shadow: 0 0 10px rgba(255,255,255,0.5);
-        }
-
-        /* 漢堡按鈕 - 預設隱藏 (電腦版) */
-        #menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            z-index: 1200;
-        }
-
-        #menu-toggle span {
-            display: block;
-            width: 28px;
-            height: 2px;
-            background: var(--pure-white);
-            transition: 0.3s;
-            box-shadow: 0 0 5px var(--tech-cyan);
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--pure-white);
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: 0.3s;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .nav-links a:hover {
-            color: var(--tech-cyan);
-            background: rgba(255,255,255,0.05);
-            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
-        }
-
-        /* 懸浮按鈕群組 */
-        .floating-group {
-            position: fixed;
-            right: 0;
-            top: 55%;
-            transform: translateY(-50%);
-            z-index: 2000;
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .f-btn {
-            writing-mode: vertical-rl;
-            padding: 20px 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            border-radius: 10px 0 0 10px;
-            transition: 0.3s all ease;
-            text-align: center;
-            border: 2px solid transparent;
-        }
-
-        .f-red { background: var(--sg-red); color: white; border: 1px solid rgba(255,255,255,0.1); }
-        .f-red:hover { background: var(--tw-blue); padding-right: 25px; border-color: var(--tech-cyan); box-shadow: -5px 0 15px var(--tech-cyan); }
-        .f-white { background: var(--pure-white); color: var(--tw-blue); border: 2px solid var(--sg-red); }
-        .f-white:hover { background: var(--sg-red); color: white; padding-right: 25px; border-color: var(--pure-white); box-shadow: -5px 0 15px rgba(239, 51, 64, 0.5); }
-        .f-green { background: var(--line-green); color: white; border: 1px solid rgba(255,255,255,0.1); }
-        .f-green:hover { background: #05a045; padding-right: 25px; border-color: #fff; box-shadow: -5px 0 15px var(--line-green); }
-
-        /* --- 手機版 RWD 特殊樣式 (關鍵！) --- */
-     /* --- 手機版 RWD 特殊樣式 (修正選單不出現問題) --- */
-      @media (max-width: 1024px) {
-    #menu-toggle { 
-        display: flex; 
-    }
-
-            .nav-brand { font-size: 1rem; letter-spacing: 1px; }
-
-           .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%; /* 初始藏在螢幕右側 */
-        width: 70%;
-        height: 100vh;
-        background: rgba(10, 15, 30, 0.98); /* 背景稍微深一點確保文字清晰 */
-        flex-direction: column; 
-        justify-content: center;
-        align-items: center;
-        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        gap: 30px;
-        z-index: 1100; /* 確保在導覽列背景之上 */
-        display: flex !important; /* 強制啟動 flex 佈局 */
-        border-left: 1px solid var(--tw-blue);
-        box-shadow: -5px 0 20px rgba(0,0,0,0.5);
-    }
-
-           /* 當 JS 加入 .active 類別時滑入螢幕 */
-    .nav-links.active {
-        right: 0 !important;
-    }
-
-    .nav-links a {
-        font-size: 1.2rem; /* 手機版字體稍微加大方便點擊 */
-        width: 100%;
-        text-align: center;
-    }
-}
-            /* 手機版懸浮按鈕優化 */
-            .floating-group {
-                top: auto;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                transform: none;
-                flex-direction: row;
-                width: 100%;
-                height: 60px;
-                background: var(--dark-bg);
-                border-top: 1px solid var(--tw-blue);
-            }
-
-            .f-btn {
-                writing-mode: horizontal-tb;
-                width: 20%;
-                height: 100%;
-                padding: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 0.7rem;
-                border-radius: 0;
-                letter-spacing: 0;
-            }
-        }
-
-        /* 漢堡按鈕動畫輔助類 */
-        .rotate-45 { transform: translateY(7px) rotate(45deg); }
-        .opacity-0 { opacity: 0; }
-        .-rotate-45 { transform: translateY(-7px) rotate(-45deg); }
-        /* 主視覺區塊 - LOGO 紋路與文字強化 */
-        .hero {
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 5%;
-        }
-
-        .hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: clamp(2rem, 7vw, 4.5rem);
-            font-weight: 900;
-            background: linear-gradient(135deg, #fff 40%, var(--tw-blue) 70%, var(--sg-red) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--tech-cyan);
-            letter-spacing: 4px;
-            margin: 20px 0 40px;
-        }
-
-        .hero-img {
-            max-width: 600px;
-            width: 95%;
-            animation: float 4s ease-in-out infinite;
-            /* 針對老闆要求：加強邊框對比色、清晰文字、凸顯紋路 */
-            filter: 
-                brightness(1.1)
-                contrast(1.2)
-                drop-shadow(0 0 2px rgba(255,255,255,0.8)) /* 白色細邊，凸顯 Global/Games 字體 */
-                drop-shadow(0 0 15px var(--tech-cyan))
-                drop-shadow(0 0 30px rgba(239, 51, 64, 0.4));
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-
-        /* 內容區塊 - 恢復完整內容與排版 */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
-            color: var(--pure-white);
-            border-bottom: 3px solid var(--sg-red);
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-       /* 確保卡片排版流暢 */
-/* 控制 2x2 排版 */
-.info-grid {
-    display: grid;
-    /* 電腦版：固定為兩欄 */
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 30px;
-    padding: 40px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* 針對年齡標籤的強化 (加大且使用鮮艷色) */
-.age-tag {
-    display: inline-block;
-    background: #ffec00; /* 使用高對比度的鮮黃色 */
-    color: #000;         /* 黑色字體確保可讀性 */
-    padding: 6px 16px;
-    border-radius: 4px;
-    font-size: 1.1rem;   /* 加大字體 */
-    font-weight: 900;    /* 極粗體 */
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    box-shadow: 0 0 10px rgba(255, 236, 0, 0.5);
-    font-family: 'Noto Sans TC', sans-serif;
-}
-
-/* 卡片基礎樣式微調 */
-.info-card {
-    background: rgba(10, 20, 40, 0.85);
-    border: 2px solid var(--spark-blue);
-    padding: 30px;
-    border-radius: 12px;
-    transition: 0.3s ease;
-    text-align: left; /* 改回靠左對齊方便閱讀列表 */
-}
-
-.info-card:hover {
-    border-color: #ff00ff;
-    transform: translateY(-5px);
-    box-shadow: 0 0 25px rgba(255, 0, 255, 0.3);
-}
-
-.info-card h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: #fff;
-    margin: 10px 0;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-}
-
-/* 手機版自動切換為一欄排版 */
-@media (max-width: 850px) {
-    .info-grid {
-        grid-template-columns: 1fr; 
-        padding: 20px;
-    }
-    
-    .age-tag {
-        font-size: 1rem;
-    }
-}
-
-/* 類別標籤樣式 (例如: 6-9 歲) */
-.category-tag {
-    display: inline-block;
-    background: var(--spark-orange);
-    color: #000;
-    padding: 3px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 900;
-    margin-bottom: 10px;
-    font-family: 'Orbitron', sans-serif;
-}
-
-.mission-theme {
-    color: var(--spark-blue);
-    font-weight: bold;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(0, 210, 255, 0.3);
-    padding-bottom: 5px;
-}
-        /* 影片展示區塊 */
-        .video-section {
-            background: rgba(0,0,0,0.2);
-            padding: 80px 5%;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            border: none;
-        }
-
-        /* 媒體報導區塊 - 恢復破框浮動效果 */
-        .media-section {
-            padding: 100px 5%;
-            background: var(--dark-bg);
-        }
-
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .media-card {
-            display: block;
-            text-decoration: none;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            z-index: 1;
-        }
-
-        .media-img-wrapper {
-            width: 100%;
-            height: 220px;
-            overflow: visible; /* 關鍵：恢復破框浮動 */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .media-img-wrapper img {
-            width: 90%;
-            height: 90%;
-            object-fit: contain;
-            opacity: 0.7;
-            transition: all 0.5s ease;
-        }
-
-        /* 媒體卡片滑動回饋 */
-        .media-card:hover {
-            z-index: 10;
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--tech-cyan);
-            box-shadow: 0 20px 40px rgba(0, 242, 255, 0.2);
-        }
-
-        .media-card:hover .media-img-wrapper img {
-            opacity: 1;
-            transform: scale(1.15) translateY(-15px); /* 破框浮起特效 */
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
-        }
-
-        .media-content { padding: 25px; text-align: center; }
-        .media-content h4 { color: #fff; margin-bottom: 5px; font-size: 1.2rem; }
-        .media-content p { color: var(--tech-cyan); font-size: 0.9rem; }
-
-        footer {
-            padding: 50px 5%;
-            text-align: center;
-            border-top: 1px solid var(--tw-blue);
-            color: rgba(255,255,255,0.4);
-        }
-        
-        /* --- 浮動動畫 --- */
-@keyframes logoFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-25px); /* 向上漂浮的幅度 */
-    }
-}
-        /* 聯絡區塊基礎設置 */
-.contact-section {
-    padding: 80px 0;
-    text-align: center;
-    background: transparent;
-}
-
-/* 社群卡片容器 */
-.social-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    padding-top: 40px;
-}
-
-/* 高科技社群圖框 */
-.social-card {
-    text-decoration: none;
-    color: #fff;
-    perspective: 1000px;
-    /* 持續漂浮動畫，三個卡片給予不同的延遲時間讓動態更有層次 */
-    animation: floatingCard 4s ease-in-out infinite;
-}
-
-.social-card:nth-child(2) { animation-delay: 0.5s; }
-.social-card:nth-child(3) { animation-delay: 1s; }
-
-.card-inner {
-    width: 140px;
-    height: 160px;
-    background: rgba(15, 15, 25, 0.8);
-    border: 2px solid #00ffff; /* 初號機螢光藍邊框 */
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(0, 255, 255, 0.2);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
-}
-
-/* 圖框上方的掃描光束特效 */
-.card-inner::after {
-    content: '';
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 300%;
-    height: 300%;
-    background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.1), transparent);
-    transition: 0.5s;
-}
-
-/* 圖像框 */
-.icon-box {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-icon {
-    width: 100%;
-    height: auto;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
-}
-
-/* --- 觸碰動態回饋 (Hover) --- */
-.social-card:hover .card-inner {
-    transform: translateY(-10px) rotateX(10deg) scale(1.1);
-    border-color: #ff00ff; /* 觸碰時變為初號機紫/粉色系 */
-    box-shadow: 0 0 30px rgba(255, 0, 255, 0.6), inset 0 0 20px rgba(255, 0, 255, 0.4);
-}
-
-.social-card:hover .card-inner::after {
-    top: -50%;
-    left: -50%;
-}
-
-.social-card span {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-/* --- 動畫：持續漂浮 --- */
-@keyframes floatingCard {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
-/* 平滑捲動 */
-html {
-    scroll-behavior: smooth;
-}
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -601,7 +27,7 @@ html {
 
  <nav>
         <div class="logo-container">
-            <img src="your-image-filename.png" alt="GRG Logo" class="main-logo-img" onerror="this.style.display='none'">
+            <img src="images/your-image-filename.png" alt="GRG Logo" class="main-logo-img" onerror="this.style.display='none'">
             <span class="nav-brand">GRG TAIWAN</span>
         </div>
         
@@ -621,28 +47,16 @@ html {
     </nav>
 
     <section class="hero" id="hero">
-        <img src="your-image-filename.png" alt="Competition Poster" class="hero-img" onerror="this.style.display='none'">
+        <img src="images/your-image-filename.png" alt="Competition Poster" class="hero-img" onerror="this.style.display='none'">
         <h1>GLOBAL ROBOTICS GAMES</h1>
         <p>TAIWAN 2026 台灣賽區</p>
     </section>
-<section id="rules" class="section-container" style="padding-top: 100px; margin-top: -100px;">
+<section id="rules" class="section-container rules-section">
     <div class="section-header">
         <h2 class="section-title">GRG 2026 競賽項目核心規範</h2>
     </div>
 
     <div class="info-grid">
-        <div class="info-card">
-            <div class="age-tag">5 - 6 歲</div>
-            <h3>Preschool</h3>
-            <p class="mission-theme">任務主題：Mission Meals</p>
-            <ul>
-                <li><strong>硬體限制：</strong>限用 KUBO Coding Starter Set & KUBO Coding+ Set</li>
-                <li><strong>核心挑戰：</strong>無螢幕編程任務 (TagTile®)，透過實體拼圖指令控制機器人完成地圖路徑</li>
-                <li><strong>評分重點：</strong>邏輯排序正確性與基礎問題解決能力 (Computational Thinking)</li>
-                <li><strong>賽制特色：</strong>任務導向 (Mission-based)，專注於幼兒程式邏輯建構</li>
-            </ul>
-        </div>
-
         <div class="info-card">
             <div class="age-tag">7 - 9 歲</div>
             <h3>Mobile Robotics I</h3>
@@ -653,6 +67,10 @@ html {
                 <li><strong>車體規範：</strong>最大尺寸 250mm x 250mm x 250mm (含線材)</li>
                 <li><strong>得分關鍵：</strong>感測器精準度 (如偵測黑色物件) 與 120 秒內自動化任務完成率</li>
             </ul>
+            <div class="button-group">
+                <a href="rules/mr1_rules.html" class="rule-btn" target="_blank">查看完整中文規則</a>
+                <a href="rules/mr1_rules_en.html" class="rule-btn en-btn" target="_blank">View Original English Rules</a>
+            </div>
         </div>
 
         <div class="info-card">
@@ -665,6 +83,10 @@ html {
                 <li><strong>技術門檻：</strong>進階感測器應用 (顏色/距離判讀) 與 PID 循線控制能力</li>
                 <li><strong>競賽要求：</strong>結構穩定性與程式演算法的最佳化 (需適應隨機任務變數)</li>
             </ul>
+            <div class="button-group">
+                <a href="rules/mr23_rules.html" class="rule-btn" target="_blank">查看完整中文規則</a>
+                <a href="rules/mr23_rules_en.html" class="rule-btn en-btn" target="_blank">View Original English Rules</a>
+            </div>
         </div>
 
         <div class="info-card">
@@ -677,6 +99,39 @@ html {
                 <li><strong>軟體平台：</strong>Control.stickem.sg (AI/ML 模型訓練)</li>
                 <li><strong>核心挑戰：</strong>訓練 AI 模型以辨識任務卡牌 (Mission Cards) 並執行對應動作，結合永續材料機構設計</li>
             </ul>
+            <div class="button-group">
+                <a href="rules/aims_rules.html" class="rule-btn" target="_blank">查看完整中文規則</a>
+                <a href="rules/aims_rules_en.html" class="rule-btn en-btn" target="_blank">View Original English Rules</a>
+            </div>
+        </div>
+        
+        <div class="info-card">
+            <div class="age-tag">Tertiary (17+ 歲)</div>
+            <h3>Mobile Robotics IV</h3>
+            <p class="mission-theme">主題任務：Integrated Bio-Stack</p>
+            <ul>
+                <li><strong>核心挑戰：</strong>高度自動化的 AI 視覺辨識與精密控制</li>
+                <li><strong>技術門檻：</strong>必須使用 AI 視覺模型進行物件與字母辨識，並依序疊加指定方塊</li>
+            </ul>
+            <div class="button-group">
+                <a href="rules/mr4_rules.html" class="rule-btn" target="_blank">查看完整中文規則</a>
+                <a href="rules/mr4_rules_en.html" class="rule-btn en-btn" target="_blank">View Original English Rules</a>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="age-tag">國小/國中/高中職 (依年齡分組)</div>
+            <h3>Open Category (公開組)</h3>
+            <p class="mission-theme">主題任務：Mission Meals (機器人解決方案專題)</p>
+            <ul>
+                <li><strong>雙軌賽制：</strong>分為「線上展示影片」與「現場專題攤位」兩階段</li>
+                <li><strong>核心挑戰：</strong>開發自製機器人解決缺乏基礎設施、勞力密集或物流不佳的問題</li>
+                <li><strong>加分項目：</strong>開發具備「可互換終端執行器 (多功能)」的機器人</li>
+            </ul>
+            <div class="button-group">
+                <a href="rules/open_rules.html" class="rule-btn" target="_blank">查看完整中文規則</a>
+                <a href="rules/open_rules_en.html" class="rule-btn en-btn" target="_blank">View Original English Rules</a>
+            </div>
         </div>
     </div>
 </section>
@@ -702,7 +157,7 @@ html {
         <div class="media-grid">
             <a href="https://www.zaobao.com.sg/news/singapore/story20231115-1450247" target="_blank" class="media-card">
                 <div class="media-img-wrapper">
-                    <img src="zaobao-thumb.png" alt="聯合早報" onerror="this.src='https://via.placeholder.com/400x200/002D62/FFFFFF?text=Lianhe+Zaobao'">
+                    <img src="images/zaobao-thumb.png" alt="聯合早報" onerror="this.src='https://via.placeholder.com/400x200/002D62/FFFFFF?text=Lianhe+Zaobao'">
                 </div>
                 <div class="media-content">
                     <h4>首屆國際機器人遊戲大賽</h4>
@@ -712,7 +167,7 @@ html {
 
             <a href="https://www.bykido.com/blogs/events-and-activities/global-robotics-games-finals-2023-with-hands-on-booths-at-our-tampines-hub" target="_blank" class="media-card">
                 <div class="media-img-wrapper">
-                    <img src="bykido-thumb.png" alt="BYKIDO" onerror="this.src='https://via.placeholder.com/400x200/EF3340/FFFFFF?text=BYKIDO+EVENTS'">
+                    <img src="images/bykido-thumb.png" alt="BYKIDO" onerror="this.src='https://via.placeholder.com/400x200/EF3340/FFFFFF?text=BYKIDO+EVENTS'">
                 </div>
                 <div class="media-content">
                     <h4>GRG Finals Highlights</h4>
@@ -728,7 +183,7 @@ html {
             <a href="https://www.facebook.com/profile.php?id=61585817385981" target="_blank" class="social-card">
                 <div class="card-inner">
                     <div class="icon-box">
-                        <img src="path-to-your-fb-icon.png" alt="Facebook" class="social-icon"> </div>
+                        <img src="images/path-to-your-fb-icon.png" alt="Facebook" class="social-icon"> </div>
                     <span>Facebook</span>
                 </div>
             </a>
@@ -736,7 +191,7 @@ html {
             <a href="https://www.instagram.com/grg__taiwan/?igsh=MXZyZTJ2enk5MGFxYg%3D%3D&utm_source=qr#" target="_blank" class="social-card">
                 <div class="card-inner">
                     <div class="icon-box">
-                        <img src="path-to-your-ig-icon.png" alt="Instagram" class="social-icon"> </div>
+                        <img src="images/path-to-your-ig-icon.png" alt="Instagram" class="social-icon"> </div>
                     <span>Instagram</span>
                 </div>
             </a>
@@ -744,69 +199,36 @@ html {
             <a href="https://www.threads.com/@grg__taiwan?invite=0" target="_blank" class="social-card">
                 <div class="card-inner">
                     <div class="icon-box">
-                        <img src="path-to-your-threads-icon.png" alt="Threads" class="social-icon"> </div>
+                        <img src="images/path-to-your-threads-icon.png" alt="Threads" class="social-icon"> </div>
                     <span>Threads</span>
                 </div>
             </a>
         </div>
     </div>
     </section>
-   <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-
-    menuToggle.addEventListener('click', function(e) {
-        // 阻止點擊事件冒泡，避免干擾其他元素
-        e.stopPropagation();
-        
-        // 切換 active 狀態
-        navLinks.classList.toggle('active');
-        
-        // 漢堡按鈕動畫
-        const spans = this.querySelectorAll('span');
-        spans[0].classList.toggle('rotate-45');
-        spans[1].classList.toggle('opacity-0');
-        spans[2].classList.toggle('-rotate-45');
-    });
-
-    // 點擊連結後自動關閉選單
-    function closeMenu() {
-        navLinks.classList.remove('active');
-        const spans = menuToggle.querySelectorAll('span');
-        spans[0].classList.remove('rotate-45');
-        spans[1].classList.remove('opacity-0');
-        spans[2].classList.remove('-rotate-45');
-    }
-
-    // 點擊選單外部自動關閉 (選配優化)
-    document.addEventListener('click', function(e) {
-        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-            closeMenu();
-        }
-    });
-</script>
+   <script src="js/script.js"></script>
         
     <footer>
-      <div class="spark-competition-footer" style="background-color: transparent; padding: 40px 20px; text-align: center; font-family: 'Microsoft JhengHei', sans-serif;">
+      <div class="spark-competition-footer" >
     
-    <hr style="border: 0; border-top: 1px solid rgba(0, 255, 255, 0.3); width: 80%; margin-bottom: 30px;">
+    <hr class="footer-divider">
 
-    <p style="color: #00ffff; font-weight: bold; margin-bottom: 25px; letter-spacing: 2px; text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);">
+    <p class="footer-subtitle">
         臺灣智能程式科技教育推廣協會 (SPARK) 系列賽事
     </p>
     
-    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+    <div class="footer-links-container">
         
-        <a href="https://enjoyai-taiwan.github.io/index.html" style="text-decoration: none; color: #00ffff; border: 1px solid #00ffff; padding: 10px 22px; border-radius: 5px; transition: 0.3s; font-size: 14px; background: rgba(0, 255, 255, 0.05); box-shadow: 0 0 8px rgba(0, 255, 255, 0.2);" onmouseover="this.style.backgroundColor='#00ffff'; this.style.color='#000'; this.style.boxShadow='0 0 20px #00ffff';" onmouseout="this.style.backgroundColor='rgba(0, 255, 255, 0.05)'; this.style.color='#00ffff'; this.style.boxShadow='0 0 8px rgba(0, 255, 255, 0.2)';">
+        <a href="https://enjoyai-taiwan.github.io/index.html" class="footer-link"  >
             Enjoy AI 2026 人工智慧挑戰賽
         </a>
 
-        <a href="https://junior-botball-challenge-taiwan.github.io/index.html" style="text-decoration: none; color: #00ffff; border: 1px solid #00ffff; padding: 10px 22px; border-radius: 5px; transition: 0.3s; font-size: 14px; background: rgba(0, 255, 255, 0.05); box-shadow: 0 0 8px rgba(0, 255, 255, 0.2);" onmouseover="this.style.backgroundColor='#00ffff'; this.style.color='#000'; this.style.boxShadow='0 0 20px #00ffff';" onmouseout="this.style.backgroundColor='rgba(0, 255, 255, 0.05)'; this.style.color='#00ffff'; this.style.boxShadow='0 0 8px rgba(0, 255, 255, 0.2)';">
+        <a href="https://junior-botball-challenge-taiwan.github.io/index.html" class="footer-link"  >
             JBC 2026 Junior Botball Challenge
         </a>
     </div>
     
-    <p style="font-size: 12px; color: rgba(0, 255, 255, 0.5); margin-top: 35px; letter-spacing: 1px;">
+    <p class="footer-copyright">
         © 2026 臺灣智能程式科技教育推廣協會 (SPARK). All Rights Reserved.
     </p>
 </div>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRG 2026 - {TITLE} 完整中文規則</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {
+            /* 覆蓋首頁的深色背景，確保獨立頁面好閱讀 */
+            background-color: #f4f6f9;
+        }
+        body::before {
+            display: none !important; /* 隱藏深色漸層背景 */
+        }
+        .rules-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #ffffff;
+            color: #333333; /* 確保文字是深色 */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.8;
+        }
+        .rules-container h1, .rules-container h2, .rules-container h3, .rules-container h4 {
+            color: #002D62;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        .rules-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .rules-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+        }
+        .rules-container th, .rules-container td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .rules-container th {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .pdf-btn {
+            display: inline-block;
+            background-color: #EF3340;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 20px;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        .pdf-btn:hover {
+            background-color: #d12d38;
+        }
+        .back-btn {
+            display: inline-block;
+            background-color: #002D62;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-right: 10px;
+        }
+        .back-btn:hover {
+            background-color: #001f44;
+        }
+        
+        /* 列印與 PDF 輸出專用樣式 */
+        @media print {
+            body { 
+                background: #ffffff !important; 
+                color: #000000 !important; 
+            }
+            .rules-container { 
+                box-shadow: none; 
+                margin: 0; 
+                padding: 0; 
+                color: #000000 !important; 
+                max-width: 100%;
+            }
+            .no-print, .pdf-btn, .back-btn, nav, footer, .floating-group { 
+                display: none !important; 
+            }
+            /* 避免表格與圖片被切斷 */
+            table, img, tr, td, th { 
+                page-break-inside: avoid !important; 
+            }
+            h1, h2, h3, h4 { 
+                page-break-after: avoid !important; 
+            }
+            p, li {
+                page-break-inside: avoid;
+            }
+            /* 強制背景顏色與字體顏色列印 */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .rules-container th {
+                background-color: #f8f9fa !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rules-container">
+        <div class="no-print">
+            <a href="../index.html" class="back-btn">回首頁</a>
+            <button onclick="window.print()" class="pdf-btn">下載為 PDF (列印)</button>
+        </div>
+        <div id="content">讀取規則中...</div>
+        <div class="no-print" style="margin-top: 40px; text-align: center;">
+            <button onclick="window.print()" class="pdf-btn">下載為 PDF (列印)</button>
+        </div>
+    </div>
+
+    <script>
+        fetch('{MDFILE}')
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById('content').innerHTML = marked.parse(text);
+            })
+            .catch(err => {
+                document.getElementById('content').innerHTML = '無法載入規則文件。';
+                console.error(err);
+            });
+    </script>
+</body>
+</html>
