@@ -7,6 +7,18 @@
 > 官方匯款回報：https://forms.gle/XxJJE6dLf5sWqfb1A
 > LINE 官方群組：https://line.me/ti/g2/XWUYNGvXIzqFgE9b6Z4oTb1_jFIvgsxXs7SCJw
 
+## 2026 賽事日程 (Schedule)
+- 2026-10-25（日）2026 GRG 臺灣推廣科學競賽：桃園市桃園區成功國小。組別 MR2、MR3、機器人趣味相撲、機器人趣味循跡；MR2、MR3 各組前三名獲新加坡世界總決賽優先邀請資格。
+- 2026-11-15（日）GRG 2026 世界總決賽：新加坡 One World International School - Digital Campus（27 Punggol Field Walk, Singapore 828649），年度主題 Mission Meals（SDG 2 消除飢餓）。臺灣代表隊由協會統一帶隊。
+
+## 主要頁面 (Key Pages)
+- [GRG 台灣賽區官方網站](https://global-robotics-games-taiwan.github.io/)：賽事日程、組別規範、常見問題
+- [MR1 中文規則](https://global-robotics-games-taiwan.github.io/rules/mr1_rules.html)
+- [MR2／MR3 中文規則](https://global-robotics-games-taiwan.github.io/rules/mr23_rules.html)
+- [AI Maker Series 中文規則](https://global-robotics-games-taiwan.github.io/rules/aims_rules.html)
+- [主辦單位：臺灣智能程式科技教育推廣協會](https://spark-taiwan-association.github.io/)
+- [Global Robotics Games 國際官網](https://www.globalroboticsgames.com/)
+
 ## 賽事实體概述 (About GRG Taiwan)
 Global Robotics Games (GRG) 是全球性的青少年機器人與人工智慧挑戰賽事。
 2026 GRG 台灣賽區由臺灣智能程式科技教育推廣協會 (SPARK) 主辦，是前進新加坡世界總決賽的台灣官方選拔賽。
