@@ -93,7 +93,7 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 12px;
         }
 
         .nav-links a {
@@ -102,7 +102,8 @@
             font-weight: 700;
             font-size: 0.95rem;
             transition: 0.3s;
-            padding: 8px 15px;
+            white-space: nowrap;
+            padding: 8px 10px;
             border-radius: 5px;
             cursor: pointer;
         }
@@ -147,8 +148,8 @@
 
         /* --- 手機版 RWD 特殊樣式 (關鍵！) --- */
      /* --- 手機版 RWD 特殊樣式 (修正選單不出現問題) --- */
-      @media (max-width: 1024px) {
-    #menu-toggle { 
+      @media (max-width: 1180px) {
+    #menu-toggle {
         display: flex; 
     }
 
