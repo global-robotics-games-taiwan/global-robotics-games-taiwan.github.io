@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://global-robotics-games-taiwan.github.io/rules/mr23_rules.html">
     <meta property="og:title" content="GRG 2026 - MR2 & MR3 (中高年級與國中組) 完整競賽規則 | Global Robotics Games Taiwan">
     <meta property="og:description" content="2026 Global Robotics Games (GRG) 台灣賽區 MR2 & MR3 (中高年級與國中組) 詳細規範與計分指南。">
-    <meta property="og:image" content="https://global-robotics-games-taiwan.github.io/images/your-image-filename.png">
+    <meta property="og:image" content="https://global-robotics-games-taiwan.github.io/img/grg-singapore-2024.jpg">
 
     <!-- Schema.org Breadcrumbs & Article for SEO & AI Search Engines -->
     <script type="application/ld+json">
@@ -46,128 +46,18 @@
     }
     </script>
 
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        body {
-            background-color: #f4f6f9;
-        }
-        body::before {
-            display: none !important;
-        }
-        .rules-container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 40px;
-            background: #ffffff;
-            color: #333333;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.8;
-        }
-        .rules-container h1, .rules-container h2, .rules-container h3, .rules-container h4 {
-            color: #002D62;
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-        }
-        .rules-container img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-        .rules-container table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: #fff;
-        }
-        .rules-container th, .rules-container td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-            vertical-align: top;
-        }
-        .rules-container th {
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        .pdf-btn {
-            display: inline-block;
-            background-color: #EF3340;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-bottom: 20px;
-            cursor: pointer;
-            border: none;
-            font-size: 16px;
-        }
-        .pdf-btn:hover {
-            background-color: #d12d38;
-        }
-        .back-btn {
-            display: inline-block;
-            background-color: #002D62;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-bottom: 20px;
-            margin-right: 10px;
-        }
-        .back-btn:hover {
-            background-color: #001f44;
-        }
-        
-        @media print {
-            body { 
-                background: #ffffff !important; 
-                color: #000000 !important; 
-            }
-            .rules-container { 
-                box-shadow: none; 
-                margin: 0; 
-                padding: 0; 
-                color: #000000 !important; 
-                max-width: 100%;
-            }
-            .no-print, .pdf-btn, .back-btn, nav, footer, .floating-group { 
-                display: none !important; 
-            }
-            table, img, tr, td, th { 
-                page-break-inside: avoid !important; 
-            }
-            h1, h2, h3, h4 { 
-                page-break-after: avoid !important; 
-            }
-            p, li {
-                page-break-inside: avoid;
-            }
-            * {
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-            }
-            .rules-container th {
-                background-color: #f8f9fa !important;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;family=Barlow+Condensed:wght@600;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/rules.css">
+<meta name="theme-color" content="#0b4f5c">
 </head>
 <body>
-    <div class="rules-container">
-        <div class="no-print">
-            <a href="../index.html" class="back-btn">回首頁</a>
-            <button onclick="window.print()" class="pdf-btn">下載為 PDF (列印)</button>
-        </div>
-        <div id="content"><h1 id="mr2--mr3-垂直農場-vertical-farm-完整中文規則">MR2 &amp; MR3: 垂直農場 (Vertical Farm) 完整中文規則</h1>
-<blockquote>
-<p>[!IMPORTANT]
-此中文規則完全基於官方最新釋出的 PDF 進行精準翻譯與校對。</p>
+<a class="skip" href="#content">跳到規則內文</a>
+<header class="top"><div class="in"><a class="brand" href="../index.html"><span class="b"><img src="../img/grg-mark.png" width="160" height="160" alt="GRG Taiwan 首頁"></span><b>GRG TAIWAN</b></a><nav aria-label="規則頁選單"><a href="../index.html#groups">組別與規則</a><a href="mr23_rules_en.html">English</a></nav></div></header>
+<div class="tools no-print"><a href="../index.html#groups">回組別列表</a><a href="mr23_rules_en.html">English 原文</a><button type="button" onclick="window.print()">下載為 PDF（列印）</button></div>
+<main class="rules-doc" id="content"><h1 id="mr2--mr3-垂直農場-vertical-farm-完整中文規則">MR2 &amp; MR3: 垂直農場 (Vertical Farm) 完整中文規則</h1>
+<blockquote class="c-IMPORTANT"><p><span class="lbl">重要</span>此中文規則完全基於官方最新釋出的 PDF 進行精準翻譯與校對。</p>
 </blockquote>
 <h2 id="1-簡介-introduction">1. 簡介 (Introduction)</h2>
 <h3 id="mobile-robotics-2-3--任務：零飢餓-mission-zero-hunger">Mobile Robotics 2-3 | 任務：零飢餓 (Mission: Zero Hunger)</h3>
@@ -175,27 +65,27 @@
 <p>世界面臨著餵養不斷增長人口的緊迫挑戰。可耕地有限、氣候變遷與城市化等因素，正威脅著傳統的農業方法與獲取營養食物的途徑。為了應對這個問題，新的解決方案應運而生。<strong>城市與垂直農場 (Urban and vertical farming)</strong> 是創新的解決方案，利用機器人與科技在小巧受控的環境中高效地生產食物。透過專注於這些現代農業技術，我們可以探索機器人如何幫助為所有人建立一個更具韌性與營養的未來。</p>
 <h3 id="垂直農場的六大核心支柱-the-six-key-pillars-of-vertical-farming">垂直農場的六大核心支柱 (The Six Key Pillars of Vertical Farming)</h3>
 <ul>
-<li>**資源管理 (Resource Management)**：這項功能涉及管理調節農場溫度、濕度與氣流的系統，以維持植物最佳健康與生長所需的精確條件。</li>
-<li>**種植 (Planting)**：這項任務需要精準部署種子或幼苗，以確保一致、準確的位置並高效栽培農作物。</li>
-<li>**營養輸送 (Nutrient Delivery)**：這涉及專門為植物供應水和營養素的自動化系統，模擬高效的灌溉與餵養過程。</li>
-<li>**照明控制 (Lighting)**：這項功能專注於部署和管理光合作用所需的特殊燈光，確保植物接收正確的光譜與強度。</li>
-<li>**收成 (Harvesting)**：這需要小心地移除成熟的農產品，展示自動化如何提高效率並盡可能減少對農作物的損害。</li>
-<li>**監測與數據 (Monitoring and Data)**：這個支柱包含收集與組織「數據」模組，強調感測器和數據分析在維持高產與健康農場環境中的重要性。</li>
+<li><strong>資源管理 (Resource Management)</strong>：這項功能涉及管理調節農場溫度、濕度與氣流的系統，以維持植物最佳健康與生長所需的精確條件。</li>
+<li><strong>種植 (Planting)</strong>：這項任務需要精準部署種子或幼苗，以確保一致、準確的位置並高效栽培農作物。</li>
+<li><strong>營養輸送 (Nutrient Delivery)</strong>：這涉及專門為植物供應水和營養素的自動化系統，模擬高效的灌溉與餵養過程。</li>
+<li><strong>照明控制 (Lighting)</strong>：這項功能專注於部署和管理光合作用所需的特殊燈光，確保植物接收正確的光譜與強度。</li>
+<li><strong>收成 (Harvesting)</strong>：這需要小心地移除成熟的農產品，展示自動化如何提高效率並盡可能減少對農作物的損害。</li>
+<li><strong>監測與數據 (Monitoring and Data)</strong>：這個支柱包含收集與組織「數據」模組，強調感測器和數據分析在維持高產與健康農場環境中的重要性。</li>
 </ul>
 <h2 id="2-閱讀挑戰文件指南-guide-to-reading-the-challenge-doc">2. 閱讀挑戰文件指南 (Guide to reading the Challenge Doc)</h2>
 <p>請依照以下四個簡單步驟來了解您的任務文件並為機器人準備挑戰：</p>
 <ol>
-<li>**閱讀簡介 (Read the Introduction)**：了解任務背後的世界現狀。</li>
-<li>**瀏覽比賽場地 (Glance through the Game Field)**：這是您的機器人運行的場地，看著地圖來想像您的路線！</li>
-<li>**了解任務 (Understand the Missions)**：深入任務細節並對應場地。了解各任務的分數與計分標準。</li>
-<li>**閱讀規則 (Read the Rules)**：了解何時可以觸碰機器人與設備，何時不行，以避免被扣分。</li>
+<li><strong>閱讀簡介 (Read the Introduction)</strong>：了解任務背後的世界現狀。</li>
+<li><strong>瀏覽比賽場地 (Glance through the Game Field)</strong>：這是您的機器人運行的場地，看著地圖來想像您的路線！</li>
+<li><strong>了解任務 (Understand the Missions)</strong>：深入任務細節並對應場地。了解各任務的分數與計分標準。</li>
+<li><strong>閱讀規則 (Read the Rules)</strong>：了解何時可以觸碰機器人與設備，何時不行，以避免被扣分。</li>
 </ol>
 <h2 id="3-比賽場地-game-field">3. 比賽場地 (Game Field)</h2>
 <h3 id="您的垂直農場-your-vertical-farm">您的垂直農場 (Your Vertical Farm)</h3>
 <p>比賽在一個代表垂直農場的大型地墊上進行。場地包含成功農場所需的所有元素：</p>
 <ul>
-<li>**資源 (Resources)**：水、營養與照明等元素由散佈在地墊上的方塊（大方塊與小方塊）代表。</li>
-<li>**任務區 (Missions)**：場地上點綴著不同的位置，您的機器人必須精確地建造、堆疊和放置這些方塊以達成任務目標。</li>
+<li><strong>資源 (Resources)</strong>：水、營養與照明等元素由散佈在地墊上的方塊（大方塊與小方塊）代表。</li>
+<li><strong>任務區 (Missions)</strong>：場地上點綴著不同的位置，您的機器人必須精確地建造、堆疊和放置這些方塊以達成任務目標。</li>
 </ul>
 <p><img src="../images/rules/MR23_Game_Field.png" alt="比賽場地全圖"></p>
 <h3 id="31-起跑區-loading-zone">3.1 起跑區 (Loading Zone)</h3>
@@ -206,9 +96,7 @@
 <li>機器人運行期間，您可以選擇將機器人設備與零件留在起跑區。</li>
 <li><strong>起跑區只能用來暫存「小方塊 (Small Cubes)」</strong>。</li>
 </ul>
-<blockquote>
-<p>[!WARNING]
-<strong>重要操作規則 (IMPORTANT HANDLING RULES)</strong></p>
+<blockquote class="c-WARNING"><p><span class="lbl">注意</span><strong>重要操作規則 (IMPORTANT HANDLING RULES)</strong></p>
 <ul>
 <li>如果機器人、機器人設備或任何方塊完全或部分離開了起跑區，隊伍<strong>嚴禁觸碰</strong>它們。它們必須保持原狀，且只能由自主運行的機器人移動。</li>
 <li>如果在起跑區外觸碰，運行將會被強制停止。</li>
@@ -216,7 +104,7 @@
 </ul>
 </blockquote>
 <h2 id="4-遊戲物件與起始位置-game-objects--positioning">4. 遊戲物件與起始位置 (Game Objects &amp; Positioning)</h2>
-<p>比賽開始前，各種尺寸與顏色的方塊會散佈在比賽場地上。起始位置會被標記為**「正方形內帶有一個 X」 (an X in a square)**。</p>
+<p>比賽開始前，各種尺寸與顏色的方塊會散佈在比賽場地上。起始位置會被標記為<strong>「正方形內帶有一個 X」 (an X in a square)</strong>。</p>
 <p><img src="../images/rules/MR23_X_mark.png" alt="X圖案"></p>
 <p><img src="../images/rules/MR23_inline_image__3_.png" alt="遊戲物件與起始位置"></p>
 <blockquote>
@@ -268,15 +156,15 @@
 <p><strong>任務計分方式：</strong>
 最終狀態（計分在機器人嘗試結束時進行）</p>
 </blockquote>
-<p>您的主要目標是使用機器人手臂幫助管理垂直農場中的資源。您需要建造穩定的、由兩個方塊組成的塔，稱為**「資源管理堆疊」(Resource Management Stacks)**。</p>
+<p>您的主要目標是使用機器人手臂幫助管理垂直農場中的資源。您需要建造穩定的、由兩個方塊組成的塔，稱為<strong>「資源管理堆疊」(Resource Management Stacks)</strong>。</p>
 <h3 id="51-什麼是「堆疊」-what-is-a-stack">5.1 什麼是「堆疊」 (What is a &quot;Stack&quot;?)</h3>
 <p><strong>有效堆疊的規則 (Rules for a Valid Stack)：</strong></p>
 <ol>
-<li>**需要兩個方塊 (Two Cubes Required)**：一個堆疊必須精確由兩個大方塊組成。</li>
+<li><strong>需要兩個方塊 (Two Cubes Required)</strong>：一個堆疊必須精確由兩個大方塊組成。</li>
 <li><strong>顏色相符 (Colour Match)<strong>：兩個大方塊必須是</strong>完全相同的顏色</strong>才能成為有效堆疊（例如，黃色大方塊疊在黃色大方塊上）。</li>
-<li>**直接接觸 (Direct Contact)**：相同顏色的大方塊必須彼此直接物理接觸。</li>
+<li><strong>直接接觸 (Direct Contact)</strong>：相同顏色的大方塊必須彼此直接物理接觸。</li>
 <li><strong>穩定放置 (Stable Placement)<strong>：大方塊只有在</strong>完全</strong>靠在下方的大方塊上，且<strong>沒有觸碰比賽場地</strong>時，才算成功「堆疊」。</li>
-<li>**無機器人支撐 (No Robot Support)**：堆疊完成後，機器人或任何機器人設備都不得觸碰或支撐大方塊的任何部分。</li>
+<li><strong>無機器人支撐 (No Robot Support)</strong>：堆疊完成後，機器人或任何機器人設備都不得觸碰或支撐大方塊的任何部分。</li>
 </ol>
 <p><strong>特別規則：大方塊配對 (Large Cube Pairs)</strong></p>
 <ul>
@@ -293,8 +181,8 @@
 <p><strong>增強方塊的規則：</strong></p>
 <ul>
 <li><strong>層的定義 (Layer Definition)<strong>：一層被定義為</strong>恰好 4 個小方塊</strong>放置在有效堆疊頂部。</li>
-<li>**最大層數 (Maximum Layers)**：由於每個堆疊有 8 個相同顏色的小方塊可用，因此單個有效堆疊上最多可以放置 **2 層 (2 Layers)**。</li>
-<li>**顏色協調 (Colour Coordination)**：小方塊必須與它們所放置的有效堆疊的顏色相對應（請參考第 4 節的顏色代碼表）。<ul>
+<li><strong>最大層數 (Maximum Layers)</strong>：由於每個堆疊有 8 個相同顏色的小方塊可用，因此單個有效堆疊上最多可以放置 <strong>2 層 (2 Layers)</strong>。</li>
+<li><strong>顏色協調 (Colour Coordination)</strong>：小方塊必須與它們所放置的有效堆疊的顏色相對應（請參考第 4 節的顏色代碼表）。<ul>
 <li><em>範例：一個有效的大綠色方塊堆疊（種植）需要四個小橘色方塊在頂部，才能創建一個增強種植堆疊。</em></li>
 </ul>
 </li>
@@ -376,37 +264,37 @@
 <h3 id="61-賽前準備-getting-ready-pre-run-rules">6.1 賽前準備 (Getting Ready: Pre-Run Rules)</h3>
 <p>在 2 分鐘的比賽開始前，我們需要確保您的機器人與設備已準備好進行比賽！這被稱為賽前檢查 (Pre-Run check)。</p>
 <ul>
-<li>**尺寸檢查 (機器人盒子) (Size Check (The Robot Box))**：您的主機器人及其所有附屬零件 (機器人設備) 必須完全放入一個 250mm x 250mm x 250mm 的盒子中。裁判會在您運行前檢查這個尺寸。</li>
-<li>**起始位置 (Starting Position)**：通過尺寸檢查後，您的機器人及其所有設備必須放置在裝載區 (Loading Zone) 內。在機器人通過尺寸檢查後且比賽開始前，您不能對機器人進行任何修改。</li>
-<li>**沒有秘密零件 (No Secret Parts)**：您不允許將任何機器人零件或配件藏在手中或比賽場地外以備在比賽期間稍後使用。您計劃使用的所有東西都必須一開始就在場地上。</li>
-<li>**機器人尺寸檢查後 (After robot&#39;s size inspection)**：隊伍不允許以任何方式修改機器人的組裝。隊伍不允許覆寫預先存在的程式碼。</li>
-<li>**僅限 LEGO® (LEGO® Only)**：裁判將檢查所有東西，確保您只使用官方的 LEGO® 積木和零件。</li>
-<li>**關閉訊號 (Turn Off the Signal)**：您的機器人主機上的所有無線功能（如藍牙和 Wi-Fi）必須完全關閉。</li>
+<li><strong>尺寸檢查 (機器人盒子) (Size Check (The Robot Box))</strong>：您的主機器人及其所有附屬零件 (機器人設備) 必須完全放入一個 250mm x 250mm x 250mm 的盒子中。裁判會在您運行前檢查這個尺寸。</li>
+<li><strong>起始位置 (Starting Position)</strong>：通過尺寸檢查後，您的機器人及其所有設備必須放置在裝載區 (Loading Zone) 內。在機器人通過尺寸檢查後且比賽開始前，您不能對機器人進行任何修改。</li>
+<li><strong>沒有秘密零件 (No Secret Parts)</strong>：您不允許將任何機器人零件或配件藏在手中或比賽場地外以備在比賽期間稍後使用。您計劃使用的所有東西都必須一開始就在場地上。</li>
+<li><strong>機器人尺寸檢查後 (After robot&#39;s size inspection)</strong>：隊伍不允許以任何方式修改機器人的組裝。隊伍不允許覆寫預先存在的程式碼。</li>
+<li><strong>僅限 LEGO® (LEGO® Only)</strong>：裁判將檢查所有東西，確保您只使用官方的 LEGO® 積木和零件。</li>
+<li><strong>關閉訊號 (Turn Off the Signal)</strong>：您的機器人主機上的所有無線功能（如藍牙和 Wi-Fi）必須完全關閉。</li>
 </ul>
 <h3 id="62-比賽開始-the-match-begins">6.2 比賽開始 (The match begins)</h3>
 <p>當裁判給出開始信號時，計時開始。
 裁判將給出指令：「G. R. G. Go!」。
 每場機器人比賽最長為 2 分鐘 (120 秒)。</p>
 <ul>
-<li>**計分結束 (Scoring End)**：裁判不會考慮機器人在 120 秒計時器結束後所獲得的任何分數。</li>
+<li><strong>計分結束 (Scoring End)</strong>：裁判不會考慮機器人在 120 秒計時器結束後所獲得的任何分數。</li>
 </ul>
 <h3 id="63-比賽期間允許與不允許的動作-what-you-can-and-cant-do-during-the-match">6.3 比賽期間允許與不允許的動作 (What You Can and Can&#39;t Do During the Match)</h3>
 <p>還有更多規則，請仔細閱讀：</p>
 <p><strong>6.3.1 機器人與機器人設備允許的動作 (Allowed Actions for robot and robot equipment):</strong>
 您「只有 (ONLY)」當機器人完全停止且完全位於裝載區 (Loading Zone) 內時，才被允許與機器人或機器人設備互動。</p>
 <ul>
-<li>**觸碰與重新定位 (Touch and Reposition)**：您可以觸碰並將您的機器人移動到裝載區內的任何新位置。</li>
-<li>**切換程式 (Switch Programs)**：您可以重新執行當前程式，或在機器人主機上為下一次運行選擇不同的程式。</li>
-<li>**處理零件 (Handle Parts)**：您只能用手 (ONLY by hand) 修改配件 (機器人設備) 和小方塊。</li>
+<li><strong>觸碰與重新定位 (Touch and Reposition)</strong>：您可以觸碰並將您的機器人移動到裝載區內的任何新位置。</li>
+<li><strong>切換程式 (Switch Programs)</strong>：您可以重新執行當前程式，或在機器人主機上為下一次運行選擇不同的程式。</li>
+<li><strong>處理零件 (Handle Parts)</strong>：您只能用手 (ONLY by hand) 修改配件 (機器人設備) 和小方塊。</li>
 </ul>
 <p><strong>6.3.2 不允許的動作 (在比賽期間的任何時候) (Disallowed Actions (Any Time During the Match))</strong></p>
 <ul>
-<li>**觸碰移動中的機器人 (Touch a Moving Robot)**：當您的機器人在裝載區外的比賽場地上移動時，您不能觸碰它。<ul>
+<li><strong>觸碰移動中的機器人 (Touch a Moving Robot)</strong>：當您的機器人在裝載區外的比賽場地上移動時，您不能觸碰它。<ul>
 <li><em>警告：裁判將立即停止比賽並記錄到該時刻為止獲得的任何分數。</em></li>
 </ul>
 </li>
-<li>**更改程式碼 (Change the Code)**：在 2 分鐘計時器運行期間，您不能將機器人的主機連接到運算裝置來重新編程或輸入新數據。</li>
-<li>**觸碰裝載區外的物件 (Touch Objects Outside Loading Zone)**：您只能在機器人、機器人設備或任何方塊完全位於裝載區內時，才可以觸碰它們。如果機器人、設備或方塊的任何部分在裝載區外，即使機器人已經停止，您也不允許觸碰或調整它們。即使機器人不小心將任何物件推出裝載區，這項規則依然適用。</li>
+<li><strong>更改程式碼 (Change the Code)</strong>：在 2 分鐘計時器運行期間，您不能將機器人的主機連接到運算裝置來重新編程或輸入新數據。</li>
+<li><strong>觸碰裝載區外的物件 (Touch Objects Outside Loading Zone)</strong>：您只能在機器人、機器人設備或任何方塊完全位於裝載區內時，才可以觸碰它們。如果機器人、設備或方塊的任何部分在裝載區外，即使機器人已經停止，您也不允許觸碰或調整它們。即使機器人不小心將任何物件推出裝載區，這項規則依然適用。</li>
 </ul>
 <p><strong>6.3.3 方塊規則 (Rules for Cubes)</strong></p>
 <table>
@@ -436,19 +324,19 @@
 <p><strong>比賽何時停止 (When the Match Stops)</strong>
 機器人嘗試將在以下情況結束：</p>
 <ul>
-<li>**時間用盡 (Time Runs Out)**：2 分鐘 (120 秒) 的時鐘歸零。</li>
-<li>**離開桌面 (Off the Table)**：您的機器人完全駛離比賽桌面。</li>
-<li>**違反規則 (Breaking Rules)**：您的機器人或隊伍違反規則或任何規定。</li>
-<li>**喊「停止」(Shout &quot;STOP&quot;)**：隊員大喊「STOP」，且機器人完全停止移動。但請記住，如果您喊「STOP」後機器人仍在移動，該次嘗試只有在機器人自行停止或被隊伍停止後才會結束。只有在您允許的情況下，裁判才會為您停止機器人。</li>
+<li><strong>時間用盡 (Time Runs Out)</strong>：2 分鐘 (120 秒) 的時鐘歸零。</li>
+<li><strong>離開桌面 (Off the Table)</strong>：您的機器人完全駛離比賽桌面。</li>
+<li><strong>違反規則 (Breaking Rules)</strong>：您的機器人或隊伍違反規則或任何規定。</li>
+<li><strong>喊「停止」(Shout &quot;STOP&quot;)</strong>：隊員大喊「STOP」，且機器人完全停止移動。但請記住，如果您喊「STOP」後機器人仍在移動，該次嘗試只有在機器人自行停止或被隊伍停止後才會結束。只有在您允許的情況下，裁判才會為您停止機器人。</li>
 </ul>
 <p><strong>確認分數 (Finalizing the Score)</strong></p>
 <ul>
-<li>**計分過程 (Scoring Process)**：機器人運行結束後，裁判將對該次嘗試進行計分。</li>
-<li>**簽名確認 (Sign-Off)**：隊伍必須在計分表（紙本或數位）上簽名以同意分數。一旦您簽名，分數就不能再更改。所以請仔細閱讀裁判給予的分數！</li>
-<li>**爭議 (Disputes)**：如果隊伍在合理時間後拒絕簽署分數，裁判可能會取消該隊伍在該回合的資格。</li>
-<li>**教練與證明 (Coach and Proof)**：教練不允許加入與裁判關於計分的討論。抱歉教練們。您的運行的影片或照片證明也不會被接受。</li>
-<li>**空白分數時間 (Empty Score Time)**：如果隊伍完成了一次運行但沒有獲得任何正分，該次運行的時間將自動設為 120 秒。</li>
-<li>**排名 (Ranking)**：如果隊伍有相同的總分，他們的最終排名將由記錄在他們嘗試中的時間來決定。</li>
+<li><strong>計分過程 (Scoring Process)</strong>：機器人運行結束後，裁判將對該次嘗試進行計分。</li>
+<li><strong>簽名確認 (Sign-Off)</strong>：隊伍必須在計分表（紙本或數位）上簽名以同意分數。一旦您簽名，分數就不能再更改。所以請仔細閱讀裁判給予的分數！</li>
+<li><strong>爭議 (Disputes)</strong>：如果隊伍在合理時間後拒絕簽署分數，裁判可能會取消該隊伍在該回合的資格。</li>
+<li><strong>教練與證明 (Coach and Proof)</strong>：教練不允許加入與裁判關於計分的討論。抱歉教練們。您的運行的影片或照片證明也不會被接受。</li>
+<li><strong>空白分數時間 (Empty Score Time)</strong>：如果隊伍完成了一次運行但沒有獲得任何正分，該次運行的時間將自動設為 120 秒。</li>
+<li><strong>排名 (Ranking)</strong>：如果隊伍有相同的總分，他們的最終排名將由記錄在他們嘗試中的時間來決定。</li>
 </ul>
 <h2 id="7-計分表-scoring">7. 計分表 (Scoring)</h2>
 <table>
@@ -551,10 +439,8 @@
 <td></td>
 </tr>
 </tbody></table>
-</div>
-        <div class="no-print" style="margin-top: 40px; text-align: center;">
-            <button onclick="window.print()" class="pdf-btn">下載為 PDF (列印)</button>
-        </div>
-    </div>
+</main>
+<footer class="site"><div>主辦單位：臺灣智能程式科技教育推廣協會（SPARK）｜內政部立案證書字號：1130027903</div><a href="https://spark-taiwan-association.github.io/">SPARK</a></footer>
+<nav class="dock" aria-label="快速操作"><a class="p" href="https://forms.gle/FFsFxDpUoLM1TUwa9">前往報名</a><a class="g" href="https://line.me/ti/g2/XWUYNGvXIzqFgE9b6Z4oTb1_jFIvgsxXs7SCJw?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default">加入 LINE</a></nav>
 </body>
 </html>
