@@ -101,6 +101,12 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+/* 參賽教練怎麼說：引言卡，跑道橘左線 */
+.voice{margin:0 0 22px;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--track);border-radius:var(--r);padding:18px 20px}
+.voice blockquote{margin:0;font-size:1.25rem;font-weight:700;line-height:1.5}
+.voice .tags{margin:8px 0 0;color:var(--muted);font-size:.93rem}
+.voice figcaption{margin-top:10px;font-size:.88rem;color:var(--muted)}
+.voice figcaption a{color:var(--teal-d);font-weight:500}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.75 var(--sans);-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
 a{color:var(--teal)}
@@ -376,6 +382,11 @@ footer a{color:var(--muted);display:inline-flex;align-items:center;min-height:44
   <section id="moments" style="padding-top:0">
     <div class="wrap">
       <div class="head"><h2><span class="en">HIGHLIGHTS</span>精彩回顧</h2></div>
+      <figure class="voice">
+        <blockquote>「打相撲第一次聽到全場都是笑聲」</blockquote>
+        <p class="tags">不是為了拔尖而比賽；輸了也會笑，也會跟旁邊的隊伍交流，這才是比賽。</p>
+        <figcaption>參賽教練 KiTo Huang（團隊帶 50 隊參加 2026 臺灣推廣賽）・<a href="https://www.facebook.com/share/p/14sA9XoDrig/" target="_blank" rel="noopener">看原文</a></figcaption>
+      </figure>
       <div class="media">
         <div class="video"><a href="https://www.youtube.com/watch?v=2MVkPrLuC4g" class="yt" data-id="2MVkPrLuC4g"><img src="https://i.ytimg.com/vi/2MVkPrLuC4g/hqdefault.jpg" width="480" height="360" alt="" loading="lazy"><span class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>播放影片</span></a></div>
         <div class="video"><a href="https://www.youtube.com/watch?v=wp3Qji2D3CY" class="yt" data-id="wp3Qji2D3CY"><img src="https://i.ytimg.com/vi/wp3Qji2D3CY/hqdefault.jpg" width="480" height="360" alt="" loading="lazy"><span class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>播放影片</span></a></div>
