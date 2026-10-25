@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GRG 2026 臺灣賽區官方網站 | Global Robotics Games 全球機器人運動會 - SPARK</title>
-<meta name="description" content="2026 Global Robotics Games（GRG）臺灣賽區官方網站。10/25（日）臺灣推廣科學競賽在桃園成功國小舉行，MR2、MR3 各組前三名獲 11/15 新加坡世界總決賽優先邀請資格。提供 MR1–MR4、AI Maker、Open 組中文規則與報名資訊。">
+<meta name="description" content="2026 Global Robotics Games（GRG）臺灣賽區官方網站。10/25 臺灣推廣科學競賽（桃園成功國小）獲獎名單公布：機器人趣味相撲、趣味循跡、MR2、MR3 各組名次。下一站 11/15 新加坡世界總決賽。提供 MR1–MR4、AI Maker、Open 組中文規則。">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://global-robotics-games-taiwan.github.io/">
 <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
@@ -12,16 +12,16 @@
 <meta name="theme-color" content="#0b4f5c">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://global-robotics-games-taiwan.github.io/">
-<meta property="og:title" content="GRG 2026 臺灣推廣科學競賽 10/25 桃園">
-<meta property="og:description" content="MR2、MR3 各組前三名獲 11/15 新加坡 GRG 世界總決賽優先邀請資格。">
+<meta property="og:title" content="GRG 2026 臺灣推廣科學競賽 獲獎名單公布">
+<meta property="og:description" content="10/25 桃園臺灣推廣賽各組名次出爐，下一站 11/15 新加坡 GRG 世界總決賽。">
 <meta property="og:image" content="https://global-robotics-games-taiwan.github.io/img/grg-singapore-2024.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="901">
 <meta property="og:site_name" content="GRG Taiwan 2026">
 <meta property="og:locale" content="zh_TW">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GRG 2026 臺灣推廣科學競賽 10/25 桃園">
-<meta name="twitter:description" content="MR2、MR3 各組前三名獲新加坡世界總決賽優先邀請資格。">
+<meta name="twitter:title" content="GRG 2026 臺灣推廣科學競賽 獲獎名單公布">
+<meta name="twitter:description" content="10/25 桃園臺灣推廣賽各組名次出爐，下一站 11/15 新加坡世界總決賽。">
 <meta name="twitter:image" content="https://global-robotics-games-taiwan.github.io/img/grg-singapore-2024.jpg">
 <script type="application/ld+json">
 {
@@ -49,7 +49,7 @@
       "@type": "SportsEvent",
       "@id": "https://global-robotics-games-taiwan.github.io/#event",
       "name": "2026 GRG 臺灣推廣科學競賽",
-      "description": "Global Robotics Games 2026 臺灣推廣科學競賽，組別為 MR2、MR3、機器人趣味相撲、機器人趣味循跡；MR2、MR3 各組前三名獲新加坡世界總決賽優先邀請資格。",
+      "description": "Global Robotics Games 2026 臺灣推廣科學競賽，組別為 MR2、MR3、機器人趣味相撲、機器人趣味循跡；已於 2026-10-25 完賽，獲獎名單公布於官網。",
       "startDate": "2026-10-25T08:30:00+08:00",
       "endDate": "2026-10-25T17:00:00+08:00",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -58,7 +58,7 @@
       "location": {"@type": "Place", "name": "桃園市桃園區成功國民小學", "address": {"@type": "PostalAddress", "addressLocality": "桃園市桃園區", "addressRegion": "桃園市", "addressCountry": "TW"}},
       "organizer": {"@type": "EducationalOrganization", "@id": "https://spark-taiwan-association.github.io/#organization", "name": "臺灣智能程式科技教育推廣協會", "url": "https://spark-taiwan-association.github.io/"},
       "performer": {"@type": "PerformingGroup", "name": "GRG 臺灣推廣賽參賽隊伍"},
-      "offers": {"@type": "Offer", "url": "https://forms.gle/FFsFxDpUoLM1TUwa9", "availability": "https://schema.org/InStock", "validFrom": "2026-01-01"}
+      "offers": {"@type": "Offer", "url": "https://global-robotics-games-taiwan.github.io/#results"}
     },
     {
       "@type": "SportsEvent",
@@ -172,6 +172,26 @@ section{padding-block:52px}
 .fx .adv{display:inline-block;margin-top:10px;background:var(--lime);color:var(--board);font-weight:700;font-size:.9rem;padding:2px 10px;border-radius:6px}
 @media (max-width:600px){.fx{grid-template-columns:1fr;gap:10px}.fx .d{display:flex;gap:10px;align-items:baseline;border-right:0;padding:0;text-align:left}.fx .d .day{font-size:2.2rem}.fx dl{grid-template-columns:4rem 1fr}.count .big{font-size:2.8rem}}
 
+.fx.done{opacity:.85}
+.fx .adv.done{background:#e7f0f2}
+.fx .adv a{color:inherit}
+
+/* 臺灣推廣賽成績：每個組別一張卡，獎項色塊＋隊名＋學校／單位 */
+.rh{font-size:1.1rem;margin:28px 0 12px}
+.rh:first-of-type{margin-top:0}
+.results{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.res{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--track);border-radius:var(--r);padding:16px 18px;min-width:0}
+.res h4{margin:0 0 8px;font-size:1rem}
+.res h4 .sub{display:block;font-size:.8rem;font-weight:500;color:var(--muted)}
+.res ol{list-style:none;margin:0;padding:0}
+.res li{display:grid;grid-template-columns:4.6rem 1fr;gap:10px;align-items:baseline;padding:7px 0;border-top:1px solid #eef1f2}
+.res li:first-child{border-top:0}
+.aw{font-size:.82rem;font-weight:700;text-align:center;padding:2px 0;border-radius:6px;background:#eef1f2;color:var(--muted)}
+.aw.g{background:#f6e7a6;color:#6b4e00}.aw.s{background:#e3e8eb;color:#3a4a52}.aw.b{background:#f3d6c2;color:#7a3410}
+.tm{font-weight:700;overflow-wrap:anywhere}
+.tm small{display:block;font-weight:400;font-size:.85rem;color:var(--muted)}
+.tm i{font-style:normal;font-weight:500;color:var(--muted)}
+
 /* 報名步驟 */
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:s}
 .steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:6px;min-width:0}
@@ -236,11 +256,11 @@ footer a{color:var(--muted);display:inline-flex;align-items:center;min-height:44
   <div class="wrap">
     <a class="brand" href="#top"><span class="b"><img src="img/grg-mark.png" width="160" height="160" alt=""></span><b>GRG TAIWAN</b></a>
     <nav class="nav" aria-label="主選單">
-      <a href="#schedule">賽程</a><a href="#apply">報名</a><a href="#groups">組別與規則</a><a href="#moments">精彩回顧</a><a href="#faq">常見問題</a><a href="#contact">聯絡</a>
+      <a href="#schedule">賽程</a><a href="#results">成績</a><a href="#groups">組別與規則</a><a href="#moments">精彩回顧</a><a href="#faq">常見問題</a><a href="#contact">聯絡</a>
     </nav>
     <details class="menu">
       <summary>選單</summary>
-      <div class="panel"><a href="#schedule">賽程</a><a href="#apply">報名</a><a href="#groups">組別與規則</a><a href="#moments">精彩回顧</a><a href="#faq">常見問題</a><a href="#contact">聯絡</a><a href="https://www.globalroboticsgames.com/">GRG 國際官網</a></div>
+      <div class="panel"><a href="#schedule">賽程</a><a href="#results">成績</a><a href="#groups">組別與規則</a><a href="#moments">精彩回顧</a><a href="#faq">常見問題</a><a href="#contact">聯絡</a><a href="https://www.globalroboticsgames.com/">GRG 國際官網</a></div>
     </details>
   </div>
 </header>
@@ -251,14 +271,14 @@ footer a{color:var(--muted);display:inline-flex;align-items:center;min-height:44
       <div>
         <div class="tag">GLOBAL ROBOTICS GAMES · TAIWAN 2026</div>
         <h1>GRG 臺灣推廣科學競賽<span class="en">Global Robotics Games Taiwan</span></h1>
-        <p class="lead">全球機器人運動會臺灣賽區。MR2、MR3 各組前三名，獲 11 月新加坡世界總決賽優先邀請資格。</p>
+        <p class="lead">全球機器人運動會臺灣賽區。10/25 臺灣推廣賽圓滿落幕，獲獎名單已公布；下一站，新加坡世界總決賽。</p>
         <ul class="when">
-          <li><span class="k">日期</span><span class="v num" style="font-size:1.15rem">2026 / 10 / 25（日）</span></li>
-          <li><span class="k">地點</span><span class="v">桃園市桃園區 成功國小</span></li>
+          <li><span class="k">世界總決賽</span><span class="v num" style="font-size:1.15rem">2026 / 11 / 15（日）</span></li>
+          <li><span class="k">地點</span><span class="v">新加坡 One World International School</span></li>
         </ul>
         <div class="btns">
-          <a class="btn primary" href="https://forms.gle/FFsFxDpUoLM1TUwa9">前往報名</a>
-          <a class="btn ghost" href="https://drive.google.com/drive/folders/1mjs0x1Emi0asD0QXFCTedv6LkjF8Yzt_?usp=sharing">活動簡章</a>
+          <a class="btn primary" href="#results">臺灣賽獲獎名單</a>
+          <a class="btn ghost" href="https://www.globalroboticsgames.com/">GRG 國際官網</a>
         </div>
       </div>
       <figure class="photo">
@@ -273,21 +293,8 @@ footer a{color:var(--muted);display:inline-flex;align-items:center;min-height:44
       <div class="head"><h2><span class="en">FIXTURES</span>2026 賽程</h2></div>
       <div class="board">
         <div class="count" id="count">
-          <span><span class="big num" id="days">10/25</span> <span class="unit" id="unit">臺灣推廣賽</span></span>
-          <p id="countText">上午場 8:30、下午場 13:30 入場，依組別安排。</p>
-        </div>
-        <div class="fx">
-          <div class="d"><span class="m">OCT</span><span class="day">25</span><span class="y">2026 週日</span></div>
-          <div>
-            <h3>GRG 臺灣推廣科學競賽</h3>
-            <dl>
-              <dt>地點</dt><dd>桃園市桃園區 成功國小</dd>
-              <dt>組別</dt><dd>MR2、MR3、機器人趣味相撲、機器人趣味循跡</dd>
-              <dt>時段</dt><dd>上午場 8:30、下午場 13:30 入場</dd>
-              <dt>辦理</dt><dd>主辦 臺灣智能程式科技教育推廣協會；協辦 桃園市桃園區成功國小</dd>
-            </dl>
-            <span class="adv">MR2、MR3 各組前三名 → 新加坡優先邀請</span>
-          </div>
+          <span><span class="big num" id="days">11/15</span> <span class="unit" id="unit">新加坡世界總決賽</span></span>
+          <p id="countText">One World International School - Digital Campus</p>
         </div>
         <div class="fx">
           <div class="d"><span class="m">NOV</span><span class="day">15</span><span class="y">2026 週日</span></div>
@@ -301,13 +308,42 @@ footer a{color:var(--muted);display:inline-flex;align-items:center;min-height:44
             </dl>
           </div>
         </div>
+        <div class="fx done">
+          <div class="d"><span class="m">OCT</span><span class="day">25</span><span class="y">2026 週日</span></div>
+          <div>
+            <h3>GRG 臺灣推廣科學競賽（已完賽）</h3>
+            <dl>
+              <dt>地點</dt><dd>桃園市桃園區 成功國小</dd>
+              <dt>組別</dt><dd>MR2、MR3、機器人趣味相撲、機器人趣味循跡</dd>
+              <dt>辦理</dt><dd>主辦 臺灣智能程式科技教育推廣協會；協辦 桃園市桃園區成功國小</dd>
+            </dl>
+            <span class="adv done"><a href="#results">獲獎名單已公布 →</a></span>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <section id="results" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2><span class="en">RESULTS</span>10/25 臺灣推廣賽 獲獎名單</h2><p>恭喜所有獲獎隊伍！</p></div>
+      <h3 class="rh">機器人趣味相撲　自動組（國小）</h3>
+      <div class="results"><div class="res"><h4><span class="sub">相撲自動組 國小組</span>總名次</h4><ol><li><span class="aw g">冠軍</span><span class="tm">福克斯01<small>福克斯機器人</small></span></li><li><span class="aw s">亞軍</span><span class="tm">文欣好棒棒01<small>桃園市立文欣國小</small></span></li><li><span class="aw b">季軍</span><span class="tm">福克斯02<small>福克斯機器人</small></span></li><li><span class="aw b">季軍</span><span class="tm">福克斯03<small>福克斯機器人</small></span></li></ol></div><div class="res"><h4>國小自動組 A 組</h4><ol><li><span class="aw g">第一名</span><span class="tm">同德好棒棒<small>同德國小</small></span></li><li><span class="aw s">第二名</span><span class="tm">文欣好棒棒02<small>桃園市立文欣國小</small></span></li><li><span class="aw b">第三名</span><span class="tm">福克斯04<small>福克斯機器人</small></span></li><li><span class="aw">優勝</span><span class="tm">富台1-文欣好棒棒04<small>富台國小</small></span></li><li><span class="aw">優勝</span><span class="tm">文欣好棒棒03<small>桃園市立文欣國小</small></span></li><li><span class="aw">優勝</span><span class="tm">富台2<small>富台國小</small></span></li><li><span class="aw">表現優異</span><span class="tm">張允睿<small>老莫機器人</small></span></li><li><span class="aw">表現優異</span><span class="tm">桃小2<small>桃園國小</small></span></li></ol></div><div class="res"><h4>國小自動組 B 組</h4><ol><li><span class="aw g">第一名</span><span class="tm">文欣國小<small>桃園市立文欣國小</small></span></li><li><span class="aw s">第二名</span><span class="tm">福克斯05<small>福克斯機器人</small></span></li><li><span class="aw b">第三名</span><span class="tm">何睿祥<small>老莫機器人</small></span></li><li><span class="aw">優勝</span><span class="tm">鍾弈凡<small>老莫機器人</small></span></li><li><span class="aw">優勝</span><span class="tm">內定1<small>內定國小</small></span></li><li><span class="aw">優勝</span><span class="tm">桃小1<small>桃園國小</small></span></li><li><span class="aw">表現優異</span><span class="tm">霄相拳<small>桃園市霄裡國小</small></span></li><li><span class="aw">表現優異</span><span class="tm">內定2<small>內定國小</small></span></li></ol></div></div>
+      <h3 class="rh">機器人趣味相撲　自動組（國高中）</h3>
+      <div class="results"><div class="res"><h4><span class="sub">相撲自動組 國高中組</span>總名次</h4><ol><li><span class="aw g">冠軍</span><span class="tm">桃園好棒棒04<small>崇林國中</small></span></li><li><span class="aw s">亞軍</span><span class="tm">北科好棒棒<small>福克斯機器人</small></span></li><li><span class="aw b">季軍</span><span class="tm">六和酷比5<small>六和高中國中部</small></span></li><li><span class="aw b">季軍</span><span class="tm">桃園好棒棒05<small>桃園國中</small></span></li></ol></div><div class="res"><h4><span class="sub">相撲自動組 國高中組</span>國中組</h4><ol><li><span class="aw g">第一名</span><span class="tm">六和酷比3<small>六和高中國中部</small></span></li><li><span class="aw s">第二名</span><span class="tm">大膽竹夢C隊<small>桃園市立大竹國民中學</small></span></li><li><span class="aw b">第三名</span><span class="tm">六和酷比1<small>六和高中國中部</small></span></li><li><span class="aw">優勝</span><span class="tm">大膽竹夢K隊<small>桃園市立大竹國民中學</small></span></li><li><span class="aw">優勝</span><span class="tm">大膽竹夢B隊<small>桃園市立大竹國民中學</small></span></li><li><span class="aw">優勝</span><span class="tm">大膽竹夢A隊<small>桃園市立大竹國民中學</small></span></li><li><span class="aw">表現優異</span><span class="tm">六和酷比4<small>六和高中國中部</small></span></li><li><span class="aw">表現優異</span><span class="tm">六和酷比2<small>六和高中國中部</small></span></li><li><span class="aw">表現優異</span><span class="tm">大膽竹夢H隊<small>桃園市立大竹國民中學</small></span></li></ol></div><div class="res"><h4><span class="sub">相撲自動組 國高中組</span>高中組</h4><ol><li><span class="aw g">第一名</span><span class="tm">治平好棒棒02<small>治平高中</small></span></li><li><span class="aw s">第二名</span><span class="tm">治平好棒棒01<small>治平高中</small></span></li><li><span class="aw b">第三名</span><span class="tm">治平好棒棒04<small>治平高中</small></span></li><li><span class="aw">優勝</span><span class="tm">桃園好棒棒03<small>桃園國中</small></span></li></ol></div></div>
+      <h3 class="rh">機器人趣味相撲　遙控組</h3>
+      <div class="results"><div class="res"><h4><span class="sub">相撲遙控組</span>總名次</h4><ol><li><span class="aw g">冠軍</span><span class="tm">贏了就隊<small>積動城市</small></span></li><li><span class="aw s">亞軍</span><span class="tm">Supernova<small>積動城市</small></span></li><li><span class="aw b">季軍</span><span class="tm">[大華]有沒有一種可能<small>積動城市</small></span></li><li><span class="aw b">季軍</span><span class="tm">哇係南波萬<small>積動城市</small></span></li></ol></div><div class="res"><h4><span class="sub">相撲遙控組</span>國小組</h4><ol><li><span class="aw g">第一名</span><span class="tm">山貓 戰鬥吧！<small>積動城市</small></span></li><li><span class="aw s">第二名</span><span class="tm">無敵推手<small>創匠機器人創意中心</small></span></li><li><span class="aw b">第三名</span><span class="tm">許書愷<small>老莫機器人</small></span></li></ol></div><div class="res"><h4><span class="sub">相撲遙控組</span>國中組</h4><ol><li><span class="aw g">第一名</span><span class="tm">福科YouBike<small>積動城市</small></span></li><li><span class="aw s">第二名</span><span class="tm">極限推進<small>積動城市</small></span></li><li><span class="aw b">第三名</span><span class="tm">超頻獵手<small>創匠機器人創意中心</small></span></li><li><span class="aw">優勝</span><span class="tm">絕地衝撞<small>創匠機器人創意中心</small></span></li><li><span class="aw">優勝</span><span class="tm">我愛手機<small>積動城市</small></span></li><li><span class="aw">優勝</span><span class="tm">Go Rolling<small>積動城市</small></span></li></ol></div><div class="res"><h4><span class="sub">相撲遙控組</span>高中組</h4><ol><li><span class="aw g">第一名</span><span class="tm">Vortex1<small>積動城市</small></span></li></ol></div></div>
+      <h3 class="rh">機器人趣味循跡</h3>
+      <div class="results"><div class="res"><h4><span class="sub">循跡賽</span>國小組</h4><ol><li><span class="aw g">第一名</span><span class="tm">福克斯好棒棒02<small>福克斯機器人</small></span></li><li><span class="aw s">第二名</span><span class="tm">福克斯好棒棒03<small>福克斯機器人</small></span></li><li><span class="aw b">第三名</span><span class="tm">福克斯好棒棒<small>福克斯機器人</small></span></li></ol></div><div class="res"><h4><span class="sub">循跡賽</span>國中組</h4><ol><li><span class="aw g">第一名</span><span class="tm">六和酷比6<small>六和高中國中部</small></span></li><li><span class="aw s">第二名</span><span class="tm">六和酷比7<small>六和高中國中部</small></span></li></ol></div><div class="res"><h4><span class="sub">循跡賽</span>高中組</h4><ol><li><span class="aw g">第一名</span><span class="tm">桃園好棒棒02<small>桃園國中</small></span></li><li><span class="aw s">第二名</span><span class="tm">治平好棒棒03<small>治平高中</small></span></li><li><span class="aw b">第三名</span><span class="tm">桃園好棒棒01<small>內壢高中</small></span></li></ol></div></div>
+      <h3 class="rh">Mobile Robotics II／III</h3>
+      <div class="results"><div class="res"><h4>Mobile Robotics II（MR2）</h4><ol><li><span class="aw g">冠軍</span><span class="tm">這次一定行<small>創匠機器人創意中心</small></span></li></ol></div><div class="res"><h4>Mobile Robotics III（MR3）</h4><ol><li><span class="aw g">冠軍</span><span class="tm">再次同一隊<small>創匠機器人創意中心</small></span></li><li><span class="aw s">亞軍</span><span class="tm">程風破浪<small>創匠機器人創意中心</small></span></li><li><span class="aw b">季軍</span><span class="tm">合作無間<small>創匠機器人創意中心</small></span></li><li><span class="aw b">季軍</span><span class="tm">JGJHS<small>桃園市立經國國中</small></span></li><li><span class="aw">表現優異</span><span class="tm">JGJHS02<small>桃園市立經國國中</small></span></li><li><span class="aw">表現優異</span><span class="tm">KCIS ARK<small>新北市康橋高級中學</small></span></li><li><span class="aw">表現優異</span><span class="tm">JGJHS03<small>桃園市立經國國中</small></span></li></ol></div></div>
+      <p class="note">相撲「總名次」為決賽結果；相撲其他名次依預賽成績排列（不含進入決賽的隊伍）。</p>
     </div>
   </section>
 
   <section id="apply" style="padding-top:0">
     <div class="wrap">
-      <div class="head"><h2><span class="en">REGISTER</span>報名 3 步驟</h2></div>
+      <div class="head"><h2><span class="en">REGISTER</span>報名 3 步驟</h2><p>10/25 臺灣推廣賽報名已截止</p></div>
       <ol class="steps">
         <li><h3>線上報名</h3><p>填寫教練與選手資料。</p><a href="https://forms.gle/FFsFxDpUoLM1TUwa9">報名表單</a></li>
         <li><h3>匯款後填表</h3><p>完成匯款後，填寫匯款表單。</p><a href="https://forms.gle/XxJJE6dLf5sWqfb1A">匯款表單</a></li>
@@ -384,7 +420,7 @@ footer a{color:var(--muted);display:inline-flex;align-items:center;min-height:44
 </footer>
 
 <nav class="dock" aria-label="快速操作">
-  <a class="btn primary" href="https://forms.gle/FFsFxDpUoLM1TUwa9">前往報名</a>
+  <a class="btn primary" href="#results">獲獎名單</a>
   <a class="btn ghost" href="https://line.me/ti/g2/XWUYNGvXIzqFgE9b6Z4oTb1_jFIvgsxXs7SCJw?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default">加入 LINE</a>
 </nav>
 
@@ -394,8 +430,7 @@ footer a{color:var(--muted);display:inline-flex;align-items:center;min-height:44
   var today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
   var d=Math.round((tw-today)/day), $=function(i){return document.getElementById(i)};
   if(d>0){ $('days').textContent=d; $('unit').textContent='天後 臺灣推廣賽'; }
-  else if(d===0){ $('days').textContent='TODAY'; $('unit').textContent='臺灣推廣賽今天開賽'; }
-  else { var s=Math.round((sg-today)/day);
+  else { var s=Math.round((sg-today)/day);   // 10/25 完賽當天起改倒數新加坡
     if(s>=0){ $('days').textContent=s>0?s:'TODAY'; $('unit').textContent=s>0?'天後 新加坡世界總決賽':'新加坡世界總決賽今天開賽'; $('countText').textContent='One World International School - Digital Campus'; }
     else { $('days').textContent='2026'; $('unit').textContent='賽季已結束'; $('countText').textContent='2027 賽程公布後會更新於此。'; } }
 })();
