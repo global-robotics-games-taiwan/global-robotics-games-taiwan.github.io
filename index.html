@@ -54,7 +54,7 @@
       "endDate": "2026-10-25T17:00:00+08:00",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "eventStatus": "https://schema.org/EventScheduled",
-      "image": "https://global-robotics-games-taiwan.github.io/img/grg-singapore-2024.jpg",
+      "image": ["https://global-robotics-games-taiwan.github.io/images/taoyuan-2026/tw2026-01.webp", "https://global-robotics-games-taiwan.github.io/images/taoyuan-2026/tw2026-06.webp", "https://global-robotics-games-taiwan.github.io/images/taoyuan-2026/tw2026-27.webp"],
       "location": {"@type": "Place", "name": "桃園市桃園區成功國民小學", "address": {"@type": "PostalAddress", "addressLocality": "桃園市桃園區", "addressRegion": "桃園市", "addressCountry": "TW"}},
       "organizer": {"@type": "EducationalOrganization", "@id": "https://spark-taiwan-association.github.io/#organization", "name": "臺灣智能程式科技教育推廣協會", "url": "https://spark-taiwan-association.github.io/"},
       "performer": {"@type": "PerformingGroup", "name": "GRG 臺灣推廣賽參賽隊伍"},
@@ -233,6 +233,22 @@ section{padding-block:52px}
 .press span{padding:12px 16px;font-weight:700}
 .press small{display:block;font-weight:400;color:var(--muted)}
 
+/* 活動照片：縮圖 640 寬、點開看 1600 寬大圖；收合時只顯示 .pick 的 12 張 */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.gallery a{display:block;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:var(--line)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .2s}
+.gallery a:hover img{transform:scale(1.04)}
+.gallery.folded a:not(.pick){display:none}
+@media (max-width:600px){.gallery{grid-template-columns:repeat(2,1fr);gap:8px}}
+.gal-more{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+.gal-more button{font:inherit;font-weight:700;cursor:pointer}
+.lb{border:0;padding:0;background:transparent;width:min(96vw,1600px);max-width:none;max-height:none}
+.lb::backdrop{background:rgba(13,31,38,.94)}
+.lb img{width:100%;max-height:80vh;object-fit:contain;margin:0 auto}
+.lb p{margin:8px 0 0;color:#e7f0f2;text-align:center}
+.lb .ctl{display:flex;justify-content:center;gap:10px;margin-top:10px}
+.lb button{min-height:48px;min-width:48px;padding:0 18px;border:0;border-radius:10px;background:#fff;color:var(--ink);font:inherit;font-weight:700;cursor:pointer}
+
 .faq details{border-bottom:1px solid var(--line)}
 .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;min-height:56px;font-weight:700}
 .faq summary::-webkit-details-marker{display:none}
@@ -262,11 +278,11 @@ footer a{color:var(--muted);display:inline-flex;align-items:center;min-height:44
   <div class="wrap">
     <a class="brand" href="#top"><span class="b"><img src="img/grg-mark.png" width="160" height="160" alt=""></span><b>GRG TAIWAN</b></a>
     <nav class="nav" aria-label="主選單">
-      <a href="#schedule">賽程</a><a href="#results">成績</a><a href="#groups">組別與規則</a><a href="#moments">精彩回顧</a><a href="#faq">常見問題</a><a href="#contact">聯絡</a>
+      <a href="#schedule">賽程</a><a href="#results">成績</a><a href="#photos">照片</a><a href="#groups">組別與規則</a><a href="#moments">精彩回顧</a><a href="#faq">常見問題</a><a href="#contact">聯絡</a>
     </nav>
     <details class="menu">
       <summary>選單</summary>
-      <div class="panel"><a href="#schedule">賽程</a><a href="#results">成績</a><a href="#groups">組別與規則</a><a href="#moments">精彩回顧</a><a href="#faq">常見問題</a><a href="#contact">聯絡</a><a href="https://www.globalroboticsgames.com/">GRG 國際官網</a></div>
+      <div class="panel"><a href="#schedule">賽程</a><a href="#results">成績</a><a href="#photos">照片</a><a href="#groups">組別與規則</a><a href="#moments">精彩回顧</a><a href="#faq">常見問題</a><a href="#contact">聯絡</a><a href="https://www.globalroboticsgames.com/">GRG 國際官網</a></div>
     </details>
   </div>
 </header>
@@ -344,6 +360,54 @@ footer a{color:var(--muted);display:inline-flex;align-items:center;min-height:44
       <h3 class="rh">Mobile Robotics II／III</h3>
       <div class="results"><div class="res"><h4>Mobile Robotics II（MR2）</h4><ol><li><span class="aw g">冠軍</span><span class="tm">這次一定行<small>創匠機器人創意中心</small></span></li></ol></div><div class="res"><h4>Mobile Robotics III（MR3）</h4><ol><li><span class="aw g">冠軍</span><span class="tm">再次同一隊<small>創匠機器人創意中心</small></span></li><li><span class="aw s">亞軍</span><span class="tm">程風破浪<small>創匠機器人創意中心</small></span></li><li><span class="aw b">季軍</span><span class="tm">合作無間<small>創匠機器人創意中心</small></span></li><li><span class="aw b">季軍</span><span class="tm">JGJHS<small>桃園市立經國國中</small></span></li><li><span class="aw">表現優異</span><span class="tm">JGJHS02<small>桃園市立經國國中</small></span></li><li><span class="aw">表現優異</span><span class="tm">KCIS ARK<small>新北市康橋高級中學</small></span></li><li><span class="aw">表現優異</span><span class="tm">JGJHS03<small>桃園市立經國國中</small></span></li></ol></div></div>
       <p class="note">相撲「總名次」為決賽結果；相撲其他名次依預賽成績排列（不含進入決賽的隊伍）。</p>
+    </div>
+  </section>
+
+  <section id="photos" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2><span class="en">PHOTOS</span>10/25 臺灣推廣賽 活動照片</h2><p>精選 36 張，點照片看大圖</p></div>
+      <div class="gallery folded" id="gallery">
+        <a class="pick" href="images/taoyuan-2026/tw2026-01.webp" data-cap="場地與場邊花絮：開賽前場館全景"><img src="images/taoyuan-2026/tw2026-01-s.webp" width="640" height="360" alt="場地與場邊花絮：開賽前場館全景" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-02.webp" data-cap="場地與場邊花絮：工作人員"><img src="images/taoyuan-2026/tw2026-02-s.webp" width="640" height="360" alt="場地與場邊花絮：工作人員" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-03.webp" data-cap="場地與場邊花絮：選手備賽合影"><img src="images/taoyuan-2026/tw2026-03-s.webp" width="640" height="360" alt="場地與場邊花絮：選手備賽合影" loading="lazy" decoding="async"></a>
+        <a class="pick" href="images/taoyuan-2026/tw2026-04.webp" data-cap="相撲自動組：選手與機器人合影"><img src="images/taoyuan-2026/tw2026-04-s.webp" width="640" height="360" alt="相撲自動組：選手與機器人合影" loading="lazy" decoding="async"></a>
+        <a class="pick" href="images/taoyuan-2026/tw2026-05.webp" data-cap="相撲自動組：機器人對戰特寫"><img src="images/taoyuan-2026/tw2026-05-s.webp" width="640" height="360" alt="相撲自動組：機器人對戰特寫" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-06.webp" data-cap="相撲自動組：多場地同時開打"><img src="images/taoyuan-2026/tw2026-06-s.webp" width="640" height="360" alt="相撲自動組：多場地同時開打" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-07.webp" data-cap="相撲自動組：隊伍調整機器人"><img src="images/taoyuan-2026/tw2026-07-s.webp" width="640" height="360" alt="相撲自動組：隊伍調整機器人" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-08.webp" data-cap="相撲自動組：選手歡呼"><img src="images/taoyuan-2026/tw2026-08-s.webp" width="640" height="360" alt="相撲自動組：選手歡呼" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-09.webp" data-cap="相撲自動組：裁判與選手"><img src="images/taoyuan-2026/tw2026-09-s.webp" width="640" height="360" alt="相撲自動組：裁判與選手" loading="lazy" decoding="async"></a>
+        <a class="pick" href="images/taoyuan-2026/tw2026-10.webp" data-cap="相撲自動組：決賽圍觀"><img src="images/taoyuan-2026/tw2026-10-s.webp" width="640" height="360" alt="相撲自動組：決賽圍觀" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-11.webp" data-cap="相撲自動組：決賽激戰"><img src="images/taoyuan-2026/tw2026-11-s.webp" width="640" height="360" alt="相撲自動組：決賽激戰" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-12.webp" data-cap="相撲自動組：賽後開心合影"><img src="images/taoyuan-2026/tw2026-12-s.webp" width="640" height="360" alt="相撲自動組：賽後開心合影" loading="lazy" decoding="async"></a>
+        <a class="pick" href="images/taoyuan-2026/tw2026-13.webp" data-cap="相撲遙控組：遙控選手與大螢幕計時"><img src="images/taoyuan-2026/tw2026-13-s.webp" width="640" height="360" alt="相撲遙控組：遙控選手與大螢幕計時" loading="lazy" decoding="async"></a>
+        <a class="pick" href="images/taoyuan-2026/tw2026-14.webp" data-cap="相撲遙控組：遙控對戰"><img src="images/taoyuan-2026/tw2026-14-s.webp" width="640" height="360" alt="相撲遙控組：遙控對戰" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-15.webp" data-cap="相撲遙控組：選手放置機器人"><img src="images/taoyuan-2026/tw2026-15-s.webp" width="640" height="360" alt="相撲遙控組：選手放置機器人" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-16.webp" data-cap="相撲遙控組：機器人特寫"><img src="images/taoyuan-2026/tw2026-16-s.webp" width="640" height="360" alt="相撲遙控組：機器人特寫" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-17.webp" data-cap="相撲遙控組：遙控對戰圍觀"><img src="images/taoyuan-2026/tw2026-17-s.webp" width="640" height="360" alt="相撲遙控組：遙控對戰圍觀" loading="lazy" decoding="async"></a>
+        <a class="pick" href="images/taoyuan-2026/tw2026-18.webp" data-cap="循跡賽：循跡賽場"><img src="images/taoyuan-2026/tw2026-18-s.webp" width="640" height="360" alt="循跡賽：循跡賽場" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-19.webp" data-cap="循跡賽：團隊討論"><img src="images/taoyuan-2026/tw2026-19-s.webp" width="640" height="360" alt="循跡賽：團隊討論" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-20.webp" data-cap="循跡賽：循跡調整"><img src="images/taoyuan-2026/tw2026-20-s.webp" width="640" height="360" alt="循跡賽：循跡調整" loading="lazy" decoding="async"></a>
+        <a class="pick" href="images/taoyuan-2026/tw2026-21.webp" data-cap="循跡賽：選手專注看機器人"><img src="images/taoyuan-2026/tw2026-21-s.webp" width="640" height="360" alt="循跡賽：選手專注看機器人" loading="lazy" decoding="async"></a>
+        <a class="pick" href="images/taoyuan-2026/tw2026-22.webp" data-cap="MR2／MR3：比賽"><img src="images/taoyuan-2026/tw2026-22-s.webp" width="640" height="360" alt="MR2／MR3：比賽" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-23.webp" data-cap="MR2／MR3：任務場地"><img src="images/taoyuan-2026/tw2026-23-s.webp" width="640" height="360" alt="MR2／MR3：任務場地" loading="lazy" decoding="async"></a>
+        <a class="pick" href="images/taoyuan-2026/tw2026-24.webp" data-cap="MR2／MR3：機器人特寫"><img src="images/taoyuan-2026/tw2026-24-s.webp" width="640" height="360" alt="MR2／MR3：機器人特寫" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-25.webp" data-cap="MR2／MR3：圍觀"><img src="images/taoyuan-2026/tw2026-25-s.webp" width="640" height="360" alt="MR2／MR3：圍觀" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-26.webp" data-cap="MR2／MR3：選手"><img src="images/taoyuan-2026/tw2026-26-s.webp" width="640" height="360" alt="MR2／MR3：選手" loading="lazy" decoding="async"></a>
+        <a class="pick" href="images/taoyuan-2026/tw2026-27.webp" data-cap="頒獎：國小自動組總冠軍"><img src="images/taoyuan-2026/tw2026-27-s.webp" width="640" height="360" alt="頒獎：國小自動組總冠軍" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-28.webp" data-cap="頒獎：國高中自動組總冠軍"><img src="images/taoyuan-2026/tw2026-28-s.webp" width="640" height="360" alt="頒獎：國高中自動組總冠軍" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-29.webp" data-cap="頒獎：國小優勝合照"><img src="images/taoyuan-2026/tw2026-29-s.webp" width="640" height="360" alt="頒獎：國小優勝合照" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-30.webp" data-cap="頒獎：國中表現優異"><img src="images/taoyuan-2026/tw2026-30-s.webp" width="640" height="360" alt="頒獎：國中表現優異" loading="lazy" decoding="async"></a>
+        <a class="pick" href="images/taoyuan-2026/tw2026-31.webp" data-cap="頒獎：遙控組總冠軍"><img src="images/taoyuan-2026/tw2026-31-s.webp" width="640" height="360" alt="頒獎：遙控組總冠軍" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-32.webp" data-cap="頒獎：循跡國小組第一名"><img src="images/taoyuan-2026/tw2026-32-s.webp" width="640" height="360" alt="頒獎：循跡國小組第一名" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-33.webp" data-cap="頒獎：循跡高中組第一名"><img src="images/taoyuan-2026/tw2026-33-s.webp" width="640" height="360" alt="頒獎：循跡高中組第一名" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-34.webp" data-cap="頒獎：MR2 冠軍"><img src="images/taoyuan-2026/tw2026-34-s.webp" width="640" height="360" alt="頒獎：MR2 冠軍" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-35.webp" data-cap="頒獎：MR3 冠軍"><img src="images/taoyuan-2026/tw2026-35-s.webp" width="640" height="360" alt="頒獎：MR3 冠軍" loading="lazy" decoding="async"></a>
+        <a href="images/taoyuan-2026/tw2026-36.webp" data-cap="頒獎：表現優異特寫"><img src="images/taoyuan-2026/tw2026-36-s.webp" width="640" height="360" alt="頒獎：表現優異特寫" loading="lazy" decoding="async"></a>
+      </div>
+      <div class="gal-more">
+        <button type="button" class="btn ghost" id="galMore" aria-controls="gallery" aria-expanded="false">顯示全部 36 張</button>
+        <a class="btn primary" href="https://www.facebook.com/profile.php?id=61595224448955&amp;sk=photos">更多照片（Facebook 粉專）</a>
+      </div>
     </div>
   </section>
 
@@ -435,6 +499,12 @@ footer a{color:var(--muted);display:inline-flex;align-items:center;min-height:44
   <a class="btn ghost" href="https://line.me/ti/g2/XWUYNGvXIzqFgE9b6Z4oTb1_jFIvgsxXs7SCJw?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default">加入 LINE</a>
 </nav>
 
+<dialog class="lb" id="lb" aria-label="照片大圖">
+  <img id="lbImg" src="data:," alt="">
+  <p id="lbCap"></p>
+  <div class="ctl"><button type="button" id="lbPrev" aria-label="上一張">‹ 上一張</button><button type="button" id="lbClose">關閉</button><button type="button" id="lbNext" aria-label="下一張">下一張 ›</button></div>
+</dialog>
+
 <script>
 (function(){
   var now=new Date(), tw=new Date(2026,9,25), sg=new Date(2026,10,15), day=864e5;
@@ -450,6 +520,19 @@ document.querySelectorAll('.yt').forEach(function(a){a.addEventListener('click',
   f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.id+'?autoplay=1&rel=0'; f.title='GRG 影片';
   f.allow='autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen=true; a.replaceWith(f);
 })});
+(function(){
+  var g=document.getElementById('gallery'), more=document.getElementById('galMore'), lb=document.getElementById('lb');
+  var links=[].slice.call(g.querySelectorAll('a')), i=0;
+  more.addEventListener('click',function(){ var f=g.classList.toggle('folded'); more.textContent=f?'顯示全部 36 張':'收合照片'; more.setAttribute('aria-expanded',!f); });
+  if(!lb.showModal) return;   // 舊瀏覽器沒有 dialog：點縮圖直接開大圖
+  function show(n){ i=(n+links.length)%links.length; var a=links[i]; document.getElementById('lbImg').src=a.href; document.getElementById('lbImg').alt=a.dataset.cap; document.getElementById('lbCap').textContent=a.dataset.cap+'（'+(i+1)+' / '+links.length+'）'; }
+  links.forEach(function(a,n){ a.addEventListener('click',function(e){ e.preventDefault(); show(n); lb.showModal(); }); });
+  document.getElementById('lbPrev').onclick=function(){show(i-1)};
+  document.getElementById('lbNext').onclick=function(){show(i+1)};
+  document.getElementById('lbClose').onclick=function(){lb.close()};
+  lb.addEventListener('click',function(e){ if(e.target===lb) lb.close(); });
+  lb.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft') show(i-1); if(e.key==='ArrowRight') show(i+1); });
+})();
 document.querySelectorAll('.menu .panel a').forEach(function(a){a.addEventListener('click',function(){a.closest('details').removeAttribute('open')})});
 </script>
 </body>
