@@ -1,7 +1,7 @@
 # 2026 GRG AI Maker Series (AIMS) Rules - Original English Version
 
 > [!IMPORTANT]  
-> This is the exact verbatim original English rulebook as provided by the official Global Robotics Games.
+> This is the exact verbatim original English rulebook as provided by the official Global Robotics Games. Checked chapter by chapter against the organizer's Quacktolearn online version on 2026-11-10.
 
 ## 1. INTRODUCTION
 
@@ -12,7 +12,9 @@ As we strive for a world with Zero Hunger (SDG 2), we face a critical inefficien
 
 **THE NEURAL SOLUTION: THE "GENTLE GIANT"**  
 To solve this, we need technology that combines industrial efficiency with biological sensitivity. Your mission is to engineer an autonomous robot capable of navigating a complex "Serpentine Path" greenhouse terrain.  
-Using Machine Learning, your robot must act as a selective harvester: identifying and collecting only ripe crops while leaving fragile unripe plants strictly undisturbed.
+Using Machine Learning, your robot must act as a selective harvester: identifying and collecting only ripe crops while leaving fragile unripe plants outside of the End box.
+
+> **Official update (24-7-26):** Interpretation: Teams can choose to push aside the Large Cubes out of the way of the robot's path.
 
 ### MISSION OBJECTIVES
 
@@ -44,19 +46,14 @@ Rough handling bruises produce, triggering Ethylene gas release. This reaction c
 The competition takes place on a high-precision workspace measuring 2362 mm by 1143 mm (+-5mm of error). (Updated as of 21-5-26)  
 The playfield consists of a dark mat featuring a single, continuous, high-contrast white track. The layout mimics a "Serpentine" or "Snake" pattern, designed to simulate a robot navigating back and forth across agricultural rows.
 
-![Terminal Setup](../images/rules/AIMS_inline_image.png)
-
 ### 2.2 BASE STATIONS (START & END)
 Located on the far-left side of the field are two white square boxes (250mm by 250mm):
 - **Top Base:** Connected to the beginning of the first track row.
 - **Bottom Base:** Connected to the end of the last track row.
 
-![Base Stations](../images/rules/AIMS_inline_image1.png)
-
 **Function:** Before each run, the Referee will designate one box as the START point and the opposite box as the END point. The Start and End boxes may be randomized for each robot run.
 
-![Base Station A](../images/rules/AIMS_inline_image2.png)
-![Base Station B](../images/rules/AIMS_inline_image3.png)
+![AIMS game field with the two base stations on the left](../images/rules/AIMS_inline_image3.png)
 
 ### 2.3 TRACK LAYOUT
 The track connects the two Base Stations through a winding path consisting of:
@@ -77,8 +74,6 @@ The track connects the two Base Stations through a winding path consisting of:
 
 ## 3. Game Objects
 
-![Game Objects](../images/rules/AIMS_Game_Objects.png)
-
 ### 3.1 OBJECT SPECIFICATIONS
 The challenge utilizes two types of magnetic cubes representing different crop states.
 
@@ -86,6 +81,9 @@ The challenge utilizes two types of magnetic cubes representing different crop s
   50mm x 50mm x 50mm
 - **SMALL CUBE (Ripe Fruit)**  
   25mm x 25mm x 25mm
+
+![Large Cubes](../images/rules/AIMS_LargeCubes-nobg.jpg)
+![Small Cubes](../images/rules/AIMS_SmallCubes-nobg.jpg)
 
 ### 3.2 PLACEMENT ZONES
 Specific Yellow Dots marked directly on the white track indicate designated spawning locations for all game objects.
@@ -121,6 +119,8 @@ During a single mission execution, the agent must achieve the following logic mi
 
 ### 4.3 COMPLETING A FULL RUN
 - **Success Criteria:** A run is officially accomplished only when the robot navigates the entire path and executes a complete, autonomous stop within the End Box.
+
+  *The playfield is on a flat plywood. The playfield will not have any walls around it.*
 - **Path Validation (Line Following):**
   - **Projection:** Chassis must vertically overlap with the white line at all times.
   - **⚠ Loss of Path:** Straying completely off-line without correction results in a referee stop.  
@@ -148,6 +148,8 @@ If there is any uncertainty during the robot attempt, the judge will make the fi
 - Prior to each game-run, Referees will arrange the large cubes and the small cubes randomly on the yellow dots. The placement of the cubes will only be shown to the teams after they have quarantined their robots.
 - The image below is an example of how the large cubes and small cubes may be placed on the playfield.
 
+![Example of random cube placement](../images/rules/AIMS_inline_image7.png)
+
 ### 5.2 START OF ROBOT RUN
 - Time begins when the referee gives the signal to start.
 - Teams may run their programs/codes and let the robot move.
@@ -156,7 +158,7 @@ If there is any uncertainty during the robot attempt, the judge will make the fi
 
 ### 5.3 DURING ROBOT RUN
 - Teams must ensure that their robot is equipped to navigate the designated path within the track and identify large cubes and small cubes exclusively through an Artificial Intelligence (AI) or Machine Learning (ML) model developed by the team.
-- Sensors may only be employed to support the robot's movement and not for card detection purposes.
+- Sensors may only be employed to support the robot's movement and not for cube detection purposes.
 - Any team suspected of using any other means, except for an AI or ML model to detect the cubes, may be stopped and asked to show their robot’s codes, systems and AI or ML model to the Referees.
 - Failure to prove that an AI or ML model is the sole system utilized for cube detection may lead to disqualification.
 
@@ -226,7 +228,7 @@ A team is not allowed to perform any actions or movements to interfere or assist
 ## 6.3 TECHNICAL REPORT
 
 While creating the robot and AI or ML models, we must also be mindful of documenting our work. A good engineer is one who is meticulous in his report and can communicate his/her work efficiently.
-All teams will have to submit a digital copy of their Technical Report by (a date will be announced later). Here are the details of what should be reported.
+All teams will have to submit a digital copy of their Technical Report by 3rd August 2026, at 23:59 hrs. Here are the details of what should be reported.
 
 **6.3.1 Robot Design:**  
 Each team is required to submit 1 picture of each side of their robot. Namely:
@@ -247,7 +249,7 @@ Teams should also describe the AI or ML model created that allows the robot to d
 - The programming language used in creating the AI model.
 - How was the robot programmed to react to the AI model?
 
-A sample report and a skeleton report will be provided. Students should study the sample and understand the level of reporting expected. Then teams must utilize the skeleton report and create their report. An online drive/folder will be shared with each team to allow them to share their Technical Report.
+A report guide can be found in the next section. Students should study the guide and understand the level of reporting expected. An online drive/folder will be shared with each team to allow them to share their Technical Report.
 
 *DOCUMENTATION SYNCHRONIZED. SYSTEM INTEGRITY VERIFIED. EXECUTE REPORT SUBMISSION.*
 

@@ -61,7 +61,7 @@
 <header class="top"><div class="in"><a class="brand" href="../index.html"><span class="b"><img src="../img/grg-mark.png" width="160" height="160" alt="GRG Taiwan 首頁"></span><b>GRG TAIWAN</b></a><nav aria-label="規則頁選單"><a href="../index.html#groups">組別與規則</a><a href="aims_rules_en.html">English</a></nav></div></header>
 <div class="tools no-print"><a href="../index.html#groups">回組別列表</a><a href="aims_rules_en.html">English 原文</a><button type="button" onclick="window.print()">下載為 PDF（列印）</button></div>
 <main class="rules-doc" id="content"><h1 id="aims-ai-創客系列-ai-maker-series-完整中文規則">AIMS: AI 創客系列 (AI Maker Series) 完整中文規則</h1>
-<blockquote class="c-IMPORTANT"><p><span class="lbl">重要</span>此中文規則完全基於官方最新釋出的 PDF 進行精準翻譯與校對。排版已同步原網站設計。</p>
+<blockquote class="c-IMPORTANT"><p><span class="lbl">重要</span>此中文規則完全基於官方最新釋出的 PDF 進行精準翻譯與校對。排版已同步原網站設計。2026-11-10 已與主辦 Quacktolearn 線上版全文逐章核對並補齊。</p>
 </blockquote>
 <h2 id="1-簡介-introduction">1. 簡介 (INTRODUCTION)</h2>
 <h3 id="ai-創客系列-2026：精準收成-ai-maker-series-2026-precision-harvest">AI 創客系列 2026：精準收成 (AI Maker Series 2026: Precision Harvest)</h3>
@@ -69,7 +69,10 @@
 當我們為實現「零飢餓 (SDG 2)」的世界而努力時，我們面臨著一個嚴重的低效問題：在全球範圍內，大約有 14% 的食物在收成與市場之間損失。這種「收成後損失」是我們糧食系統中一個價值數兆美元的漏洞，通常是由我們用來收集食物的工具所造成的。</p>
 <p><strong>神經網路解決方案：「溫柔的巨人」 (THE NEURAL SOLUTION: THE &quot;GENTLE GIANT&quot;)</strong>
 為了解決這個問題，我們需要結合工業效率與生物敏感性的技術。您的任務是設計一個能夠在複雜的「蛇形路徑 (Serpentine Path)」溫室地形中導航的自主機器人。
-利用機器學習 (Machine Learning)，您的機器人必須作為一個選擇性收割機：識別並只收集成熟的農作物，同時嚴格保持脆弱的未成熟植物不受干擾。</p>
+利用機器學習 (Machine Learning)，您的機器人必須作為一個選擇性收割機：識別並只收集成熟的農作物，同時把脆弱的未成熟植物留在終點盒子之外。</p>
+<blockquote>
+<p><strong>官方更新（24-7-26）</strong>：解釋：隊伍可以選擇把大方塊推開，讓出機器人的行進路徑。</p>
+</blockquote>
 <p><strong>任務目標 (MISSION OBJECTIVES)</strong></p>
 <blockquote>
 <p><strong>⚠ 經濟陷阱 (The Economic Trap)</strong>
@@ -139,7 +142,6 @@
 <p><em>FIELD CONFIGURED. SENSORS CALIBRATED. EXECUTE NAVIGATION.</em></p>
 <hr>
 <h2 id="3-遊戲物件-game-objects">3. 遊戲物件 (Game Objects)</h2>
-<p><img src="../images/rules/AIMS_Game_Objects.png" alt="遊戲物件"></p>
 <h3 id="31-物件規格-object-specifications">3.1 物件規格 (OBJECT SPECIFICATIONS)</h3>
 <p>挑戰賽使用兩種類型的磁性方塊來代表不同的農作物狀態。</p>
 <ul>
@@ -152,6 +154,8 @@
 </ul>
 </li>
 </ul>
+<p><img src="../images/rules/AIMS_LargeCubes-nobg.jpg" alt="大方塊實物照">
+<img src="../images/rules/AIMS_SmallCubes-nobg.jpg" alt="小方塊實物照"></p>
 <h3 id="32-放置區域-placement-zones">3.2 放置區域 (PLACEMENT ZONES)</h3>
 <p>直接標記在白色軌道上的特定黃點，指示了所有遊戲物件的指定生成位置。</p>
 <p><em>圖示為為了清楚設定而放大的黃點位置：</em>
@@ -183,7 +187,7 @@
 </ul>
 <h3 id="43-完成完整運行-completing-a-full-run">4.3 完成完整運行 (COMPLETING A FULL RUN)</h3>
 <ul>
-<li><strong>成功標準 (Success Criteria)</strong>：只有當機器人導航了整條路徑，並在終點盒子內執行了完全自主的停止，才算正式完成一次運行。</li>
+<li><strong>成功標準 (Success Criteria)</strong>：只有當機器人導航了整條路徑，並在終點盒子內執行了完全自主的停止，才算正式完成一次運行。<p><em>比賽場地放在平坦的合板上，場地四周不會有任何圍牆。</em></p></li>
 <li><strong>路徑驗證 (尋線) (Path Validation (Line Following))</strong>：<ul>
 <li><strong>投影 (Projection)</strong>：底盤必須始終與白線垂直重疊。</li>
 <li><strong>⚠ 偏離路徑 (Loss of Path)</strong>：完全偏離路線且未進行修正，將導致裁判停止比賽。
@@ -236,7 +240,7 @@
 </ul>
 <h3 id="53-機器人運行期間-during-robot-run">5.3 機器人運行期間 (DURING ROBOT RUN)</h3>
 <p>隊伍必須確保其機器人具備在軌道內指定路徑導航的能力，並專門透過隊伍開發的人工智慧 (AI) 或機器學習 (ML) 模型來識別大方塊與小方塊。
-感測器只能用於支援機器人的移動，不能用於檢測卡片/方塊。
+感測器只能用於支援機器人的移動，不能用於檢測方塊。
 任何被懷疑使用非 AI/ML 模型來檢測方塊的隊伍，可能會被叫停，並要求向裁判展示其機器人程式碼、系統和 AI/ML 模型。<strong>未能證明 AI/ML 模型是唯一用於方塊檢測的系統可能會導致取消資格。</strong></p>
 <p><strong>隊伍允許 (Teams are allowed)：</strong></p>
 <ul>
@@ -298,7 +302,7 @@
 <hr>
 <h2 id="63-技術報告-technical-report">6.3 技術報告 (TECHNICAL REPORT)</h2>
 <p>在建立機器人與 AI 或 ML 模型時，我們也必須注意記錄我們的工作。優秀的工程師是能夠在報告中一絲不苟，並能有效溝通其工作的人。
-所有隊伍都必須在（日期將於稍後公佈）前提交其技術報告的數位副本。以下是應報告的詳細資訊。</p>
+所有隊伍都必須在 <strong>2026 年 8 月 3 日 23:59</strong> 前提交其技術報告的數位副本。以下是應報告的詳細資訊。</p>
 <h3 id="631-機器人設計-robot-design">6.3.1 機器人設計 (Robot Design):</h3>
 <p>每支隊伍需要提交其機器人每一側的 1 張圖片。也就是：</p>
 <ul>
@@ -319,7 +323,7 @@
 <li>建立 AI 模型所使用的程式語言。</li>
 <li>機器人是如何被編程以對 AI 模型做出反應的？</li>
 </ul>
-<p>將提供報告範例與報告骨架 (skeleton report)。學生應研究該範例並了解所期望的報告水準。然後，隊伍必須利用報告骨架並建立他們的報告。將與每支隊伍分享一個線上雲端硬碟/資料夾，讓他們可以分享他們的技術報告。</p>
+<p>報告指南 (report guide) 收錄在下一節（主辦線上課程中的「AIMS 2026 &#39;Guide to&#39; Technical Report」）。學生應研究該指南並了解所期望的報告水準。將與每支隊伍分享一個線上雲端硬碟/資料夾，讓他們可以分享他們的技術報告。</p>
 <p><em>DOCUMENTATION SYNCHRONIZED. SYSTEM INTEGRITY VERIFIED. EXECUTE REPORT SUBMISSION.</em></p>
 <hr>
 <h2 id="7-計分-scoring">7. 計分 (Scoring)</h2>

@@ -61,12 +61,15 @@
 <header class="top"><div class="in"><a class="brand" href="../index.html"><span class="b"><img src="../img/grg-mark.png" width="160" height="160" alt="GRG Taiwan 首頁"></span><b>GRG TAIWAN</b></a><nav aria-label="規則頁選單"><a href="../index.html#groups">All categories</a><a href="aims_rules.html">中文規則</a></nav></div></header>
 <div class="tools no-print"><a href="../index.html#groups">Back to categories</a><a href="aims_rules.html">中文版</a><button type="button" onclick="window.print()">Save as PDF</button></div>
 <main class="rules-doc" id="content"><h1 id="2026-grg-ai-maker-series-aims-rules---original-english-version">2026 GRG AI Maker Series (AIMS) Rules - Original English Version</h1>
-<blockquote class="c-IMPORTANT"><p><span class="lbl">Important</span><br>This is the exact verbatim original English rulebook as provided by the official Global Robotics Games.</p>
+<blockquote class="c-IMPORTANT"><p><span class="lbl">Important</span><br>This is the exact verbatim original English rulebook as provided by the official Global Robotics Games. Checked chapter by chapter against the organizer's Quacktolearn online version on 2026-11-10.</p>
 </blockquote>
 <h2 id="1-introduction">1. INTRODUCTION</h2>
 <p><strong>AI Maker Series 2026: Precision Harvest</strong></p>
 <p><strong>THE CHALLENGE: POST-HARVEST LOSS</strong><br>As we strive for a world with Zero Hunger (SDG 2), we face a critical inefficiency: globally, approximately 14% of food is lost between the harvest and the market. This &quot;Post-Harvest Loss&quot; is a trillion-dollar leak in our food system, often caused by the very tools we use to gather our food.</p>
-<p><strong>THE NEURAL SOLUTION: THE &quot;GENTLE GIANT&quot;</strong><br>To solve this, we need technology that combines industrial efficiency with biological sensitivity. Your mission is to engineer an autonomous robot capable of navigating a complex &quot;Serpentine Path&quot; greenhouse terrain.<br>Using Machine Learning, your robot must act as a selective harvester: identifying and collecting only ripe crops while leaving fragile unripe plants strictly undisturbed.</p>
+<p><strong>THE NEURAL SOLUTION: THE &quot;GENTLE GIANT&quot;</strong><br>To solve this, we need technology that combines industrial efficiency with biological sensitivity. Your mission is to engineer an autonomous robot capable of navigating a complex &quot;Serpentine Path&quot; greenhouse terrain.<br>Using Machine Learning, your robot must act as a selective harvester: identifying and collecting only ripe crops while leaving fragile unripe plants outside of the End box.</p>
+<blockquote>
+<p><strong>Official update (24-7-26):</strong> Interpretation: Teams can choose to push aside the Large Cubes out of the way of the robot&#39;s path.</p>
+</blockquote>
 <h3 id="mission-objectives">MISSION OBJECTIVES</h3>
 <p><strong>⚠ The Economic Trap</strong><br>Farmers rely on &quot;blind&quot; mass machinery that destroys up to 40% of unripe crops—flowers and green buds—permanently reducing future yield.</p>
 <p><strong>ANALYSIS</strong><br><strong>🧪 Ethylene Reaction</strong><br>Rough handling bruises produce, triggering Ethylene gas release. This reaction causes rapid spoilage, wasting healthy food within 48 hours.</p>
@@ -130,13 +133,14 @@
 <p><em>FIELD CONFIGURED. SENSORS CALIBRATED. EXECUTE NAVIGATION.</em></p>
 <hr>
 <h2 id="3-game-objects">3. Game Objects</h2>
-<p><img src="../images/rules/AIMS_Game_Objects.png" alt="Game Objects"></p>
 <h3 id="31-object-specifications">3.1 OBJECT SPECIFICATIONS</h3>
 <p>The challenge utilizes two types of magnetic cubes representing different crop states.</p>
 <ul>
 <li><strong>LARGE CUBE (Unripe Fruit)</strong><br>50mm x 50mm x 50mm</li>
 <li><strong>SMALL CUBE (Ripe Fruit)</strong><br>25mm x 25mm x 25mm</li>
 </ul>
+<p><img src="../images/rules/AIMS_LargeCubes-nobg.jpg" alt="Large Cubes">
+<img src="../images/rules/AIMS_SmallCubes-nobg.jpg" alt="Small Cubes"></p>
 <h3 id="32-placement-zones">3.2 PLACEMENT ZONES</h3>
 <p>Specific Yellow Dots marked directly on the white track indicate designated spawning locations for all game objects.</p>
 <p><em>Graphic illustrates exaggerated yellow dot positions for setup clarity.</em>
@@ -168,7 +172,7 @@
 </ul>
 <h3 id="43-completing-a-full-run">4.3 COMPLETING A FULL RUN</h3>
 <ul>
-<li><strong>Success Criteria:</strong> A run is officially accomplished only when the robot navigates the entire path and executes a complete, autonomous stop within the End Box.</li>
+<li><strong>Success Criteria:</strong> A run is officially accomplished only when the robot navigates the entire path and executes a complete, autonomous stop within the End Box.<p><em>The playfield is on a flat plywood. The playfield will not have any walls around it.</em></p></li>
 <li><strong>Path Validation (Line Following):</strong><ul>
 <li><strong>Projection:</strong> Chassis must vertically overlap with the white line at all times.</li>
 <li><strong>⚠ Loss of Path:</strong> Straying completely off-line without correction results in a referee stop.<br><em>(As long as the projection of any part of the robot is over the line, the robot is considered to be following the path.)</em></li>
@@ -212,6 +216,7 @@
 <li>Prior to each game-run, Referees will arrange the large cubes and the small cubes randomly on the yellow dots. The placement of the cubes will only be shown to the teams after they have quarantined their robots.</li>
 <li>The image below is an example of how the large cubes and small cubes may be placed on the playfield.</li>
 </ul>
+<p><img src="../images/rules/AIMS_inline_image7.png" alt="Example of random cube placement"></p>
 <h3 id="52-start-of-robot-run">5.2 START OF ROBOT RUN</h3>
 <ul>
 <li>Time begins when the referee gives the signal to start.</li>
@@ -222,7 +227,7 @@
 <h3 id="53-during-robot-run">5.3 DURING ROBOT RUN</h3>
 <ul>
 <li>Teams must ensure that their robot is equipped to navigate the designated path within the track and identify large cubes and small cubes exclusively through an Artificial Intelligence (AI) or Machine Learning (ML) model developed by the team.</li>
-<li>Sensors may only be employed to support the robot&#39;s movement and not for card detection purposes.</li>
+<li>Sensors may only be employed to support the robot&#39;s movement and not for cube detection purposes.</li>
 <li>Any team suspected of using any other means, except for an AI or ML model to detect the cubes, may be stopped and asked to show their robot’s codes, systems and AI or ML model to the Referees.</li>
 <li>Failure to prove that an AI or ML model is the sole system utilized for cube detection may lead to disqualification.</li>
 </ul>
@@ -296,7 +301,7 @@ The ranking of teams depends on the overall tournament format. For example, the 
 <hr>
 <h2 id="63-technical-report">6.3 TECHNICAL REPORT</h2>
 <p>While creating the robot and AI or ML models, we must also be mindful of documenting our work. A good engineer is one who is meticulous in his report and can communicate his/her work efficiently.
-All teams will have to submit a digital copy of their Technical Report by (a date will be announced later). Here are the details of what should be reported.</p>
+All teams will have to submit a digital copy of their Technical Report by 3rd August 2026, at 23:59 hrs. Here are the details of what should be reported.</p>
 <p><strong>6.3.1 Robot Design:</strong><br>Each team is required to submit 1 picture of each side of their robot. Namely:</p>
 <ul>
 <li>Picture of the top of the robot.</li>
@@ -314,7 +319,7 @@ All teams will have to submit a digital copy of their Technical Report by (a dat
 <li>The programming language used in creating the AI model.</li>
 <li>How was the robot programmed to react to the AI model?</li>
 </ul>
-<p>A sample report and a skeleton report will be provided. Students should study the sample and understand the level of reporting expected. Then teams must utilize the skeleton report and create their report. An online drive/folder will be shared with each team to allow them to share their Technical Report.</p>
+<p>A report guide can be found in the next section. Students should study the guide and understand the level of reporting expected. An online drive/folder will be shared with each team to allow them to share their Technical Report.</p>
 <p><em>DOCUMENTATION SYNCHRONIZED. SYSTEM INTEGRITY VERIFIED. EXECUTE REPORT SUBMISSION.</em></p>
 <hr>
 <h2 id="7-scoring">7. Scoring</h2>

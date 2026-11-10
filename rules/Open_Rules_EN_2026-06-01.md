@@ -1,12 +1,14 @@
 # 2026 GRG Open Category Rules - Original English Version
 
 > [!IMPORTANT]  
-> This is the exact verbatim original English rulebook as provided by the official Global Robotics Games.
+> This is the exact verbatim original English rulebook as provided by the official Global Robotics Games. Checked chapter by chapter against the organizer's Quacktolearn online version on 2026-11-10.
 
 ## 3.1 Introduction
 The theme for NRC this year is "Mission Meals" focusing on individuals who use technology to tackle hunger issues around the world.
 This challenge aims to address the challenge of ensuring a sufficient and stable food supply for all people by leveraging robotic technologies.
 Hunger often results from problems in how food is produced and delivered. Robots can support many stages of this journey — from growing food to bringing it safely to the people who need it.
+
+![Mission Meals](../images/rules/Open_Mission_Meals.jpg)
 
 ## 3.2. Online Component: Video Submission
 Teams are required to submit a demonstration video showing the robot in action and a presentation video. Each video must be no longer than 3 minutes.
