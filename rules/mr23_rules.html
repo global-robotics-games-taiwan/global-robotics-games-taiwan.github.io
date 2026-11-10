@@ -301,10 +301,14 @@
 <li><strong>觸碰裝載區外的物件 (Touch Objects Outside Loading Zone)</strong>：您只能在機器人、機器人設備或任何方塊完全位於裝載區內時，才可以觸碰它們。如果機器人、設備或方塊的任何部分在裝載區外，即使機器人已經停止，您也不允許觸碰或調整它們。即使機器人不小心將任何物件推出裝載區，這項規則依然適用。</li>
 </ul>
 <p><strong>6.3.3 方塊規則 (Rules for Cubes)</strong></p>
+<blockquote>
+<p><strong>2026-11-10 主辦更新版</strong>：本節已依主辦單位 2026-11-10 提供的更新版 6.3.3 改寫（舊版只有「小方塊／大方塊」兩列）。</p>
+</blockquote>
 <table>
 <thead>
 <tr>
 <th>方塊類型 (Cube Type)</th>
+<th>組別 (Category)</th>
 <th>允許動作 (隨時)</th>
 <th>不允許動作 (隨時)</th>
 <th>特殊操作規則 (Special Manipulation Rule)</th>
@@ -312,15 +316,38 @@
 </thead>
 <tbody><tr>
 <td><strong>小方塊 (Small Cubes)</strong></td>
-<td>可以被運送到比賽場地上的任何地方，包含進入裝載區 (Loading Zone)。</td>
+<td>MR2、MR3</td>
+<td>場上任何地方都能搬，包含裝載區 (Loading Zone)。</td>
 <td>無</td>
-<td>無</td>
+<td>無（沒有圓圈限制）</td>
 </tr>
 <tr>
-<td><strong>大方塊 (Large Cubes)</strong></td>
-<td>可以被運送到比賽場地上的任何地方，除了裝載區之外 (例如，從一個圓圈到另一個圓圈)。</td>
-<td>不能被帶入裝載區 (Loading Zone)。<br><strong>罰則</strong>：它們將被裁判沒收。</td>
-<td>只有當機器人接觸比賽場地的每個部分都<strong>完全位於圓圈 (Circle) 內</strong>且機器人已經<strong>完全停止 (complete stop)</strong> 時，才允許進行操作。</td>
+<td><strong>藍／綠／白 大方塊 (Blue, Green, White Large Cubes)</strong></td>
+<td>MR2、MR3</td>
+<td>可以搬到場上任何地方（例如從一個圓圈到另一個），裝載區除外。</td>
+<td>不能帶進裝載區 (Loading Zone)。<br><strong>罰則</strong>：裁判沒收。</td>
+<td>① <strong>第一次碰（夾起）</strong>：機器人碰地部分<strong>整台在圓圈 (Circle) 內、完全停下 (complete stop)</strong> 才可以操作。<br>② <strong>拿到之後</strong>：可以用任何方式（夾著、拖、拉…）在場上移動到別處（裝載區除外）。<br>③ <strong>疊上去得分（有效／無效堆疊）</strong>：搬過去的方塊放到第二顆大方塊上時，機器人<strong>部分在那個圓圈內</strong>就可以。<br>例：做營養輸送（藍色大方塊）堆疊時，開到西北圓圈整台停在圈內 → 夾起藍色大方塊 → 帶到西南圓圈 → 部分在圈內停下 → 放到原地那顆藍色大方塊上。</td>
+</tr>
+<tr>
+<td><strong>粉紅／黃 大方塊 (Pink, Yellow Large Cubes)</strong></td>
+<td>MR2、MR3</td>
+<td>起始位置固定，<strong>一定要在原本的圓圈疊</strong>。<br>例：粉紅大方塊在東北圓圈、黃色大方塊在南邊圓圈。</td>
+<td><strong>不能</strong>用任何方式（夾著、拖、拉…）<strong>離開起始圓圈</strong>。</td>
+<td>只能在它所在的圓圈操作；操作時機器人碰地部分<strong>整台在圈內、完全停下</strong>。</td>
+</tr>
+<tr>
+<td><strong>任何大方塊堆疊 (Any Large Cube Stack)</strong></td>
+<td><strong>僅 MR2（國小高年級）</strong></td>
+<td>機器人沒有整台在圈內時，碰到或把有效／無效堆疊推離方格一點點（底下那顆大方塊仍有部分在原方格內）。</td>
+<td>無</td>
+<td><strong>罰則：每次扣 5 分。</strong><br>例：已完成有效的營養輸送堆疊，放加強層（增強方塊）時碰到、推動了該堆疊。</td>
+</tr>
+<tr>
+<td><strong>任何大方塊堆疊 (Any Large Cube Stack)</strong></td>
+<td><strong>僅 MR3（國高中）</strong></td>
+<td>無</td>
+<td>機器人沒有整台在圈內時，碰到或把有效／無效堆疊推離方格一點點（底下那顆大方塊仍有部分在原方格內）。</td>
+<td><strong>罰則：該堆疊＋上面的加強層全部不算分（取消資格）。</strong></td>
 </tr>
 </tbody></table>
 <h3 id="64-比賽結束與計分-how-the-match-ends-and-scoring">6.4 比賽結束與計分 (How the Match Ends and Scoring)</h3>
