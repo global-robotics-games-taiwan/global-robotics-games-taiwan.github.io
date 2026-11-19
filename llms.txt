@@ -9,6 +9,16 @@
 - 2026-10-25（日）2026 GRG 臺灣推廣科學競賽：桃園市桃園區成功國小，已完賽。組別 MR2、MR3、機器人趣味相撲、機器人趣味循跡；獲獎名單見下方。
 - 2026-11-15（日）GRG 2026 世界總決賽：新加坡 One World International School - Digital Campus（27 Punggol Field Walk, Singapore 828649），年度主題 Mission Meals（SDG 2 消除飢餓）。臺灣代表隊由協會統一帶隊。
 
+## 2026 新加坡世界總決賽 臺灣代表隊得獎名單
+成果頁（含 55 秒精彩回顧影片）：[2026 新加坡世界賽 臺灣代表隊成果](https://global-robotics-games-taiwan.github.io/singapore-2026.html)
+- MR3 世界冠軍：TW_Elite1（指導教練 魏士楷）
+- MR2 亞軍：TW_Elite2（指導教練 魏士楷）
+- AIMS（AI Maker Series）亞軍：TW_MBC_IDK（指導教練 張來騫）
+- MR3 最佳簡報獎 第三名：TW_KCIS_ARK（指導教練 楊方寧）
+- MR3 第四名：TW_LauMo_Junior 1（指導教練 陳彥霖）
+- MR3 前十名：TW_JGJHS_NO1（指導教練 黃雅謙）
+- MR3 前十名：TW_LHHS_NO2（指導教練 黃雅謙）
+
 ## 2026 臺灣推廣賽獲獎名單（2026-10-25，桃園市桃園區成功國小）
 完整名單：https://global-robotics-games-taiwan.github.io/#results
 - 相撲自動組 國小組｜總名次：冠軍 福克斯01（福克斯機器人）、亞軍 文欣好棒棒01（桃園市立文欣國小）、季軍 福克斯02（福克斯機器人）、季軍 福克斯03（福克斯機器人）
