@@ -89,11 +89,10 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- 中文字型等頁面載入完才抓（先用系統字畫出來，避免首屏文字 LCP 被字型拖到 4 秒）；數字窄體維持非阻塞 swap -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&display=swap">
-<script>addEventListener('load',function(){var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600&display=swap';document.head.appendChild(l)})</script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&display=swap"></noscript>
+<!-- 數字窄體 Barlow Condensed 放在本站 fonts/（OFL 授權，同網域不用另開連線）。中文字型等頁面載入完、而且第一次畫出文字（FCP）之後才抓，瀏覽器不支援就 3 秒後抓（先用系統字畫出來，避免首屏被字型拖慢） -->
+<style>@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/barlow-condensed-600-latin.woff2) format("woff2")}@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:800;font-display:swap;src:url(fonts/barlow-condensed-800-latin.woff2) format("woff2")}</style>
+<script>(function(){var n=0;function add(){if(n++)return;var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600&display=swap';document.head.appendChild(l)}addEventListener('load',function(){setTimeout(add,3000);try{new PerformanceObserver(function(e){if(e.getEntriesByName('first-contentful-paint').length)setTimeout(add,0)}).observe({type:'paint',buffered:true})}catch(x){add()}})})();if(location.hash)document.documentElement.classList.add('cv-off');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(a)document.documentElement.classList.add('cv-off')},true)</script>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600&display=swap"></noscript>
 <style>
 /* 版面：「運動會成績公告」。淺灰底；深色計分板（年份、賽程）在第一屏；成績用表格；區塊之間用跑道分道線＋道次編號分隔。數字一律窄體運動字型。單欄 72rem，左對齊。字重最多 600。 */
 :root{
@@ -133,9 +132,15 @@ h1,h2,h3{line-height:1.35;margin:0;font-weight:600;text-wrap:balance}
 .menu .panel a{min-height:48px;display:flex;align-items:center;text-decoration:none;color:var(--ink);font-weight:500;border-bottom:1px solid #eef1f2}
 @media (max-width:900px){.nav{display:none}.menu{display:block}}
 
-/* 第一屏：左邊標題＋兩顆按鈕，右邊計分板 */
+/* 第一屏：左邊標題＋兩顆按鈕＋代表隊合照，右邊計分板（手機：標題 → 合照 → 計分板） */
 .hero{padding-block:40px 48px}
-.hero .grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:40px;align-items:center}
+.hero .grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);grid-template-areas:"intro board" "shot board";gap:28px 40px;align-items:start}
+.hero .intro{grid-area:intro}
+.hero .board{grid-area:board}
+.shot{grid-area:shot;margin:0;border-radius:var(--r);overflow:hidden;background:var(--board)}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 70%}
+.shot figcaption{display:flex;align-items:baseline;gap:10px;padding:10px 16px;color:#e7f0f2;font-size:.92rem;border-top:4px solid var(--lime)}
+.shot figcaption .num{color:var(--lime);font-weight:600;font-size:1.1rem}
 .hero .tag{margin:0;font-weight:500;color:var(--track)}
 .hero h1{font-size:clamp(1.9rem,4.2vw,2.8rem);margin-top:8px}
 .hero h1 .en{display:block;font:600 clamp(1.1rem,2vw,1.4rem)/1.2 var(--num);letter-spacing:.02em;color:var(--teal);margin-top:8px}
@@ -145,7 +150,7 @@ h1,h2,h3{line-height:1.35;margin:0;font-weight:600;text-wrap:balance}
 .btn.primary{background:var(--teal);color:#fff}
 .btn.primary:hover{background:var(--teal-d);border-color:var(--teal-d)}
 .btn.ghost{background:#fff;color:var(--teal-d)}
-@media (max-width:900px){.hero .grid{grid-template-columns:1fr;gap:24px}.hero{padding-block:22px 32px}}
+@media (max-width:900px){.hero .grid{grid-template-columns:1fr;grid-template-areas:"intro" "shot" "board";gap:24px}.hero{padding-block:22px 32px}.shot img{aspect-ratio:3/2}}
 
 /* 計分板 */
 .board{background:var(--board);color:#e7f0f2;border-radius:var(--r);overflow:hidden}
@@ -167,7 +172,8 @@ h1,h2,h3{line-height:1.35;margin:0;font-weight:600;text-wrap:balance}
 @media (max-width:600px){.fx .xs{display:none}.fx{grid-template-columns:1fr;gap:6px;padding:14px 18px}.fx .d{display:flex;gap:10px;align-items:baseline}.fx .y{margin:0}.count{padding:14px 18px}.count .big{font-size:3rem}.go.foot{padding:0 18px}}
 
 /* 區塊：跑道分道線＋道次編號當分隔 */
-section:not(.hero){padding-block:0 48px}
+section:not(.hero){padding-block:0 48px;content-visibility:auto;contain-intrinsic-size:auto 900px}/* 首屏以外的區塊捲到附近才排版，省掉手機第一次載入的版面計算；點站內錨點時加 .cv-off 全部排好，平滑捲動才會停在對的位置 */
+.cv-off section:not(.hero){content-visibility:visible}
 section:not(.hero) > .wrap::before{content:"";display:block;height:12px;border-block:2px solid var(--lane);margin-bottom:36px}
 .head{display:flex;align-items:end;justify-content:space-between;gap:4px 12px;flex-wrap:wrap;margin-bottom:18px}
 .head h2{font-size:clamp(1.4rem,3vw,1.85rem);display:flex;align-items:center;gap:12px}
@@ -311,7 +317,7 @@ footer a{color:var(--muted);display:inline-flex;align-items:center;min-height:44
 <main id="main">
   <section class="hero" id="top">
     <div class="wrap grid">
-      <div>
+      <div class="intro">
         <p class="tag">全球機器人運動會 · 臺灣賽區</p>
         <h1>GRG 臺灣推廣科學競賽<span class="en">Global Robotics Games Taiwan</span></h1>
         <p class="lead">新加坡世界總決賽，臺灣代表隊拿下 MR3 世界冠軍等 7 個獎項；10/25 臺灣推廣賽成績也已公布。</p>
@@ -320,6 +326,10 @@ footer a{color:var(--muted);display:inline-flex;align-items:center;min-height:44
           <a class="btn ghost" href="#results">臺灣推廣賽成績</a>
         </div>
       </div>
+      <figure class="shot">
+        <img src="img/grg-singapore-2024.webp" srcset="img/grg-singapore-2024-700.webp 700w, img/grg-singapore-2024.webp 1200w" sizes="(min-width: 901px) 560px, calc(100vw - 40px)" width="1200" height="901" alt="臺灣選手在新加坡 GRG 競賽會場舉牌合影" fetchpriority="high">
+        <figcaption><span class="num">2024</span><span>GRG 新加坡競賽臺灣選手</span></figcaption>
+      </figure>
       <div class="board" id="schedule" aria-label="2026 賽程計分板">
         <div class="count" id="count">
           <span class="big num" id="days">11/15</span>
