@@ -185,6 +185,13 @@ h1,h2,h3{line-height:1.35;margin:0;font-weight:600;text-wrap:balance}
 .medals .mf{display:block;font-weight:600;color:var(--teal-d)}
 .medals .mf .num{font-size:1.25rem}
 .medals:hover{border-color:#d4a800}.medals:hover .mf{text-decoration:underline}
+/* 2027 招生標語（hero 與 #season-2027 共用；片段不斷行，只在片段之間換行） */
+.call{margin:0 0 20px;padding:12px 16px;background:var(--board);color:#fff;border-left:5px solid var(--lime);border-radius:var(--r);font-weight:600;font-size:1.12rem;line-height:1.5;max-width:34em}
+.call .k{white-space:nowrap}
+.call .hh{color:var(--lime);letter-spacing:.02em}
+.hero .lead + .call{margin-top:-8px}
+.season .call{margin:0 0 16px;max-width:none}
+@media (max-width:600px){.call{font-size:1.02rem;padding:10px 14px}}
 /* 2027 新賽季 */
 .season{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--lime);border-radius:var(--r);padding:20px 22px}
 .season .theme{margin:0 0 4px;font:800 clamp(1.6rem,3.6vw,2.2rem)/1.1 var(--num);letter-spacing:.03em;color:var(--teal-d)}
@@ -345,6 +352,7 @@ footer a{color:var(--muted);display:inline-flex;align-items:center;min-height:44
         <p class="tag">全球機器人運動會 · 臺灣賽區</p>
         <h1>GRG 2027 新賽季：HEALTH HACKERS<span class="en">Global Robotics Games Taiwan</span></h1>
         <p class="lead">2027 賽季主題對應聯合國 SDG 3「健康與福祉」：用機器人與 AI 解決醫療與健康的難題。</p>
+        <p class="call"><span class="k">創意賽隊伍提早準備囉！</span><wbr><span class="k">2027 健康駭客</span> <span class="k hh">HEALTH HACKERS</span> <span class="k">等你來挑戰</span></p>
         <a class="medals" href="singapore-2026.html" aria-label="2026 新加坡世界賽臺灣代表隊戰績，共 7 個獎項，看成果頁">
           <span class="mt">2026 新加坡世界賽 臺灣代表隊</span>
           <span class="ml"><span class="m g">MR3 世界冠軍</span><span class="m s">MR2 亞軍</span><span class="m s">AIMS 亞軍</span><span class="m b">MR3 最佳簡報獎 第三名</span></span>
@@ -411,6 +419,7 @@ footer a{color:var(--muted);display:inline-flex;align-items:center;min-height:44
     <div class="wrap">
       <div class="head"><h2><span class="ln num">01</span>2027 新賽季主題預告</h2><p><a class="more" href="https://www.globalroboticsgames.com/competitions/2027-season-information" target="_blank" rel="noopener">官方 2027 賽季頁 ↗</a></p></div>
       <div class="season">
+        <p class="call"><span class="k">創意賽隊伍提早準備囉！</span><wbr><span class="k">2027 健康駭客</span> <span class="k hh">HEALTH HACKERS</span> <span class="k">等你來挑戰</span></p>
         <p class="theme">HEALTH HACKERS</p>
         <p class="sdg">對應聯合國永續發展目標 SDG 3：健康與福祉（Good Health and Well-being）</p>
         <p>GRG 國際主辦公布 2027 賽季主題為「HEALTH HACKERS」。參賽隊伍要運用自主機器人、AI 診斷、輔具與智慧環境系統，找出並解決醫療與健康照護上的瓶頸。</p>
