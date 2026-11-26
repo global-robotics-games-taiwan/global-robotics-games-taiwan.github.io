@@ -5,6 +5,13 @@
 > 國際總決賽：新加坡 (Singapore)
 > LINE 官方群組：https://line.me/ti/g2/XWUYNGvXIzqFgE9b6Z4oTb1_jFIvgsxXs7SCJw
 
+## 2027 新賽季主題預告 (2027 Season Preview)
+- 主題：HEALTH HACKERS，對應聯合國永續發展目標 SDG 3 Good Health and Well-being（健康與福祉）。
+- 內容：參賽隊伍運用自主機器人、AI 診斷、輔具與智慧環境系統，解決醫療與健康照護上的瓶頸。
+- 系列沿革：2025 消除貧窮 → 2026 Mission Meals 糧食安全 → 2027 健康與福祉。
+- 世界賽日期、地點、組別與規則書：GRG 國際主辦尚未公布，公布後更新；臺灣賽程確定後於官網與 LINE 群組公布。
+- 官方來源：https://www.globalroboticsgames.com/competitions/2027-season-information
+
 ## 2026 賽事日程 (Schedule)
 - 2026-10-25（日）2026 GRG 臺灣推廣科學競賽：桃園市桃園區成功國小，已完賽。組別 MR2、MR3、機器人趣味相撲、機器人趣味循跡；獲獎名單見下方。
 - 2026-11-15（日）GRG 2026 世界總決賽：新加坡 One World International School - Digital Campus（27 Punggol Field Walk, Singapore 828649），年度主題 Mission Meals（SDG 2 消除飢餓）。臺灣代表隊由協會統一帶隊。
@@ -18,6 +25,8 @@
 - MR3 第四名：TW_LauMo_Junior 1（指導教練 陳彥霖）
 - MR3 前十名：TW_JGJHS_NO1（指導教練 黃雅謙）
 - MR3 前十名：TW_LHHS_NO2（指導教練 黃雅謙）
+
+媒體報導（成果頁 #press）：三立新聞電視報導（2026-11-22，YouTube：https://www.youtube.com/watch?v=Xudv54Z9uag ，原標題「國際機器人大賽! 台灣隊奪1冠2亞 創最佳成績 新加坡GRG機器人大賽 台灣隊學生狂掃4大獎」）、Yahoo 奇摩新聞、LINE TODAY、NOWnews 今日新聞、翻報、Yam 蕃新聞。
 
 ## 2026 臺灣推廣賽獲獎名單（2026-10-25，桃園市桃園區成功國小）
 完整名單：https://global-robotics-games-taiwan.github.io/#results
